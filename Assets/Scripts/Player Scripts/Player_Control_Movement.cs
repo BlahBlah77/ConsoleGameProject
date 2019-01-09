@@ -38,10 +38,11 @@ public class Player_Control_Movement : MonoBehaviour {
 		{
 			transform.eulerAngles = new Vector3 (transform.eulerAngles.x, camQuad.eulerAngles.y, transform.eulerAngles.z);
 			playerRefs.rb.AddRelativeForce (new Vector3 (horiInput, 0.0f, vertInput), ForceMode.Impulse);
-			//transform.localRotation = Quaternion.LookRotation (new Vector3(horiInput, 0.0f, vertInput), Vector3.up);
-			playerRefs.model.localRotation = Quaternion.LookRotation (new Vector3(horiInput, 0.0f, vertInput), Vector3.up);
-		}
-		if (playerRefs.rb.velocity.magnitude > maxSpeed) 
+            //playerRefs.playerObject.localRotation = Quaternion.LookRotation (new Vector3(horiInput, 0.0f, vertInput), Vector3.up);
+            playerRefs.playerObject.localRotation = Quaternion.LookRotation(transform.InverseTransformDirection(playerRefs.rb.velocity.x, 0.0f, playerRefs.rb.velocity.z), Vector3.up);
+
+        }
+        if (playerRefs.rb.velocity.magnitude > maxSpeed) 
 		{
 			playerRefs.rb.velocity = playerRefs.rb.velocity.normalized * maxSpeed;
 		}

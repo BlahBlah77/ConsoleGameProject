@@ -8,7 +8,7 @@ public class Player_Reference_Holder : MonoBehaviour {
 	public Player_Control_Ground_Check playerCGC;
 	public Rigidbody rb;
 	public Transform camTran;
-	public Transform model; 
+	public Transform playerObject; 
 
 	// Use this for initialization
 	void Start () 
