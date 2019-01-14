@@ -2,26 +2,33 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DestroyCoin : MonoBehaviour/*IScorer*/ {
+public class DestroyCoin : MonoBehaviour, IPoolableObject/*IScorer*/ {
 
+    ObjectPooler objectpool;
     int coins;
     int currentCoins;
 
+    void Start()
+    {
+        GetComponent<PickupEvent>().OnCollection += DestroyCoin_OnCollection;
+    }
 
-   //public float getCoinsAdded { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
+    private void DestroyCoin_OnCollection(object sender, System.EventArgs e)
+    {
+        objectpool.CoinReturn(this.gameObject);
+    }
 
-   // public void CoinsAdded(float amount)
+
+
+    //public float getCoinsAdded { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
+
+    // public void CoinsAdded(float amount)
     //{
     //    throw new System.NotImplementedException();
     //}
-
-    private void OnCollisionEnter(Collision other)
+    
+    public void SetObjectPool(ObjectPooler objectPooler)
     {
-
-        if (other.gameObject.tag == "Player")
-        {
-            Destroy(this.gameObject);
-            // ADD A SCORE OF 1... (WILL BE ADDED VIA INTERFACES)
-        }
+        objectpool = objectPooler;
     }
 }

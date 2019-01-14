@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 54579749665477876}
   - component: {fileID: 65510957711527162}
   - component: {fileID: 114717930245884486}
+  - component: {fileID: 114952964106608832}
   m_Layer: 0
   m_Name: CoinCube
   m_TagString: Untagged
@@ -124,3 +125,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b0d38ca67b910d4a937cd00c0e070db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114952964106608832
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1101332828942474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5022c11acbe4aff44a824f376b361f7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myType: 1

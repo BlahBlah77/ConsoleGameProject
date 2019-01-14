@@ -1,12 +1,23 @@
 ﻿using System.Collections;
+using System;
+using UnityEngine.Events;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class BreakableObjects : MonoBehaviour {
 
     public GameObject CoinTest;
-    private float numberOfCoins;
+    private int numberOfCoins;
 
+    public event EventHandler<CoinArgs> OnSmashBox; // declare event
+    public event EventHandler<SpecialArgs> OnSmashSpecialBox; // for special items
+    
+    // make method to call an event
+    void RaiseSmashBox(CoinArgs args)
+    {
+        if(OnSmashBox != null)
+            OnSmashBox.Invoke(this, args);
+    }
 
     private void Start()
     {
@@ -21,15 +32,32 @@ public class BreakableObjects : MonoBehaviour {
 
     private void OnCollisionEnter(Collision other)
     {
-        numberOfCoins = Random.Range(1, 6);
+        numberOfCoins = UnityEngine.Random.Range(1, 6);
 
         if (other.gameObject.tag == "Player")
-        {
-            for (int x = 0; x < numberOfCoins; x++)
-            {
-                Destroy(this.gameObject);
-                Instantiate(CoinTest, transform.position, transform.rotation).GetComponent<Rigidbody>().AddExplosionForce(100, transform.position, 50);
-            }
+        {            
+            //for (int x = 0; x < numberOfCoins; x++)
+            //{                
+            //    Instantiate(CoinTest, transform.position, transform.rotation).GetComponent<Rigidbody>().AddExplosionForce(100, transform.position, 50);
+            //}
+            //call function to raise smash box event and create new event of number of coins that were spawned.
+            RaiseSmashBox(new CoinArgs(numberOfCoins));
+            //Destroy(this.gameObject);
         }
     }
+}
+
+// custom event argument that passes info about the number of coins spawned..
+public class CoinArgs: EventArgs
+{
+    public int coinsSpawns { get; private set; }
+    public CoinArgs(int numOfCoins)
+    {
+        coinsSpawns = numOfCoins;
+    }
+}
+
+public class SpecialArgs: EventArgs
+{
+
 }
