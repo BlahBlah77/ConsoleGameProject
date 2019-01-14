@@ -9,6 +9,7 @@ public class UI_Manager : MonoBehaviour
 
     [Header("UI Panels")]
     public RectTransform pausePanel;
+    public RectTransform gameOverPanel;
     public RectTransform currentPanel;
 
     public static UI_Manager Current
@@ -29,6 +30,7 @@ public class UI_Manager : MonoBehaviour
     void CollectStartUIObjects()
     {
         pausePanel.gameObject.SetActive(false);
+        gameOverPanel.gameObject.SetActive(false);
     }
 
     public void DisableUIPanel()
