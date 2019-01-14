@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UI_Manager : MonoBehaviour {
+public class UI_Manager : MonoBehaviour
+{
 
     private static UI_Manager current = null;
 
@@ -18,7 +19,7 @@ public class UI_Manager : MonoBehaviour {
         }
     }
 
-    void Awake ()
+    void Awake()
     {
         current = this;
         CollectStartUIObjects();
@@ -30,7 +31,7 @@ public class UI_Manager : MonoBehaviour {
         pausePanel.gameObject.SetActive(false);
     }
 
-    void DisableUIPanel()
+    public void DisableUIPanel()
     {
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
@@ -42,7 +43,7 @@ public class UI_Manager : MonoBehaviour {
         }
     }
 
-    void EnableUIPanel(RectTransform newPanel)
+    public void EnableUIPanel(RectTransform newPanel)
     {
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
@@ -55,12 +56,8 @@ public class UI_Manager : MonoBehaviour {
         currentPanel = newPanel;
     }
 
-    void Start ()
+    public void ExitGame()
     {
-		
-	}
-	
-	void Update () {
-		
-	}
+        Application.Quit();
+    }
 }

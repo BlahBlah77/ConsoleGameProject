@@ -8,7 +8,8 @@ public class Player_Reference_Holder : MonoBehaviour {
 	public Player_Control_Ground_Check playerCGC;
 	public Rigidbody rb;
 	public Transform camTran;
-	public Transform playerObject; 
+	public Transform playerObject;
+    public UI_Manager uiRef;
 
 	// Use this for initialization
 	void Start () 
@@ -16,5 +17,6 @@ public class Player_Reference_Holder : MonoBehaviour {
         camTran = Camera.main.transform;
 		rb = GetComponent<Rigidbody> ();
 		playerCGC = GetComponent<Player_Control_Ground_Check> ();
+        uiRef = UI_Manager.Current;
 	}
 }
