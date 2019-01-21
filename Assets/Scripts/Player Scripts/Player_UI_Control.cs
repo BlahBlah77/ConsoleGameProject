@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class Player_UI_Control : MonoBehaviour {
 
-    Player_Reference_Holder playerRefs;
+    //Player_Reference_Holder playerRefs;
     Game_Manager gmRef;
 
     void Start ()
     {
-        playerRefs = GetComponent<Player_Reference_Holder>();
+        //playerRefs = GetComponent<Player_Reference_Holder>();
         gmRef = Game_Manager.Instance;
     }
 
