@@ -4,8 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CoinBurst : MonoBehaviour {
+
     ObjectPooler objectPooler;
-    public event EventHandler OnCoinBurst;
+
     // Use this for initialization
     void Awake ()
     {
@@ -13,14 +14,16 @@ public class CoinBurst : MonoBehaviour {
         objectPooler = FindObjectOfType<ObjectPooler>();
     }
 
-
     void SetupSpawnedCoins(GameObject newCoin)
     {
         newCoin.transform.position = gameObject.transform.position;
-
         newCoin.GetComponent<Rigidbody>().useGravity = true;
         newCoin.GetComponent<Collider>().isTrigger = false;
         newCoin.GetComponent<Rigidbody>().AddExplosionForce(100, transform.position, 50);
+
+        // sets the collider of the coins back on trigger after 0.5 seconds.
+        CoinTriggerActivator newCoinLogicScript = newCoin.GetComponent<CoinTriggerActivator>();
+        newCoinLogicScript.Invoke("ActivateCoin", 0.5f);
     }
 
     private void CoinBurst_OnCollection(object sender, System.EventArgs e)
@@ -34,7 +37,6 @@ public class CoinBurst : MonoBehaviour {
 
         for (int x = 0; x < numberOfCoins; x++)
         {
-            //GameObject newCoin = Instantiate(CoinTest, transform.position, transform.rotation);
            GameObject newCoin = objectPooler.GetCoin();
            SetupSpawnedCoins(newCoin);
         } 

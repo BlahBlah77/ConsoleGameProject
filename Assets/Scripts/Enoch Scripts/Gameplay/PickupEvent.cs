@@ -9,6 +9,8 @@ public class PickupEvent : MonoBehaviour, IPoolableObject {
     public ObjectPooler objectpool;
     public event EventHandler OnCollection; // declare event
 
+    public bool isCollided = false;
+
     public void ResetSubscriptions()
     {
         OnCollection = null;
@@ -21,12 +23,16 @@ public class PickupEvent : MonoBehaviour, IPoolableObject {
             OnCollection.Invoke(this, args);
     }
 
-    private void OnCollisionEnter(Collision other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
         {
-            OnCollection(this, EventArgs.Empty);
-            objectpool.ReturnObject(this.gameObject, myType);
+            if (!isCollided)
+            {
+                //isCollided = true;
+                OnCollection(this, EventArgs.Empty);
+                objectpool.ReturnObject(this.gameObject, myType);
+            }
         }
     }
 

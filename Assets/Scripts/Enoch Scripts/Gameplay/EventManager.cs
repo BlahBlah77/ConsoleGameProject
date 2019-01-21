@@ -52,9 +52,4 @@ public class EventManager : MonoBehaviour {
         print("Smashed Box: " + sender);
         RaiseAnySmashBox(e);
     }
-
-    // Update is called once per frame
-    void Update () {
-		
-	}
 }

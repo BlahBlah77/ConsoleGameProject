@@ -9,6 +9,7 @@ public class Scoring : MonoBehaviour {
     public EventManager eventmanager;
     public Text coinText;
     int currentCoinScore = 0;
+    int maxCoinScore = 9999;
 
 	// Use this for initialization
 	void Start ()
@@ -18,18 +19,16 @@ public class Scoring : MonoBehaviour {
 
     private void Eventmanager_OnAnyCoinCollected(object sender, EventArgs e)
     {      
-
-        if (currentCoinScore < 100)
+        if (currentCoinScore < maxCoinScore)
         {
             currentCoinScore++;
             coinText.text = "Coins: " + currentCoinScore;
         }
         else
         {
-            currentCoinScore = 100;
+            currentCoinScore = maxCoinScore;
             coinText.text = "Coins: " + currentCoinScore;
+            Debug.Log("You have collected the max coins");
         }
     }
-
-
 }

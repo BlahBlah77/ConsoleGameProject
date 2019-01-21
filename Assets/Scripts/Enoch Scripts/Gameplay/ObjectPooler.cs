@@ -21,9 +21,7 @@ public class ObjectPooler : MonoBehaviour
     public event EventHandler OnBreakableSpawn;
 
     // Destroy unloads object from the memory and set reference to null so in order to use it again you need to recreate it, via let's say instantiate. 
-    //Meanwhile SetActive just hides the object and disables all components on it so if you need you can use it again.
-
-
+    // Meanwhile SetActive just hides the object and disables all components on it so if you need you can use it again.
 
     void Awake()
     {
@@ -34,14 +32,21 @@ public class ObjectPooler : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        //You need to populate both the Breakable list
+        GameObject[] temp = GameObject.FindGameObjectsWithTag("Breakable");
+
+        foreach (GameObject tempObject in temp)
+        {
+            pooledBreakables.Add(tempObject);
+        }
+
         foreach (GameObject breakableObj in pooledBreakables)
             breakableObj.GetComponent<IPoolableObject>().SetObjectPool(this);
-        foreach (GameObject coinObj in pooledCoins)
-            coinObj.GetComponent<IPoolableObject>().SetObjectPool(this);
 
-        SeedList(breakablePrefab, pooledBreakables);
-        SeedList(coinPrefab, pooledCoins);
+        SeedCoinList(coinPrefab, pooledCoins);
     }
+
+
     public void ReturnObject(GameObject genericObject, ObjectTypes objectType)
     {
         switch (objectType) 
@@ -59,6 +64,7 @@ public class ObjectPooler : MonoBehaviour
 
     public void CoinReturn(GameObject returnedCoin)
     {
+        Debug.Log("Coin Returned");
         returnedCoin.GetComponent<PickupEvent>().ResetSubscriptions();
         returnedCoin.SetActive(false);
         pooledCoins.Add(returnedCoin);
@@ -68,7 +74,7 @@ public class ObjectPooler : MonoBehaviour
     {
         if(pooledCoins.Count == 0)
         {
-            SeedList(coinPrefab, pooledCoins);
+            SeedCoinList(coinPrefab, pooledCoins);
         }
 
         GameObject poppedCoin = pooledCoins[0];
@@ -82,14 +88,14 @@ public class ObjectPooler : MonoBehaviour
     {
         returnedBreakable.GetComponent<PickupEvent>().ResetSubscriptions();
         returnedBreakable.SetActive(false);
-        pooledCoins.Add(returnedBreakable);
+        
     }
 
     public GameObject GetBreakable()
     {
         if (pooledBreakables.Count == 0)
         {
-            SeedList(breakablePrefab, pooledBreakables);
+            SeedCoinList(breakablePrefab, pooledBreakables);
         }
 
         GameObject poppedBreakable = pooledBreakables[0];
@@ -99,7 +105,7 @@ public class ObjectPooler : MonoBehaviour
         return poppedBreakable;
     }
 
-    void SeedList (GameObject prefab, List<GameObject> poolList)
+    void SeedCoinList(GameObject prefab, List<GameObject> poolList)
     {
         for (int x = 0; x < 4; x++)
         {
@@ -109,7 +115,6 @@ public class ObjectPooler : MonoBehaviour
             poolList.Add(newCoin);
         }
     }
-
 
     void RaiseBreakableSpawn(object spawnedBreakable, EventArgs args)
     {
@@ -122,6 +127,5 @@ public class ObjectPooler : MonoBehaviour
         if (OnCoinSpawn != null)
             OnCoinSpawn.Invoke(spawnedCoin, args);
     }
-
 }
 
