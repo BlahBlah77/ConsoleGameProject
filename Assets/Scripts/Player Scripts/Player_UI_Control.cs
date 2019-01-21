@@ -19,12 +19,12 @@ public class Player_UI_Control : MonoBehaviour {
         {
             if (!gmRef.isPaused)
             {
-                playerRefs.uiRef.EnableUIPanel(playerRefs.uiRef.pausePanel);
+                Event_Manager_Luke.TriggerEvent("PauseToggle");
                 gmRef.isPaused = true;
             }
             else
             {
-                playerRefs.uiRef.DisableUIPanel();
+                Event_Manager_Luke.TriggerEvent("PauseToggle");
                 gmRef.isPaused = false;
             }
         }

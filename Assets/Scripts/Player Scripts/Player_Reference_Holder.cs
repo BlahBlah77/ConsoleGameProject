@@ -9,14 +9,11 @@ public class Player_Reference_Holder : MonoBehaviour {
 	public Rigidbody rb;
 	public Transform camTran;
 	public Transform playerObject;
-    public UI_Manager uiRef;
 
-	// Use this for initialization
 	void Start () 
 	{
         camTran = Camera.main.transform;
 		rb = GetComponent<Rigidbody> ();
 		playerCGC = GetComponent<Player_Control_Ground_Check> ();
-        uiRef = UI_Manager.Current;
 	}
 }

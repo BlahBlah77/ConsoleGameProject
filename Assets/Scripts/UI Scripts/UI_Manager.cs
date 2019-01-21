@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class UI_Manager : MonoBehaviour
 {
@@ -11,6 +12,10 @@ public class UI_Manager : MonoBehaviour
     public RectTransform pausePanel;
     public RectTransform gameOverPanel;
     public RectTransform currentPanel;
+
+    private UnityAction pauseListen;
+
+    Game_Manager gmRef;
 
     public static UI_Manager Current
     {
@@ -27,10 +32,33 @@ public class UI_Manager : MonoBehaviour
         DisableUIPanel();
     }
 
+    private void Start()
+    {
+        Event_Manager_Luke.StartListen("PauseToggle", PauseActivate);
+        gmRef = Game_Manager.Instance;
+    }
+
     void CollectStartUIObjects()
     {
         pausePanel.gameObject.SetActive(false);
         gameOverPanel.gameObject.SetActive(false);
+    }
+
+    public void PauseActivate()
+    {
+        if (!gmRef.isPaused)
+        {
+            EnableUIPanel(pausePanel);
+        }
+        else
+        {
+            DisableUIPanel();
+        }
+    }
+
+    public void GMActivate()
+    {
+        EnableUIPanel(gameOverPanel);
     }
 
     public void DisableUIPanel()
@@ -44,7 +72,7 @@ public class UI_Manager : MonoBehaviour
             currentPanel = null;
         }
     }
-
+    
     public void EnableUIPanel(RectTransform newPanel)
     {
         Cursor.visible = true;
