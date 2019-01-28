@@ -9,13 +9,18 @@ public class Stats_Manager : MonoBehaviour {
     public int playerStrength = 1;
     public float playerExperience = 0;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public delegate void OnPlayerExperienceUpdateHandle(float currentExperience, float newExperience);
+    public event OnPlayerExperienceUpdateHandle OnPlayerExperienceUpdate;
+
+    public void ExperienceUpdate(float xp)
+    {
+        if (xp !=0)
+        {
+            if (OnPlayerExperienceUpdate != null)
+            {
+                OnPlayerExperienceUpdate(playerExperience, xp);
+            }
+            playerExperience += xp;
+        }
+    }
 }

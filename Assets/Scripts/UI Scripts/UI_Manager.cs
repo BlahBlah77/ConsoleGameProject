@@ -15,6 +15,8 @@ public class UI_Manager : MonoBehaviour
 
     private UnityAction pauseListen;
 
+
+
     Game_Manager gmRef;
 
     public static UI_Manager Current
@@ -35,6 +37,7 @@ public class UI_Manager : MonoBehaviour
     private void Start()
     {
         Event_Manager_Luke.StartListen("PauseToggle", PauseActivate);
+
         gmRef = Game_Manager.Instance;
     }
 
