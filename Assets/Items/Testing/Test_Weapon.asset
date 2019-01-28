@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ceba158706de3c48aaf6e4ff4965b3b, type: 3}
   m_Name: Test_Weapon
   m_EditorClassIdentifier: 
-  itemModel: {fileID: 100000, guid: a5891d79fc30d314597f7cd1cdfcb62b, type: 3}
+  itemModel: {fileID: 1885678111289524, guid: 75de50f9cf0de7448a86cb28632dd946, type: 2}
   itemName: Item Name
   itemIcon: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
   itemDescription: This is an item without a description, give me one you fuck

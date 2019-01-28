@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class Player_Control_Movement : MonoBehaviour {
 
+    public bool isAttacking = false;
+
 	[Header("Player Inputs")]
 	float vertInput;
 	float horiInput;
+    Vector3 combInput;
 
 	[Header("Speed Values")]
 	public float inputSpeed = 8.0f;
@@ -29,17 +32,21 @@ public class Player_Control_Movement : MonoBehaviour {
 	{
 		horiInput = Input.GetAxis ("Horizontal") * inputSpeed;
 		vertInput = Input.GetAxis ("Vertical") * inputSpeed;
+        combInput = new Vector3(horiInput, 0.0f, vertInput);
 	}
 
 	void GroundMovement()
 	{
 		Quaternion camQuad = playerRefs.camTran.transform.rotation;
-		if ((horiInput != 0) || (vertInput != 0)) 
-		{
-			transform.eulerAngles = new Vector3 (transform.eulerAngles.x, camQuad.eulerAngles.y, transform.eulerAngles.z);
-			playerRefs.rb.AddRelativeForce (new Vector3 (horiInput, 0.0f, vertInput), ForceMode.Impulse);
-            //playerRefs.playerObject.localRotation = Quaternion.LookRotation (new Vector3(horiInput, 0.0f, vertInput), Vector3.up);
-            playerRefs.playerObject.localRotation = Quaternion.LookRotation(transform.InverseTransformDirection(playerRefs.rb.velocity.x, 0.0f, playerRefs.rb.velocity.z), Vector3.up);
+        if (combInput != Vector3.zero)
+        {
+            transform.eulerAngles = new Vector3(transform.eulerAngles.x, camQuad.eulerAngles.y, transform.eulerAngles.z);
+            playerRefs.playerObject.localRotation = Quaternion.LookRotation (combInput, Vector3.up);
+            if (!isAttacking)
+            { 
+                playerRefs.rb.AddRelativeForce(combInput, ForceMode.Impulse);
+            }
+            //playerRefs.playerObject.localRotation = Quaternion.LookRotation(transform.InverseTransformDirection(playerRefs.rb.velocity.x, 0.0f, playerRefs.rb.velocity.z), Vector3.up);
 
         }
         if (playerRefs.rb.velocity.magnitude > maxSpeed) 

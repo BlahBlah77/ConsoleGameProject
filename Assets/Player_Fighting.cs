@@ -7,12 +7,18 @@ public class Player_Fighting : MonoBehaviour {
     Animator anim;
     int clickNum;
     bool isClickable;
+    public Player_Reference_Holder playerRefs;
 
     private void Awake()
     {
         anim = GetComponent<Animator>();
         clickNum = 0;
         isClickable = true;
+    }
+
+    private void Start()
+    {
+        playerRefs = GetComponentInParent<Player_Reference_Holder>();
     }
 
     // Update is called once per frame
@@ -26,6 +32,7 @@ public class Player_Fighting : MonoBehaviour {
 
     void Comboer()
     {
+        playerRefs.playerPCM.isAttacking = true;
         if(isClickable)
         {
             clickNum++;

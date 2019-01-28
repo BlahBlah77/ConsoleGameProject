@@ -248,7 +248,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 31820056}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8b30b19042fd754418fc6ce4fccc18ae, type: 3}
   m_Name: 
@@ -1000,7 +1000,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 696242923}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8b30b19042fd754418fc6ce4fccc18ae, type: 3}
   m_Name: 
@@ -1890,6 +1890,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6402d57cd0ba80e45993fc2b4afe91d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerRefs: {fileID: 0}
 --- !u!1 &1174768025
 GameObject:
   m_ObjectHideFlags: 0
@@ -2460,7 +2461,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1435624672}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8b30b19042fd754418fc6ce4fccc18ae, type: 3}
   m_Name: 
@@ -3065,6 +3066,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a167ea2d3ebd7343834b754e48a199a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerPCM: {fileID: 0}
   playerCGC: {fileID: 0}
   rb: {fileID: 0}
   camTran: {fileID: 0}
@@ -3080,6 +3082,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e448e39e05a2cec4abe4eede5779e94e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isAttacking: 0
   inputSpeed: 8
   maxSpeed: 15
 --- !u!114 &1865709151
@@ -3142,7 +3145,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1907514283}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8b30b19042fd754418fc6ce4fccc18ae, type: 3}
   m_Name: 
