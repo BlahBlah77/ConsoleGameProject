@@ -31,4 +31,9 @@ public class Scoring : MonoBehaviour {
             Debug.Log("You have collected the max coins");
         }
     }
+
+    private void Update()
+    {
+        
+    }
 }

@@ -4,10 +4,12 @@ using UnityEngine;
 
 public interface IDamager
 {
-    // function to determine how much damage is taken
-    void DamageTaken(float damage);
+    // function to determine how much damage is given
+    float DoDamage();
+
+
 
     // getter and setter for damage taken
-    float getDamageTaken { get; set; }
+    //float getDamageTaken { get; set; }
 }
 
