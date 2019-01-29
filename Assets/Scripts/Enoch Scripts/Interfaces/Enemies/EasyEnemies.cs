@@ -4,28 +4,39 @@ using UnityEngine;
 
 public class EasyEnemies : MonoBehaviour, IDamager, IDamageable {
 
-    public float enemyHealth = 100;
-
+    public float easyEnemyHealth = 50f;
+    public float damageAmount = 5f;
+    float damageReduction = 5f;
 
     public float DoDamage()
     {
-        float damageAmount = 5;
-
+        // how much damage did i do to the player
+        // based on the type of animation I play (extension task)
         return damageAmount;
     }
 
     public void TakeDamage(float damage)
     {
-        enemyHealth -= damage;
+        // this checks how much damage would be taken
+        // if hit by something in the game...
+        damage -= damageReduction;
+
+        if (damage <= 0)
+        {
+            damage = 0;
+        }
+
+        easyEnemyHealth -= damage;
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        IDamageable player = collision.gameObject.GetComponent<IDamageable>();
+        // if i hit anything that implemets the iDamageable
+        IDamageable player = other.gameObject.GetComponent<IDamageable>();
         if (player != null)
         {
             Debug.Log("You are hit");
-            player.TakeDamage(DoDamage());
+            player.TakeDamage(DoDamage()); // the player with the interface will take damage to its health
         }
     }
 

@@ -5,7 +5,7 @@ using UnityEngine;
 public class MeduimEnemies : MonoBehaviour, IDamager, IDamageable
 {
     public float meduimEnemyHealth = 100;
-    float damageAmount = 10f;
+    public float damageAmount = 10f;
     float damageReduction = 5f;
 
     public float DoDamage()
@@ -37,7 +37,7 @@ public class MeduimEnemies : MonoBehaviour, IDamager, IDamageable
         if (player != null)
         {
             Debug.Log("You are hit");
-            player.TakeDamage(DoDamage()); // that object will take damage
+            player.TakeDamage(DoDamage()); // the player with the interface will take damage to its health
         }
     }
 

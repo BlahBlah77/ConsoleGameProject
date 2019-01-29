@@ -8,7 +8,6 @@ public class PlayerHealthManager : MonoBehaviour, IDamager, IDamageable {
     public Slider healthSlider;
     public float currentHealth;
     private float maxHealth = 100;
-    bool canTakeDamage;
 
     // getter and setter for damage taken
     public float getDamageTaken
@@ -39,34 +38,8 @@ public class PlayerHealthManager : MonoBehaviour, IDamager, IDamageable {
 	void Update ()
     {
         ShowPlayerHealth();
-        PressToDie();
+        PlayerDead();
 	}
-
-    void OnTriggerEnter(Collider other)
-    {
-        IDamageable meduimDamageObj = other.gameObject.GetComponent<IDamageable>();
-
-        if (meduimDamageObj != null)
-        {
-            meduimDamageObj.TakeDamage(DoDamage());
-        }
-
-    }
-
-
-    void PressToDie()
-    {
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            currentHealth--;
-        }
-
-        if (currentHealth <= 0)
-        {
-            currentHealth = 0;
-            Debug.Log("You die");
-        }
-    }
 
     void SetPlayerHealth()
     {
@@ -79,17 +52,59 @@ public class PlayerHealthManager : MonoBehaviour, IDamager, IDamageable {
         healthSlider.value = currentHealth;
     }
 
+    void PlayerDead()
+    {
+        if (currentHealth <= 0)
+        {
+            currentHealth = 0;
+            Debug.Log("You die");
+            // death animation here....
+        }
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        // 3 types of enemies that can damage the player
+        IDamageable easyEnemies = other.gameObject.GetComponent<IDamageable>();
+        IDamageable meduimEnemies = other.gameObject.GetComponent<IDamageable>();
+        IDamageable hardEnemies = other.gameObject.GetComponent<IDamageable>();
+
+        // if player collides with any of these enemies
+        // the player will take damage based on what type of enemy it is.
+
+        if (easyEnemies != null)
+        {
+            easyEnemies.TakeDamage(DoDamage());
+        }
+
+        if (meduimEnemies != null)
+        {
+            meduimEnemies.TakeDamage(DoDamage());
+        }
+
+        if (hardEnemies != null)
+        {
+            hardEnemies.TakeDamage(DoDamage());
+        }
+
+    }
+
     public float DoDamage()
     {
         // all attacking sword animation stuff 
         // will do damage to enemies so add.
 
-        Debug.Log("I have given: " + 10);
+        //Debug.Log("I have given: " + 10); 
+        //return 10;
+
         return 10;
     }
 
     public void TakeDamage(float damage)
     {
+        // player will take damage based on
+        // what enemy is attacking it...
+
         currentHealth -= damage;
     }
 }
