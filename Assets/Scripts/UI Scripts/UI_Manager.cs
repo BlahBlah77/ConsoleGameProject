@@ -15,7 +15,9 @@ public class UI_Manager : MonoBehaviour
 
     private UnityAction pauseListen;
 
-
+    [Header("Stored Player Stats")]
+    public Int_Stat_Script playerXP;
+    public Int_Stat_Script playerLevel;
 
     Game_Manager gmRef;
 
