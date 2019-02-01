@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerHealthManager : MonoBehaviour, IDamager, IDamageable {
+public class PlayerHealthManager : MonoBehaviour, IDamager, IPlayerDamageable
+{
 
     public Slider healthSlider;
     public float currentHealth;
     private float maxHealth = 100;
+    float damageAmount;
 
     // getter and setter for damage taken
     public float getDamageTaken
@@ -65,46 +67,30 @@ public class PlayerHealthManager : MonoBehaviour, IDamager, IDamageable {
     void OnTriggerEnter(Collider other)
     {
         // 3 types of enemies that can damage the player
-        IDamageable easyEnemies = other.gameObject.GetComponent<IDamageable>();
-        IDamageable meduimEnemies = other.gameObject.GetComponent<IDamageable>();
-        IDamageable hardEnemies = other.gameObject.GetComponent<IDamageable>();
+        IDamageable Enemy = other.gameObject.GetComponent<IDamageable>();
 
         // if player collides with any of these enemies
         // the player will take damage based on what type of enemy it is.
 
-        if (easyEnemies != null)
+        if (Enemy != null)
         {
-            easyEnemies.TakeDamage(DoDamage());
+            Enemy.TakeDamage(damageAmount);
         }
-
-        if (meduimEnemies != null)
-        {
-            meduimEnemies.TakeDamage(DoDamage());
-        }
-
-        if (hardEnemies != null)
-        {
-            hardEnemies.TakeDamage(DoDamage());
-        }
-
     }
+
+    void UpdatePlayerHealth(float value)
+    {
+        currentHealth -= value;
+    }
+
 
     public float DoDamage()
     {
-        // all attacking sword animation stuff 
-        // will do damage to enemies so add.
-
-        //Debug.Log("I have given: " + 10); 
-        //return 10;
-
-        return 10;
+        throw new System.NotImplementedException();
     }
 
-    public void TakeDamage(float damage)
+    void IPlayerDamageable.PlayerTakesDamage(float damage)
     {
-        // player will take damage based on
-        // what enemy is attacking it...
-
-        currentHealth -= damage;
+        UpdatePlayerHealth(damage);
     }
 }
