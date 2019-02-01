@@ -4,15 +4,18 @@
 public class Int_Stat_Script : ScriptableObject, ISerializationCallbackReceiver
 {
     public int initialisedVariable;
-    [System.NonSerialized]
-    public int runVariable;
+    public int initialisedVariable2;
+    [System.NonSerialized] public int runVariable;
+    [System.NonSerialized] public int runVariable2;
 
     public delegate void OnIntUpdateHandle(int newValue);
     public event OnIntUpdateHandle OnIntUpdate;
+    public event OnIntUpdateHandle OnIntUpdate2;
 
     public void OnAfterDeserialize()
     {
         runVariable = initialisedVariable;
+        runVariable2 = initialisedVariable2;
     }
 
     public void OnBeforeSerialize() { }
@@ -32,6 +35,15 @@ public class Int_Stat_Script : ScriptableObject, ISerializationCallbackReceiver
         if (OnIntUpdate != null)
         {
             OnIntUpdate(runVariable);
+        }
+    }
+
+    public void SecondIntSetValChanger(int newValue)
+    {
+        runVariable2 = newValue;
+        if (OnIntUpdate != null)
+        {
+            OnIntUpdate2(runVariable2);
         }
     }
 

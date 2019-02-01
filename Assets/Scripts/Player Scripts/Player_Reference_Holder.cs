@@ -8,8 +8,8 @@ public class Player_Reference_Holder : MonoBehaviour {
 	public Rigidbody rb;
 	public Transform camTran;
 	public Transform playerObject;
-    public Int_Stat_Script playerXP;
-    public Int_Stat_Script playerLevel;
+    //public Int_Stat_Script playerXP;
+    //public Int_Stat_Script playerLevel;
 
     void Start () 
 	{

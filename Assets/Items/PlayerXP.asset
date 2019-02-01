@@ -11,4 +11,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e08683c6f96fd8a4bbe53664392db35a, type: 3}
   m_Name: PlayerXP
   m_EditorClassIdentifier: 
-  initialisedVariable: 100
+  initialisedVariable: 1
+  initialisedVariable2: 2

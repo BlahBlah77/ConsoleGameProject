@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.Events;
 
 public class UI_Manager : MonoBehaviour
@@ -18,6 +19,10 @@ public class UI_Manager : MonoBehaviour
     [Header("Stored Player Stats")]
     public Int_Stat_Script playerXP;
     public Int_Stat_Script playerLevel;
+
+    [Header("UI Elements")]
+    public Text lvlText;
+    public Slider xpSlider;
 
     Game_Manager gmRef;
 
@@ -39,8 +44,15 @@ public class UI_Manager : MonoBehaviour
     private void Start()
     {
         Event_Manager_Luke.StartListen("PauseToggle", PauseActivate);
-
+        playerXP.OnIntUpdate += SliderSet;
+        playerLevel.OnIntUpdate += TextSet;
         gmRef = Game_Manager.Instance;
+    }
+
+    private void OnDestroy()
+    {
+        playerXP.OnIntUpdate -= SliderSet;
+        playerLevel.OnIntUpdate -= TextSet;
     }
 
     void CollectStartUIObjects()
@@ -89,6 +101,16 @@ public class UI_Manager : MonoBehaviour
         }
         newPanel.gameObject.SetActive(true);
         currentPanel = newPanel;
+    }
+
+    void SliderSet(int value)
+    {
+        xpSlider.value = value;
+    }
+
+    void TextSet(int value)
+    {
+        lvlText.text = value.ToString();
     }
 
     public void ExitGame()
