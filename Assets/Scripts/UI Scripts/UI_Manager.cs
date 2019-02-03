@@ -43,16 +43,21 @@ public class UI_Manager : MonoBehaviour
 
     private void Start()
     {
+        MaxSliderSet(playerXP.runVariable2);
+        XPSliderSet(playerXP.runVariable);
+        LevelTextSet(playerLevel.runVariable);
         Event_Manager_Luke.StartListen("PauseToggle", PauseActivate);
-        playerXP.OnIntUpdate += SliderSet;
-        playerLevel.OnIntUpdate += TextSet;
+        playerXP.OnIntUpdate += XPSliderSet;
+        playerXP.OnIntUpdate2 += MaxSliderSet;
+        playerLevel.OnIntUpdate += LevelTextSet;
         gmRef = Game_Manager.Instance;
     }
 
     private void OnDestroy()
     {
-        playerXP.OnIntUpdate -= SliderSet;
-        playerLevel.OnIntUpdate -= TextSet;
+        playerXP.OnIntUpdate -= XPSliderSet;
+        playerLevel.OnIntUpdate -= LevelTextSet;
+        playerXP.OnIntUpdate2 -= MaxSliderSet;
     }
 
     void CollectStartUIObjects()
@@ -103,12 +108,17 @@ public class UI_Manager : MonoBehaviour
         currentPanel = newPanel;
     }
 
-    void SliderSet(int value)
+    void XPSliderSet(int value)
     {
         xpSlider.value = value;
     }
 
-    void TextSet(int value)
+    void MaxSliderSet(int value)
+    {
+        xpSlider.maxValue = value;
+    }
+
+    void LevelTextSet(int value)
     {
         lvlText.text = value.ToString();
     }

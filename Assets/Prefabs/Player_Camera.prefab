@@ -47,7 +47,7 @@ GameObject:
   - component: {fileID: 114467779043098714}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -618,8 +618,6 @@ MonoBehaviour:
   rb: {fileID: 0}
   camTran: {fileID: 0}
   playerObject: {fileID: 4692518784489186}
-  playerXP: {fileID: 0}
-  playerLevel: {fileID: 0}
 --- !u!114 &114261127701365852
 MonoBehaviour:
   m_ObjectHideFlags: 1

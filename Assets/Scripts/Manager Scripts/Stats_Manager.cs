@@ -22,8 +22,11 @@ public class Stats_Manager : MonoBehaviour {
     {
         if (value >= playerXP.runVariable2)
         {
+            int newXP = value - playerXP.runVariable2;
             playerLevel.IntPlusChanger(1);
-            playerXP.IntSetValChanger(0);
+            playerXP.IntSetValChanger(newXP);
+            int newVal = playerXP.runVariable2 + (playerXP.runVariable2 / 3);
+            playerXP.SecondIntSetValChanger(newVal);
         }
     }
 

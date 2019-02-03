@@ -5,8 +5,10 @@ public class Int_Stat_Script : ScriptableObject, ISerializationCallbackReceiver
 {
     public int initialisedVariable;
     public int initialisedVariable2;
-    [System.NonSerialized] public int runVariable;
-    [System.NonSerialized] public int runVariable2;
+    //[System.NonSerialized]
+    public int runVariable;
+    //[System.NonSerialized]
+    public int runVariable2;
 
     public delegate void OnIntUpdateHandle(int newValue);
     public event OnIntUpdateHandle OnIntUpdate;
@@ -41,7 +43,7 @@ public class Int_Stat_Script : ScriptableObject, ISerializationCallbackReceiver
     public void SecondIntSetValChanger(int newValue)
     {
         runVariable2 = newValue;
-        if (OnIntUpdate != null)
+        if (OnIntUpdate2 != null)
         {
             OnIntUpdate2(runVariable2);
         }
