@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class UI_Manager : MonoBehaviour
 {
@@ -19,6 +20,9 @@ public class UI_Manager : MonoBehaviour
     [Header("Stored Player Stats")]
     public Int_Stat_Script playerXP;
     public Int_Stat_Script playerLevel;
+
+    [Header("UI Variables")]
+    public string menuScene;
 
     [Header("UI Elements")]
     public Text lvlText;
@@ -123,8 +127,22 @@ public class UI_Manager : MonoBehaviour
         lvlText.text = value.ToString();
     }
 
+    public void MainMenu()
+    {
+        StartCoroutine(LoadSceneAsynchronously(menuScene));
+    }
+
     public void ExitGame()
     {
         Application.Quit();
+    }
+
+    IEnumerator LoadSceneAsynchronously(string newLevel)
+    {
+        AsyncOperation aOp = SceneManager.LoadSceneAsync(newLevel);
+        while (!aOp.isDone)
+        {
+            yield return null;
+        }
     }
 }
