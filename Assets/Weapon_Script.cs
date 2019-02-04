@@ -5,6 +5,7 @@ using UnityEngine;
 public class Weapon_Script : MonoBehaviour {
 
     public Item_Class weapon;
+    public Int_Stat_Script weaponStrength;
     public float damage;
 
     public string itemName;
@@ -17,15 +18,27 @@ public class Weapon_Script : MonoBehaviour {
     {
         meshFil = GetComponent<MeshFilter>();
         andworck = GetComponent<Renderer>();
-        ItemEquip();
+        ItemEquip(weaponStrength.initialisedVariable);
+        weaponStrength.OnIntUpdate += ItemEquip;
     }
 
-    public void ItemEquip()
+    private void OnDestroy()
     {
-        damage = weapon.stat;
+        weaponStrength.OnIntUpdate -= ItemEquip;
+    }
+
+    public void ItemEquip(int newValue)
+    {
+        damage = DamageCalculator(newValue);
         itemName = weapon.name;
         description = weapon.itemDescription;
         meshFil.mesh = weapon.itemModel.GetComponent<MeshFilter>().sharedMesh;
         andworck.material = weapon.itemModel.GetComponent<Renderer>().sharedMaterial;
+    }
+
+    float DamageCalculator(int damageVal)
+    {
+        float imper = weapon.stat * damageVal;
+        return imper;
     }
 }

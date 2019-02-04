@@ -6,7 +6,7 @@ public class Stats_Manager : MonoBehaviour {
 
     public Int_Stat_Script playerXP;
     public Int_Stat_Script playerLevel;
-    public int playerStrength = 1;
+    public Int_Stat_Script playerStrength;
 
     private void Start()
     {
@@ -25,6 +25,7 @@ public class Stats_Manager : MonoBehaviour {
             int newXP = value - playerXP.runVariable2;
             playerLevel.IntPlusChanger(1);
             playerXP.IntSetValChanger(newXP);
+            playerStrength.IntPlusChanger(1);
             int newVal = playerXP.runVariable2 + (playerXP.runVariable2 / 3);
             playerXP.SecondIntSetValChanger(newVal);
         }

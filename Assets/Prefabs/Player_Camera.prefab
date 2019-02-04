@@ -599,6 +599,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapon: {fileID: 11400000, guid: 1670e171a08cf514fb7d085a45e10bd3, type: 2}
+  weaponStrength: {fileID: 11400000, guid: 31a6f64d6fdd7ab40b65d37f87c330ff, type: 2}
   damage: 1
   itemName: 
   description: 
@@ -630,6 +631,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapon: {fileID: 11400000, guid: fa092ed06ceccc5499c86e5d421bb849, type: 2}
+  weaponStrength: {fileID: 11400000, guid: 31a6f64d6fdd7ab40b65d37f87c330ff, type: 2}
   damage: 1
   itemName: 
   description: 
