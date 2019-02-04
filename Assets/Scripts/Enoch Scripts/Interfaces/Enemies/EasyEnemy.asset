@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Name: EasyEnemy
   m_EditorClassIdentifier: 
   _enemyData:
-    EnemyHealth: 100
+    EnemyHealth: 70
     damageToTake: 30
     enemyAttackPower: 5

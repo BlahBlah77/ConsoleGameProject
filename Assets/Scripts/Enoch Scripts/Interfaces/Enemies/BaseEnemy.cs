@@ -26,10 +26,10 @@ public class BaseEnemy : MonoBehaviour, IDamager, IDamageable
         // how much damage did i do to the player
         // based on the type of animation I play (extension task)
 
-        if (isAttacking)
-        {
-            anim.SetTrigger("attack");
-        }
+        //if (isAttacking)
+        //{
+        //    anim.SetTrigger("attack");
+        //}
 
         return _enemyData.enemyAttackPower;
     }
@@ -49,7 +49,9 @@ public class BaseEnemy : MonoBehaviour, IDamager, IDamageable
 
     }
 
-    public void TakeDamage(float damage)
+    //
+    //
+    public void TakeDamage()
     {
        // the enemy will check how much damage it needs to take
        // and takes the damage...
@@ -58,7 +60,6 @@ public class BaseEnemy : MonoBehaviour, IDamager, IDamageable
 
     void UpdateHealth(float value)
     {
-       
         _enemyData.EnemyHealth -= value;
 
         // if the enemy health is zero.
@@ -68,7 +69,7 @@ public class BaseEnemy : MonoBehaviour, IDamager, IDamageable
         if (_enemyData.EnemyHealth <= 0)
         {
             _enemyData.EnemyHealth = 0;
-            anim.SetTrigger("Death");
+            //anim.SetTrigger("Death");
             Debug.Log("Enemy Dead");
         }
 
