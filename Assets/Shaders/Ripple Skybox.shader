@@ -1,4 +1,4 @@
-﻿Shader "Custom/Ripple" {
+﻿Shader "Custom/Ripple Skybox" {
 	Properties {
 		_Color ("Color", Color) = (1,1,1,1)
 		_MainTex ("Albedo (RGB)", 2D) = "white" {}
@@ -9,7 +9,7 @@
 		_Speed("Ripple Speed", Range(-50.0, 50.0)) = 1.0
 	}
 	SubShader {
-		Tags { "RenderType"="Opaque" }
+		Tags { "RenderType"="Background" }
 		LOD 200
 
 		CGPROGRAM
@@ -48,12 +48,16 @@
 			half b = sqrt(newuv.x * newuv.x + newuv.y * newuv.y);
 			half l = sin(b + _Time[1] * _Speed) / b;
 
+			half2 newnor = (IN.uv_NormTex - 0.5) * _Scale;
+			half norb = sqrt(newnor.x * newnor.x + newnor.y * newnor.y);
+			half norl = sin(norb + _Time[1] * _Speed) / norb;
+
 			fixed4 c = tex2D(_MainTex, IN.uv_MainTex + l) * _Color;
 			o.Albedo = c.rgb;
 			o.Metallic = _Metallic;
 			o.Smoothness = _Glossiness;
 			o.Alpha = _Color.a;
-			half norc = UnpackNormal(tex2D(_NormTex, IN.uv_NormTex + l));
+			half norc = UnpackNormal(tex2D(_NormTex, IN.uv_NormTex + norl));
 			o.Normal = norc + (l, l, l);
 			//o.Normal = (norl, norl, norl) + (l, l, l);
 			//o.Normal = UnpackNormal(tex2D(_NormTex, IN.uv_NormTex)) * (l, l, l);

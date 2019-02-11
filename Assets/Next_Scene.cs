@@ -3,29 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Menu_UI_Manager : MonoBehaviour {
+public class Next_Scene : MonoBehaviour {
 
     public string startGameScene;
-    public Material menuMat;
 
-    private void Awake()
-    {
-        RenderSettings.skybox = menuMat;
-    }
-
-    private void Start()
-    {
-        Time.timeScale = 1.0f;
-    }
-
-    public void StartGame()
+    // Use this for initialization
+    void Start ()
     {
         StartCoroutine(LoadSceneAsynchronously(startGameScene));
-    }
-
-    public void ExitGame()
-    {
-        Application.Quit();
     }
 
     IEnumerator LoadSceneAsynchronously(string newLevel)
