@@ -16,7 +16,7 @@ public abstract class Base_Enemy_Control : MonoBehaviour {
     public float rayLengthAttack = 3.0f;
 
     public float fireRate = 3.0f;
-    private float fireTime;
+    public float fireTime;
 
     public float patrolSpeed = 3.0f;
     public Transform[] patrolPointList;
