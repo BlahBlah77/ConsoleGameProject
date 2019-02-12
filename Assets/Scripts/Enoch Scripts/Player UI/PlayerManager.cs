@@ -15,6 +15,8 @@ public class PlayerManager : MonoBehaviour, IDamager, IPlayerDamageable
     private float playerRotation;
     public float playerSpeed;
     public float playerRotationSpeed;
+    public bool isAttacking = false;
+
 
 
     // getter and setter for damage taken
@@ -41,6 +43,7 @@ public class PlayerManager : MonoBehaviour, IDamager, IPlayerDamageable
     {
         anim = GetComponent<Animator>();
         SetPlayerHealth();
+        anim.SetBool("isIdle", true);
 	}
 	
 	// Update is called once per frame
@@ -62,7 +65,7 @@ public class PlayerManager : MonoBehaviour, IDamager, IPlayerDamageable
         this.transform.Translate(0, 0, playerMovement);
         this.transform.Rotate(0, playerRotation, 0);
 
-        // set the player running forwards...
+        //set the player running forwards...
         if (playerMovement > 0)
         {
             anim.SetBool("isRunningForwards", true);
@@ -80,12 +83,19 @@ public class PlayerManager : MonoBehaviour, IDamager, IPlayerDamageable
         else
         {
             anim.SetBool("isRunningBackwards", false);
+            if (isAttacking) return;
         }
 
         // play attack animation
         if (Input.GetMouseButtonDown(0))
         {
             anim.SetTrigger("Attack");
+        }
+
+        // set a heavy combo attack
+        if (Input.GetMouseButtonDown(1))
+        {
+            anim.SetTrigger("HeavyAttack");
         }
 
         // play jumping animation
@@ -108,28 +118,19 @@ public class PlayerManager : MonoBehaviour, IDamager, IPlayerDamageable
 
     void PlayerDead()
     {
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            currentHealth -= 10; 
+        }
+
         if (currentHealth <= 0)
         {
             currentHealth = 0;
             Debug.Log("You die");
-            anim.SetTrigger("Death"); // death animation here....
-  
+            anim.SetBool("isDead", true); // death animation here....
+            this.GetComponent<Rigidbody>().freezeRotation = true;
         }
     }
-
-    //void OnTriggerEnter(Collider other)
-    //{
-    //    // 3 types of enemies that can damage the player
-    //    IDamageable Enemy = other.gameObject.GetComponent<IDamageable>();
-
-    //    // if player collides with any of these enemies
-    //    // the player will take damage based on what type of enemy it is.
-
-    //    if (Enemy != null)
-    //    {
-    //        //Enemy.TakeDamage(damageAmount);
-    //    }
-    //}
 
     void UpdatePlayerHealth(float value)
     {
