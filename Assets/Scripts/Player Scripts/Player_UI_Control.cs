@@ -28,5 +28,18 @@ public class Player_UI_Control : MonoBehaviour {
                 gmRef.isPaused = false;
             }
         }
-	}
+        if (Input.GetButtonDown("Inventory"))
+        {
+            if (!gmRef.isPaused)
+            {
+                Event_Manager_Luke.TriggerEvent("InventToggle");
+                gmRef.isPaused = true;
+            }
+            else
+            {
+                Event_Manager_Luke.TriggerEvent("InventToggle");
+                gmRef.isPaused = false;
+            }
+        }
+    }
 }

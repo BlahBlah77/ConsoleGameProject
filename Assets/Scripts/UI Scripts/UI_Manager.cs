@@ -12,6 +12,7 @@ public class UI_Manager : MonoBehaviour
 
     [Header("UI Panels")]
     public RectTransform pausePanel;
+    public RectTransform inventoryPanel;
     public RectTransform gameOverPanel;
     public RectTransform currentPanel;
 
@@ -51,6 +52,7 @@ public class UI_Manager : MonoBehaviour
         XPSliderSet(playerXP.runVariable);
         LevelTextSet(playerLevel.runVariable);
         Event_Manager_Luke.StartListen("PauseToggle", PauseActivate);
+        Event_Manager_Luke.StartListen("InventToggle", InventoryActivate);
         playerXP.OnIntUpdate += XPSliderSet;
         playerXP.OnIntUpdate2 += MaxSliderSet;
         playerLevel.OnIntUpdate += LevelTextSet;
@@ -67,6 +69,7 @@ public class UI_Manager : MonoBehaviour
     void CollectStartUIObjects()
     {
         pausePanel.gameObject.SetActive(false);
+        inventoryPanel.gameObject.SetActive(false);
         gameOverPanel.gameObject.SetActive(false);
     }
 
@@ -75,6 +78,18 @@ public class UI_Manager : MonoBehaviour
         if (!gmRef.isPaused)
         {
             EnableUIPanel(pausePanel);
+        }
+        else
+        {
+            DisableUIPanel();
+        }
+    }
+
+    public void InventoryActivate()
+    {
+        if (!gmRef.isPaused)
+        {
+            EnableUIPanel(inventoryPanel);
         }
         else
         {
