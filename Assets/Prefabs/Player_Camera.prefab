@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 114355635195645126}
   - component: {fileID: 114251677083435272}
   - component: {fileID: 114467779043098714}
+  - component: {fileID: 114423681137398862}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -61,7 +62,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4313403399680504}
   m_Layer: 0
-  m_Name: Weapons
+  m_Name: Equipment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -567,7 +568,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distance: 0.5
-  speed: 12
+  speed: 79.22
   playerObj: {fileID: 4464081706020512}
   minClamp: -10
   maxClamp: 70
@@ -598,9 +599,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2075dab6f26f39469077879e158c7e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapon: {fileID: 11400000, guid: 1670e171a08cf514fb7d085a45e10bd3, type: 2}
+  weapon: {fileID: 0}
   weaponStrength: {fileID: 11400000, guid: 31a6f64d6fdd7ab40b65d37f87c330ff, type: 2}
   damage: 1
+  equipSlot: 3
+  gear: {fileID: 11400000, guid: 438a99f204ec2f14cb14e7c2aabf9358, type: 2}
   itemName: 
   description: 
 --- !u!114 &114251677083435272
@@ -630,9 +633,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2075dab6f26f39469077879e158c7e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapon: {fileID: 11400000, guid: fa092ed06ceccc5499c86e5d421bb849, type: 2}
+  weapon: {fileID: 0}
   weaponStrength: {fileID: 11400000, guid: 31a6f64d6fdd7ab40b65d37f87c330ff, type: 2}
   damage: 1
+  equipSlot: 4
+  gear: {fileID: 11400000, guid: 438a99f204ec2f14cb14e7c2aabf9358, type: 2}
   itemName: 
   description: 
 --- !u!114 &114355635195645126
@@ -649,6 +654,17 @@ MonoBehaviour:
   isAttacking: 0
   inputSpeed: 8
   maxSpeed: 15
+--- !u!114 &114423681137398862
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1318350861861718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72aeac7ff68efdd4f8a906a7d6f29529, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114467779043098714
 MonoBehaviour:
   m_ObjectHideFlags: 1

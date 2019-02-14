@@ -10,6 +10,9 @@ public class Item_Class : ScriptableObject
     public Sprite itemIcon = null;
     public string itemDescription = "This is an item without a description, give me one you fuck";
     public float stat = 0.0f;
-    public bool isWeapon = false;
-    public bool isEquipable = false;
+
+    public virtual void UseItem()
+    {
+        
+    }
 }

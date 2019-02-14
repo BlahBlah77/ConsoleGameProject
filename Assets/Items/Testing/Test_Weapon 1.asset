@@ -8,13 +8,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ceba158706de3c48aaf6e4ff4965b3b, type: 3}
-  m_Name: Test_Weapon2
+  m_Script: {fileID: 11500000, guid: fa4150338f42d394f8fc76676d9f15fc, type: 3}
+  m_Name: Test_Weapon 1
   m_EditorClassIdentifier: 
-  itemModel: {fileID: 1417812286789600, guid: 4cedb08cee4c4c140bbf46decebd8d7d, type: 2}
-  itemName: Test Weapon 2 Electric Boogaloo
-  itemIcon: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  itemModel: {fileID: 100000, guid: a5891d79fc30d314597f7cd1cdfcb62b, type: 3}
+  itemName: Item Name
+  itemIcon: {fileID: 0}
   itemDescription: This is an item without a description, give me one you fuck
   stat: 7
-  isWeapon: 1
-  isEquipable: 0
+  equipSlot: 3
