@@ -55,7 +55,15 @@ public class Weapon_Script : MonoBehaviour {
 
     float DamageCalculator(int damageVal)
     {
-        float imper = weapon.stat * damageVal;
+        float imper;
+        if (weapon != null)
+        {
+            imper = weapon.stat * damageVal;
+        }
+        else
+        {
+            imper = 0;
+        }
         return imper;
     }
 }
