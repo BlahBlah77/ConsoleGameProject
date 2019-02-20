@@ -1,0 +1,172 @@
+fileFormatVersion: 2
+guid: 212a6067c56c5d64e937597183e53921
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Armature
+    100002: Banana
+    100004: Bone
+    100006: Bone.001
+    100008: Bone.003
+    100010: Bone.004
+    100012: Bone.005
+    100014: Bone.006
+    100016: Bone.007
+    100018: Bone.008
+    100020: Bone.008_end
+    100022: Foot.L
+    100024: Foot.L_end
+    100026: Foot.R
+    100028: Foot.R_end
+    100030: Foot_Left
+    100032: Foot_Right
+    100034: IK.L
+    100036: IK.R
+    100038: Knee.L
+    100040: Knee.L_end
+    100042: Knee.R
+    100044: Knee.R_end
+    100046: Lower_Leg.L
+    100048: Lower_Leg.R
+    100050: //RootNode
+    100052: Pelvis
+    100054: Pelvis.001
+    100056: Pelvis.002
+    100058: Pelvis.003
+    100060: Pelvis.004
+    100062: Pelvis.005
+    100064: Pelvis.006
+    100066: Pelvis.006_end
+    100068: Root
+    100070: Thigh.L
+    100072: Thigh.R
+    400000: Armature
+    400002: Banana
+    400004: Bone
+    400006: Bone.001
+    400008: Bone.003
+    400010: Bone.004
+    400012: Bone.005
+    400014: Bone.006
+    400016: Bone.007
+    400018: Bone.008
+    400020: Bone.008_end
+    400022: Foot.L
+    400024: Foot.L_end
+    400026: Foot.R
+    400028: Foot.R_end
+    400030: Foot_Left
+    400032: Foot_Right
+    400034: IK.L
+    400036: IK.R
+    400038: Knee.L
+    400040: Knee.L_end
+    400042: Knee.R
+    400044: Knee.R_end
+    400046: Lower_Leg.L
+    400048: Lower_Leg.R
+    400050: //RootNode
+    400052: Pelvis
+    400054: Pelvis.001
+    400056: Pelvis.002
+    400058: Pelvis.003
+    400060: Pelvis.004
+    400062: Pelvis.005
+    400064: Pelvis.006
+    400066: Pelvis.006_end
+    400068: Root
+    400070: Thigh.L
+    400072: Thigh.R
+    2100000: No Name
+    4300000: Foot_Right
+    4300002: Banana
+    4300004: Foot_Left
+    9500000: //RootNode
+    13700000: Banana
+    13700002: Foot_Left
+    13700004: Foot_Right
+    2186277476908879412: ImportLogs
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: "Invalid Avatar Rig Configuration. Missing or invalid transform:\n\tRequired
+      human bone 'Head' not found\n"
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.01
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
