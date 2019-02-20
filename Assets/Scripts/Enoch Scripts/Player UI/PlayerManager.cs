@@ -15,7 +15,14 @@ public class PlayerManager : MonoBehaviour, IDamager, IPlayerDamageable
     private float playerRotation;
     public float playerSpeed;
     public float playerRotationSpeed;
-    public bool isAttacking = false;
+
+    Rigidbody rb;
+    public bool isIdle = false;
+    public bool isRunning = false;
+    public bool isTurning = false;
+
+    int noofClicks;
+    bool isClickable;
 
 
 
@@ -42,12 +49,14 @@ public class PlayerManager : MonoBehaviour, IDamager, IPlayerDamageable
     void Start ()
     {
         anim = GetComponent<Animator>();
+        noofClicks = 0;
+        //rb = this.GetComponent<Rigidbody>();
         SetPlayerHealth();
         anim.SetBool("isIdle", true);
 	}
 	
 	// Update is called once per frame
-	void Update ()
+	void LateUpdate ()
     {
         ShowPlayerHealth();
         PlayerDead();
@@ -62,47 +71,97 @@ public class PlayerManager : MonoBehaviour, IDamager, IPlayerDamageable
         playerMovement *= Time.deltaTime;
         playerRotation *= Time.deltaTime;
 
+        //Quaternion turn = Quaternion.Euler(0, playerRotation, 0);
+        //rb.MoveRotation(rb.rotation * turn);
+
         this.transform.Translate(0, 0, playerMovement);
         this.transform.Rotate(0, playerRotation, 0);
+        anim.SetFloat("speed", playerMovement);
+        anim.SetFloat("turnspeed", playerRotation);
 
-        //set the player running forwards...
-        if (playerMovement > 0)
+        // if we are moving forwards or backwards we play the running animation
+        if (playerMovement != 0)
         {
-            anim.SetBool("isRunningForwards", true);
+            anim.SetBool("isIdle", false);
+            isIdle = false;
+            isRunning = true;
         }
         else
         {
-            anim.SetBool("isRunningForwards", false);
+            anim.SetBool("isIdle", true);
+            isIdle = true;
+            isRunning = false;
         }
 
-        // set the player running backwards
-        if (playerMovement < 0)
+        if (playerRotation != 0 && isIdle)
         {
-            anim.SetBool("isRunningBackwards", true);
+            anim.SetTrigger("Turning");
+            Debug.Log("we are turning");
+            isTurning = true;
         }
         else
         {
-            anim.SetBool("isRunningBackwards", false);
-            if (isAttacking) return;
+            //anim.SetBool("isIdle", true);
+            isTurning = false;
+        }
+
+        //if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D) && isIdle)
+        //{
+        //    anim.SetTrigger("Turning");
+        //    Debug.Log("we are turning");
+        //    isTurning = true;
+        //}
+
+        // if we are running and we are not idle do not trigger the turn animation
+        if (isRunning && !isIdle)
+        {
+            isTurning = false;
+        }
+
+
+
+        if ((Input.GetKeyDown(KeyCode.Space) && isRunning))
+        {
+            anim.SetTrigger("RunningJump");
+            Debug.Log("Running Jump");
+        }
+
+
+        // if we are standing...
+        if (playerMovement == 0)
+        {
+            Debug.Log("Player is standing");
+            isIdle = true;
         }
 
         // play attack animation
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !isIdle)
         {
             anim.SetTrigger("Attack");
+            Debug.Log("Running Attack");
+        }
+        else if (Input.GetMouseButton(0) && isIdle)
+        {
+            anim.SetTrigger("StandingAttack");
+            Debug.Log("Standing Attack");
+        }
+
+        // play standing jumping animation
+        if (Input.GetKeyDown(KeyCode.Space) && isIdle)
+        {
+            anim.SetTrigger("StandingJump");
         }
 
         // set a heavy combo attack
         if (Input.GetMouseButtonDown(1))
         {
-            anim.SetTrigger("HeavyAttack");
+            //anim.SetTrigger("HeavyAttack");
+            
         }
 
-        // play jumping animation
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            anim.SetTrigger("Jumping");
-        }
+
+
+
     }
 
     void SetPlayerHealth()

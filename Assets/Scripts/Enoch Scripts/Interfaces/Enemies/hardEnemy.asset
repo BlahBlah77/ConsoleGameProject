@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Name: hardEnemy
   m_EditorClassIdentifier: 
   _enemyData:
-    EnemyHealth: 100
+    EnemyHealth: 50
     damageToTake: 10
     enemyAttackPower: 10

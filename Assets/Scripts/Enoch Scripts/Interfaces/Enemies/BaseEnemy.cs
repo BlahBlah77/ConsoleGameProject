@@ -16,9 +16,15 @@ public class BaseEnemy : MonoBehaviour, IDamager, IDamageable
     // shows the enemy's current stat for the data, reset everytime 
     [SerializeField]  private  EnemyDataclass _enemyData;
 
+
+    [SerializeField] internal float currentHealth;
+
+
+
     private void Awake()
     {
         _enemyData = _enemyDataScriptableObject._enemyData;
+        currentHealth = _enemyData.EnemyHealth;
     }
 
     public float DoDamage()
@@ -60,15 +66,15 @@ public class BaseEnemy : MonoBehaviour, IDamager, IDamageable
 
     void UpdateHealth(float value)
     {
-        _enemyData.EnemyHealth -= value;
+        currentHealth -= value;
 
         // if the enemy health is zero.
         // set the health to zero
         // play their death animations...
 
-        if (_enemyData.EnemyHealth <= 0)
+        if (currentHealth <= 0)
         {
-            _enemyData.EnemyHealth = 0;
+            currentHealth = 0;
             //anim.SetTrigger("Death");
             Debug.Log("Enemy Dead");
         }

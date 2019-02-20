@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Name: MediumEnemy
   m_EditorClassIdentifier: 
   _enemyData:
-    EnemyHealth: 75
+    EnemyHealth: 100
     damageToTake: 5
     enemyAttackPower: 20
