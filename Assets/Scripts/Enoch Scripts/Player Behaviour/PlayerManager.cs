@@ -95,7 +95,7 @@ public class PlayerManager : MonoBehaviour, IDamager, IPlayerDamageable
 
         if (playerRotation != 0 && isIdle)
         {
-            anim.SetTrigger("Turning");
+            //anim.SetTrigger("Turning");
             Debug.Log("we are turning");
             isTurning = true;
         }
@@ -105,13 +105,6 @@ public class PlayerManager : MonoBehaviour, IDamager, IPlayerDamageable
             isTurning = false;
         }
 
-        //if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D) && isIdle)
-        //{
-        //    anim.SetTrigger("Turning");
-        //    Debug.Log("we are turning");
-        //    isTurning = true;
-        //}
-
         // if we are running and we are not idle do not trigger the turn animation
         if (isRunning && !isIdle)
         {
@@ -119,13 +112,11 @@ public class PlayerManager : MonoBehaviour, IDamager, IPlayerDamageable
         }
 
 
-
         if ((Input.GetKeyDown(KeyCode.Space) && isRunning))
         {
             anim.SetTrigger("RunningJump");
             Debug.Log("Running Jump");
         }
-
 
         // if we are standing...
         if (playerMovement == 0)
@@ -137,7 +128,7 @@ public class PlayerManager : MonoBehaviour, IDamager, IPlayerDamageable
         // play attack animation
         if (Input.GetMouseButtonDown(0) && !isIdle)
         {
-            anim.SetTrigger("Attack");
+            anim.SetTrigger("LightAttack");
             Debug.Log("Running Attack");
         }
         else if (Input.GetMouseButton(0) && isIdle)

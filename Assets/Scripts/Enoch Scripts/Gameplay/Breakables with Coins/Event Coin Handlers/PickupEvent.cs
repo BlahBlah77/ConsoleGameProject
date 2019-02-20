@@ -23,9 +23,11 @@ public class PickupEvent : MonoBehaviour, IPoolableObject {
             OnCollection.Invoke(this, args);
     }
 
+    // if the sword/player hits the breakable..
+    // destroy it and then instantiate the coins from the object pooler
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player" || other.gameObject.tag == "sword")
         {
             if (!isCollided)
             {

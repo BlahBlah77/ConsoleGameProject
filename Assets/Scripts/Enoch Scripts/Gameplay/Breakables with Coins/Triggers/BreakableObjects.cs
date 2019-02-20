@@ -34,7 +34,7 @@ public class BreakableObjects : MonoBehaviour {
     {
         numberOfCoins = UnityEngine.Random.Range(5, 6);
 
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "sword")
         {
            RaiseSmashBox(new CoinArgs(numberOfCoins));
         }
