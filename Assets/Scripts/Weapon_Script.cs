@@ -43,7 +43,7 @@ public class Weapon_Script : MonoBehaviour, IDamager
         damage = DamageCalculator(weaponStrength.runVariable);
         itemName = weapon.name;
         description = weapon.itemDescription;
-        meshFil.mesh = weapon.itemModel.GetComponent<MeshFilter>().sharedMesh;
+        if (meshFil) meshFil.mesh = weapon.itemModel.GetComponent<MeshFilter>().sharedMesh;
         andworck.material = weapon.itemModel.GetComponent<Renderer>().sharedMaterial;
     }
 

@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Player_Fighting : MonoBehaviour {
 
-    int clickNum;
-    bool isClickable;
+    [SerializeField] int clickNum;
+    [SerializeField] bool isClickable;
     public Player_Reference_Holder playerRefs;
 
     private void Awake()
@@ -16,7 +16,7 @@ public class Player_Fighting : MonoBehaviour {
 
     private void Start()
     {
-        playerRefs = GetComponentInParent<Player_Reference_Holder>();
+        playerRefs = GetComponent<Player_Reference_Holder>();
     }
 
     // Update is called once per frame
@@ -30,7 +30,7 @@ public class Player_Fighting : MonoBehaviour {
 
     void Comboer()
     {
-        playerRefs.playerPCM.isAttacking = true;
+        //playerRefs.playerPCM.isAttacking = true;
         if(isClickable)
         {
             clickNum++;
@@ -44,22 +44,24 @@ public class Player_Fighting : MonoBehaviour {
     public void CheckComboStatus()
     {
         isClickable = false;
-        if(playerRefs.anim.GetCurrentAnimatorStateInfo(0).IsName("Attack1") && clickNum == 1)
+        if(playerRefs.anim.GetInteger("AnimationInt") == 1 && clickNum == 1)
         {
             playerRefs.anim.SetInteger("AnimationInt", 0);
             isClickable = true;
             clickNum = 0;
         }
-        else if (playerRefs.anim.GetCurrentAnimatorStateInfo(0).IsName("Attack1") && clickNum >= 2)
+        else if (playerRefs.anim.GetInteger("AnimationInt") == 1 && clickNum >= 2)
         {
             playerRefs.anim.SetInteger("AnimationInt", 2);
             isClickable = true;
+            //clickNum = 0;
         }
-        else if (playerRefs.anim.GetCurrentAnimatorStateInfo(0).IsName("Attack2") && clickNum >= 2)
+        else if (playerRefs.anim.GetInteger("AnimationInt") == 2 && clickNum >= 2)
         {
             playerRefs.anim.SetInteger("AnimationInt", 0);
             isClickable = true;
             clickNum = 0;
         }
+        isClickable = true;
     }
 }

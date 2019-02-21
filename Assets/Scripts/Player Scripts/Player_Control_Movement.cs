@@ -5,6 +5,7 @@ using UnityEngine;
 public class Player_Control_Movement : MonoBehaviour {
 
     public bool isAttacking = false;
+    public bool isRunning = false;
     public bool isIdle = false;
 
     [Header("Player Inputs")]
@@ -42,15 +43,15 @@ public class Player_Control_Movement : MonoBehaviour {
         Quaternion camQuad = playerRefs.camTran.transform.rotation;
         if (combInput != Vector3.zero)
         {
-            playerRefs.anim.SetBool("isIdle", false);
             transform.eulerAngles = new Vector3(transform.eulerAngles.x, camQuad.eulerAngles.y, transform.eulerAngles.z);
             playerRefs.playerObject.localRotation = Quaternion.LookRotation(combInput, Vector3.up);
-            if (!isAttacking)
-            {
-                playerRefs.rb.AddRelativeForce(combInput, ForceMode.Impulse);
-                combInput *= Time.deltaTime;
-                playerRefs.anim.SetFloat("speed", combInput.magnitude);
-            }
+            //if (!isAttacking)
+            playerRefs.anim.SetBool("isIdle", false);
+            isIdle = false;
+            isRunning = true;
+            playerRefs.rb.AddRelativeForce(combInput, ForceMode.Impulse);
+            combInput *= Time.deltaTime;
+            playerRefs.anim.SetFloat("speed", combInput.magnitude);
             //playerRefs.playerObject.localRotation = Quaternion.LookRotation(transform.InverseTransformDirection(playerRefs.rb.velocity.x, 0.0f, playerRefs.rb.velocity.z), Vector3.up);
 
         }
@@ -58,6 +59,7 @@ public class Player_Control_Movement : MonoBehaviour {
         {
             playerRefs.anim.SetBool("isIdle", true);
             isIdle = true;
+            isRunning = false;
         }
         if (playerRefs.rb.velocity.magnitude > maxSpeed) 
 		{
