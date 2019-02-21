@@ -5,6 +5,6 @@ using UnityEngine;
 public interface IDamageable
 {
     // function to determine how much damage is taken by something
-    void TakeDamage();
+    void TakeDamage(float newVal);
     //float damage
 }

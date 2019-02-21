@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Melee_Enemy_Control : Base_Enemy_Control
+public class Melee_Enemy_Control : Base_Enemy_Control, IDamager
 {
+
     private void Update()
     {
         switch (state)
@@ -21,9 +22,33 @@ public class Melee_Enemy_Control : Base_Enemy_Control
                 break;
         }
     }
+
+    public float DoDamage()
+    {
+        // how much damage did i do to the player
+        // based on the type of animation I play (extension task)
+
+        //if (isAttacking)
+        //{
+        //    anim.SetTrigger("attack");
+        //}
+
+        return _enemyData.enemyAttackPower;
+    }
+
     public override void Attack()
     {
-        //WHEN HEALTH IMPLEMENTED
+        RaycastHit attackHit;
+        Ray newRay = new Ray(transform.position, transform.forward);
+        if (Physics.Raycast(newRay, out attackHit, rayLengthAttack))
+        {
+            IPlayerDamageable player = attackHit.transform.GetComponent<IPlayerDamageable>();
+            if (player != null)
+            {
+                player.PlayerTakesDamage(DoDamage()); // the player with the interface will take damage to its health
+                Debug.Log("Attack Successful");
+            }
+        }        //WHEN HEALTH IMPLEMENTED
         return;
     }
 }

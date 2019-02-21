@@ -57,7 +57,7 @@ public class BaseEnemy : MonoBehaviour, IDamager, IDamageable
 
     //
     //
-    public void TakeDamage()
+    public void TakeDamage(float val)
     {
        // the enemy will check how much damage it needs to take
        // and takes the damage...

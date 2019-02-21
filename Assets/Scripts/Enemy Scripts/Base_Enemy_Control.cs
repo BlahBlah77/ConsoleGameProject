@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public abstract class Base_Enemy_Control : MonoBehaviour {
+public abstract class Base_Enemy_Control : MonoBehaviour, IDamageable {
 
     public Transform playerPosition;
     public NavMeshAgent navAgent;
@@ -22,9 +22,26 @@ public abstract class Base_Enemy_Control : MonoBehaviour {
     public Transform[] patrolPointList;
     int patrolCurrentPoint;
 
+    public Animator anim;
+    bool isAttacking = false;
+
+    //set all the data for enemies here
+    [SerializeField] EnemyData _enemyDataScriptableObject;
+
+    // shows the enemy's current stat for the data, reset everytime 
+    [SerializeField] public EnemyDataclass _enemyData;
+
+    [SerializeField] internal float currentHealth;
+
     private void Awake()
     {
         navAgent = GetComponent<NavMeshAgent>();
+        _enemyData = _enemyDataScriptableObject._enemyData;
+        currentHealth = _enemyData.EnemyHealth;
+        if (anim == null)
+        {
+            anim = GetComponent<Animator>();
+        }
     }
 
     // Use this for initialization
@@ -106,5 +123,29 @@ public abstract class Base_Enemy_Control : MonoBehaviour {
                 }
             }
         }
+    }
+
+    void UpdateHealth(float value)
+    {
+        currentHealth -= value;
+
+        // if the enemy health is zero.
+        // set the health to zero
+        // play their death animations...
+
+        if (currentHealth <= 0)
+        {
+            currentHealth = 0;
+            //anim.SetTrigger("Death");
+            Debug.Log("Enemy Dead");
+        }
+
+        Debug.Log("I took: " + value, this);
+    }
+
+    public void TakeDamage(float newDamage)
+    {
+        float damage = (newDamage + _enemyData.damageToTake) / 2;
+        UpdateHealth(damage);
     }
 }

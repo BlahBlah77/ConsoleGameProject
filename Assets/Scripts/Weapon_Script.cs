@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Weapon_Script : MonoBehaviour {
+public class Weapon_Script : MonoBehaviour, IDamager
+{
 
     public Item_Class weapon;
     public Int_Stat_Script weaponStrength;
@@ -21,11 +22,9 @@ public class Weapon_Script : MonoBehaviour {
     {
         meshFil = GetComponent<MeshFilter>();
         andworck = GetComponent<Renderer>();
-        //ItemEquip(Inventory_Manager.InventMana.currGear[(int)equipSlot]);
         ItemEquip(gear.gearList[(int)equipSlot]);
         gear.OnGearUpdate += ItemEquip;
         weaponStrength.OnIntUpdate += StrengthInput;
-        //Inventory_Manager.InventMana.OnGearChanged += 
     }
 
     private void OnDestroy()
@@ -65,5 +64,23 @@ public class Weapon_Script : MonoBehaviour {
             imper = 0;
         }
         return imper;
+    }
+
+    public float DoDamage()
+    {
+        return damage;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        // if i hit anything that implemets the iDamageable
+        IDamageable damageable = other.gameObject.GetComponent<IDamageable>();
+
+        if (damageable != null)
+        {
+            float newDamage = DoDamage();
+            Debug.Log("You are hit");
+            damageable.TakeDamage(newDamage); // the thing that is hit with the interface will take damage to its health
+        }
     }
 }

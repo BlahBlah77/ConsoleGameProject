@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa4150338f42d394f8fc76676d9f15fc, type: 3}
   m_Name: Knife
   m_EditorClassIdentifier: 
-  itemModel: {fileID: 1483636957367182, guid: a7b5f518bf7455d4791bdbe8d5a01912, type: 2}
+  itemModel: {fileID: 100000, guid: 82c8182082ac8a848b36f451c21c8612, type: 3}
   itemName: Metal Knife
   itemIcon: {fileID: 0}
   itemDescription: This is a metal knife. It's a knife made of metal.

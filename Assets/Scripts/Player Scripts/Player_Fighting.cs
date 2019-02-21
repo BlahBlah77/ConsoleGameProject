@@ -4,14 +4,12 @@ using UnityEngine;
 
 public class Player_Fighting : MonoBehaviour {
 
-    Animator anim;
     int clickNum;
     bool isClickable;
     public Player_Reference_Holder playerRefs;
 
     private void Awake()
     {
-        anim = GetComponent<Animator>();
         clickNum = 0;
         isClickable = true;
     }
@@ -39,27 +37,27 @@ public class Player_Fighting : MonoBehaviour {
         }
         if(clickNum == 1)
         {
-            anim.SetInteger("AnimationInt", 1);
+            playerRefs.anim.SetInteger("AnimationInt", 1);
         }
     }
 
     public void CheckComboStatus()
     {
         isClickable = false;
-        if(anim.GetCurrentAnimatorStateInfo(0).IsName("Attack1") && clickNum == 1)
+        if(playerRefs.anim.GetCurrentAnimatorStateInfo(0).IsName("Attack1") && clickNum == 1)
         {
-            anim.SetInteger("AnimationInt", 0);
+            playerRefs.anim.SetInteger("AnimationInt", 0);
             isClickable = true;
             clickNum = 0;
         }
-        else if (anim.GetCurrentAnimatorStateInfo(0).IsName("Attack1") && clickNum >= 2)
+        else if (playerRefs.anim.GetCurrentAnimatorStateInfo(0).IsName("Attack1") && clickNum >= 2)
         {
-            anim.SetInteger("AnimationInt", 2);
+            playerRefs.anim.SetInteger("AnimationInt", 2);
             isClickable = true;
         }
-        else if (anim.GetCurrentAnimatorStateInfo(0).IsName("Attack2") && clickNum >= 2)
+        else if (playerRefs.anim.GetCurrentAnimatorStateInfo(0).IsName("Attack2") && clickNum >= 2)
         {
-            anim.SetInteger("AnimationInt", 0);
+            playerRefs.anim.SetInteger("AnimationInt", 0);
             isClickable = true;
             clickNum = 0;
         }
