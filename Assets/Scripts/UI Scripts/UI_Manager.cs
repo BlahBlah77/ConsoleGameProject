@@ -4,11 +4,13 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
+using System;
 
 public class UI_Manager : MonoBehaviour
 {
 
     private static UI_Manager current = null;
+    public EventManager eventmanager;
 
     [Header("UI Panels")]
     public RectTransform pausePanel;
@@ -21,13 +23,17 @@ public class UI_Manager : MonoBehaviour
     [Header("Stored Player Stats")]
     public Int_Stat_Script playerXP;
     public Int_Stat_Script playerLevel;
+    public Int_Stat_Script playerMoney;
+    public Int_Stat_Script playerHealth;
 
     [Header("UI Variables")]
     public string menuScene;
 
     [Header("UI Elements")]
     public Text lvlText;
+    public Text coinText;
     public Slider xpSlider;
+    public Slider healthSlider;
 
     Game_Manager gmRef;
 
@@ -44,6 +50,7 @@ public class UI_Manager : MonoBehaviour
         current = this;
         CollectStartUIObjects();
         DisableUIPanel();
+        playerXP.OnIntUpdate += XPSliderSet;
     }
 
     private void Start()
@@ -53,9 +60,9 @@ public class UI_Manager : MonoBehaviour
         LevelTextSet(playerLevel.runVariable);
         Event_Manager_Luke.StartListen("PauseToggle", PauseActivate);
         Event_Manager_Luke.StartListen("InventToggle", InventoryActivate);
-        playerXP.OnIntUpdate += XPSliderSet;
         playerXP.OnIntUpdate2 += MaxSliderSet;
         playerLevel.OnIntUpdate += LevelTextSet;
+        eventmanager.OnAnyCoinCollected += Eventmanager_OnAnyCoinCollected;
         gmRef = Game_Manager.Instance;
     }
 
@@ -64,6 +71,22 @@ public class UI_Manager : MonoBehaviour
         playerXP.OnIntUpdate -= XPSliderSet;
         playerLevel.OnIntUpdate -= LevelTextSet;
         playerXP.OnIntUpdate2 -= MaxSliderSet;
+        eventmanager.OnAnyCoinCollected -= Eventmanager_OnAnyCoinCollected;
+    }
+
+    private void Eventmanager_OnAnyCoinCollected(object sender, EventArgs e)
+    {
+        if (playerMoney.runVariable < playerMoney.runVariable2)
+        {
+            playerMoney.runVariable++;
+            coinText.text = "Coins: " + playerMoney.runVariable;
+        }
+        else
+        {
+            playerMoney.runVariable = playerMoney.runVariable2;
+            coinText.text = "Coins: " + playerMoney.runVariable;
+            Debug.Log("You have collected the max coins");
+        }
     }
 
     void CollectStartUIObjects()
@@ -129,7 +152,8 @@ public class UI_Manager : MonoBehaviour
 
     void XPSliderSet(int value)
     {
-        xpSlider.value = value;
+        Debug.Log(value);
+        if (playerXP.runVariable < playerXP.runVariable2) xpSlider.value = value;
     }
 
     void MaxSliderSet(int value)

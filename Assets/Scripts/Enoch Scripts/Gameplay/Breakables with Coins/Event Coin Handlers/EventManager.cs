@@ -21,6 +21,16 @@ public class EventManager : MonoBehaviour {
         }
     }
 
+    private void OnDestroy()
+    {
+        objectPooler.OnCoinSpawn -= ObjectPooler_OnCoinSpawn;
+        PickupEvent[] breakableObjects = GameObject.FindObjectsOfType<PickupEvent>();
+        foreach (PickupEvent aBreakableObject in breakableObjects)
+        {
+            aBreakableObject.OnCollection -= ABreakableObject_OnSmashBox;// subscribes to the onsmashbox from other script            
+        }
+    }
+
     private void ObjectPooler_OnCoinSpawn(object sender, EventArgs e)
     {
         GameObject spawnedCoin = sender as GameObject;

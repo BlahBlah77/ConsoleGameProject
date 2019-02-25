@@ -50,8 +50,8 @@ public abstract class Base_Enemy_Control : MonoBehaviour, IDamageable {
         playerPosition = GameObject.Find("Player").GetComponent<Transform>();
         coneSight = GetComponentInChildren<Sight_Trigger>();
         navAgent.stoppingDistance = 0.2f;
-        state = AI_BehaveState.Patrol;
-	}
+        if (patrolPointList.Length != 0) state = AI_BehaveState.Patrol; else state = AI_BehaveState.Idle;
+    }
 
     public void PatrolBehaviour()
     {
@@ -114,6 +114,7 @@ public abstract class Base_Enemy_Control : MonoBehaviour, IDamageable {
                     playerKnownPos = playerPosition.position;
                     if (rayHit.distance < 10)
                     {
+                        navAgent.stoppingDistance = 2.0f;
                         state = AI_BehaveState.Chase;
                     }
                     else
@@ -138,6 +139,7 @@ public abstract class Base_Enemy_Control : MonoBehaviour, IDamageable {
             currentHealth = 0;
             //anim.SetTrigger("Death");
             Debug.Log("Enemy Dead");
+            Destroy(gameObject);
         }
 
         Debug.Log("I took: " + value, this);

@@ -7,24 +7,24 @@ public class Event_Manager_Luke : MonoBehaviour {
 
     Dictionary<string, UnityEvent> eventDic;
 
-    private static Event_Manager_Luke eventManager;
+    private static Event_Manager_Luke _eventManager;
 
     public static Event_Manager_Luke Instance
     {
         get
         {
-            return eventManager;
+            return _eventManager;
         }
     }
 
     private void Awake()
     {
-        if (eventManager)
+        if (_eventManager)
         {
             DestroyImmediate(gameObject);
             return;
         }
-        eventManager = this;
+        _eventManager = this;
 
         if (eventDic == null)
         {
@@ -49,7 +49,7 @@ public class Event_Manager_Luke : MonoBehaviour {
 
     public static void StopListen(string eventName, UnityAction listener)
     {
-        if (eventManager == null) return;
+        if (_eventManager == null) return;
         UnityEvent newEvent = null;
         if (Instance.eventDic.TryGetValue(eventName, out newEvent))
         {

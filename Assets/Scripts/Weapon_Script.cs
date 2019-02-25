@@ -44,7 +44,7 @@ public class Weapon_Script : MonoBehaviour, IDamager
         itemName = weapon.name;
         description = weapon.itemDescription;
         if (meshFil) meshFil.mesh = weapon.itemModel.GetComponent<MeshFilter>().sharedMesh;
-        andworck.material = weapon.itemModel.GetComponent<Renderer>().sharedMaterial;
+        if (andworck) andworck.material = weapon.itemModel.GetComponent<Renderer>().sharedMaterial;
     }
 
     public void StrengthInput(int newValue)

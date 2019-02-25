@@ -10,7 +10,7 @@ public class Test_Collectible : MonoBehaviour {
     {
         if (other.CompareTag("Player"))
         {
-            playerXP.IntPlusChanger(300);
+            playerXP.IntPlusChanger(100);
             gameObject.SetActive(false);
         }
     }
