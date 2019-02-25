@@ -82,6 +82,7 @@ public abstract class Base_Enemy_Control : MonoBehaviour, IDamageable {
             if (Time.time > fireTime)
             {
                 Attack();
+                Debug.Log("Hung up on this line");
                 fireTime = Time.time + fireRate;
             }
         }

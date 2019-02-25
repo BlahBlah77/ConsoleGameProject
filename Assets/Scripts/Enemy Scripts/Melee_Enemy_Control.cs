@@ -48,6 +48,10 @@ public class Melee_Enemy_Control : Base_Enemy_Control, IDamager
                 player.PlayerTakesDamage(DoDamage()); // the player with the interface will take damage to its health
                 Debug.Log("Attack Successful");
             }
+            else
+            {
+                Debug.Log("ERROR");
+            }
         }        //WHEN HEALTH IMPLEMENTED
         return;
     }

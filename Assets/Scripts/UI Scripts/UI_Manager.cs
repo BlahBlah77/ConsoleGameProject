@@ -51,6 +51,7 @@ public class UI_Manager : MonoBehaviour
         CollectStartUIObjects();
         DisableUIPanel();
         playerXP.OnIntUpdate += XPSliderSet;
+        playerHealth.OnIntUpdate += HealthSliderSet;
     }
 
     private void Start()
@@ -58,6 +59,8 @@ public class UI_Manager : MonoBehaviour
         MaxSliderSet(playerXP.runVariable2);
         XPSliderSet(playerXP.runVariable);
         LevelTextSet(playerLevel.runVariable);
+        healthSlider.maxValue = playerHealth.runVariable2;
+        HealthSliderSet(playerHealth.runVariable);
         Event_Manager_Luke.StartListen("PauseToggle", PauseActivate);
         Event_Manager_Luke.StartListen("InventToggle", InventoryActivate);
         playerXP.OnIntUpdate2 += MaxSliderSet;
@@ -94,6 +97,11 @@ public class UI_Manager : MonoBehaviour
         pausePanel.gameObject.SetActive(false);
         inventoryPanel.gameObject.SetActive(false);
         gameOverPanel.gameObject.SetActive(false);
+    }
+
+    void HealthSliderSet(int value)
+    {
+        healthSlider.value = value;
     }
 
     public void PauseActivate()
