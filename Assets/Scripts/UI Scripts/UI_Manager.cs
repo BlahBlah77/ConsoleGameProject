@@ -17,6 +17,7 @@ public class UI_Manager : MonoBehaviour
     public RectTransform inventoryPanel;
     public RectTransform gameOverPanel;
     public RectTransform currentPanel;
+    public RectTransform dialoguePanel;
 
     private UnityAction pauseListen;
 
@@ -32,8 +33,13 @@ public class UI_Manager : MonoBehaviour
     [Header("UI Elements")]
     public Text lvlText;
     public Text coinText;
+    public Text speechDialogueText;
+    public Text nameDialogueText;
     public Slider xpSlider;
     public Slider healthSlider;
+    public Button dialogueNextButton;
+    public Button dialogueFirstOptionButton;
+    public Button dialogueSecondOptionButton;
 
     Game_Manager gmRef;
 
@@ -189,6 +195,24 @@ public class UI_Manager : MonoBehaviour
         AsyncOperation aOp = SceneManager.LoadSceneAsync(newLevel);
         while (!aOp.isDone)
         {
+            yield return null;
+        }
+    }
+
+    public void DialogueName(string name)
+    {
+        nameDialogueText.text = name;
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+        Time.timeScale = 0.0f;
+    }
+
+    public IEnumerator DialogueAutoType(string dialogue)
+    {
+        speechDialogueText.text = "";
+        foreach (char dialogueLetter in dialogue.ToCharArray())
+        {
+            speechDialogueText.text += dialogueLetter;
             yield return null;
         }
     }

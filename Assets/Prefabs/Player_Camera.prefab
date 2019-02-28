@@ -2603,6 +2603,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6402d57cd0ba80e45993fc2b4afe91d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  clickNum: 0
+  isClickable: 0
   playerRefs: {fileID: 114251677083435272}
 --- !u!114 &114055533765279938
 MonoBehaviour:
@@ -2662,8 +2664,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   listOfWeapons:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 114055533765279938}
+  - {fileID: 114438884671900516}
   equipedWeapon: 0
   isSwitching: 0
 --- !u!114 &114247536332452146
@@ -2747,6 +2749,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealth: 0
+  playerHealth: {fileID: 11400000, guid: a4420fb92f943eb4db00dd9e6f19d2cb, type: 2}
 --- !u!114 &114438884671900516
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2758,7 +2761,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2075dab6f26f39469077879e158c7e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapon: {fileID: 0}
+  weapon: {fileID: 11400000, guid: 1b50aa03af7aada4abf8b9d4be32df87, type: 2}
   weaponStrength: {fileID: 11400000, guid: 31a6f64d6fdd7ab40b65d37f87c330ff, type: 2}
   damage: 1
   equipSlot: 4
@@ -2824,7 +2827,7 @@ CapsuleCollider:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1318350861861718}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: bf721ae554f9e724091b3056fbcb9398, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
