@@ -8,8 +8,8 @@ public class Dialogue_Manager : MonoBehaviour {
 
     Queue<string> dialogueLinesInput;
     Dialogue_Segment currentDialogue;
-    Dialogue_Segment firstOptionDialogue;
-    Dialogue_Segment secondOptionDialogue;
+    public Dialogue_Segment firstOptionDialogue;
+    public Dialogue_Segment secondOptionDialogue;
 
     UI_Manager uiReference;
 
@@ -74,14 +74,14 @@ public class Dialogue_Manager : MonoBehaviour {
 
     public void DialogueNextSecond()
     {
-        DialogueStart(firstOptionDialogue);
+        DialogueStart(secondOptionDialogue);
     }
 
     void ResponseChecker()
     {
-        if (currentDialogue.choiceLists.Count == 0)
+        if (currentDialogue.choiceLists.Count > 0)
         {
-            if (dialogueLinesInput.Count >= 1)
+            if (dialogueLinesInput.Count > 1)
             {
 
                 uiReference.dialogueNextButton.gameObject.SetActive(true);
@@ -96,6 +96,12 @@ public class Dialogue_Manager : MonoBehaviour {
                 uiReference.dialogueFirstOptionButton.gameObject.SetActive(true);
                 uiReference.dialogueSecondOptionButton.gameObject.SetActive(true);
             }
+        }
+        else
+        {
+            uiReference.dialogueNextButton.gameObject.SetActive(true);
+            uiReference.dialogueFirstOptionButton.gameObject.SetActive(false);
+            uiReference.dialogueSecondOptionButton.gameObject.SetActive(false);
         }
     }
 }
