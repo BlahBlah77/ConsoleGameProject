@@ -216,4 +216,10 @@ public class UI_Manager : MonoBehaviour
             yield return null;
         }
     }
+
+    public void ButtonTextChanger(string firstOption, string secondOption)
+    {
+        dialogueFirstOptionButton.GetComponentInChildren<Text>().text = firstOption;
+        dialogueSecondOptionButton.GetComponentInChildren<Text>().text = secondOption;
+    }
 }

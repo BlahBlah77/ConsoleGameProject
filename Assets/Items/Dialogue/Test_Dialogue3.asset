@@ -13,6 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   choiceLists: []
   dialogueName: A Wall
+  dialogueOptionName: Upper
   dialogueLines:
   - In perfect isolation...
   - Here behind my wall...

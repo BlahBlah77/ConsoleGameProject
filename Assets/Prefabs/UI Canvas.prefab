@@ -1416,6 +1416,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5eb40f11c7290b54db2683d3a7211c14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  firstOptionDialogue: {fileID: 0}
+  secondOptionDialogue: {fileID: 0}
 --- !u!114 &114021329276782624
 MonoBehaviour:
   m_ObjectHideFlags: 1

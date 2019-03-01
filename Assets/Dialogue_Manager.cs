@@ -93,6 +93,7 @@ public class Dialogue_Manager : MonoBehaviour {
                 firstOptionDialogue = currentDialogue.choiceLists[0];
                 secondOptionDialogue = currentDialogue.choiceLists[1];
                 uiReference.dialogueNextButton.gameObject.SetActive(false);
+                uiReference.ButtonTextChanger(currentDialogue.choiceLists[0].dialogueOptionName, currentDialogue.choiceLists[1].dialogueOptionName);
                 uiReference.dialogueFirstOptionButton.gameObject.SetActive(true);
                 uiReference.dialogueSecondOptionButton.gameObject.SetActive(true);
             }

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   choiceLists: []
   dialogueName: Darkness
+  dialogueOptionName: Lower
   dialogueLines:
   - Non unknowable.
   - As if I would know though.

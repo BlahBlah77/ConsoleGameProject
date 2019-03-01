@@ -15,6 +15,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0d4a75d5f7dae7a4e8bff3cf8fdc5040, type: 2}
   - {fileID: 11400000, guid: 7b6d3f2d664746d46953178b449d11a0, type: 2}
   dialogueName: Test_Mark
+  dialogueOptionName: Root
   dialogueLines:
   - There is little that cannot be accomplished without this.
   - Nothing is wasted.
