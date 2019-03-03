@@ -15,13 +15,16 @@ public class Weapon_Script : MonoBehaviour, IDamager
     public string itemName;
     public string description;
 
+    public GameObject swordModel;
     MeshFilter meshFil;
+    SkinnedMeshRenderer skinMeshil;
     Renderer andworck;
 
     private void Start()
     {
-        meshFil = GetComponent<MeshFilter>();
-        andworck = GetComponent<Renderer>();
+        meshFil = swordModel.GetComponent<MeshFilter>();
+        skinMeshil = swordModel.GetComponent<SkinnedMeshRenderer>();
+        andworck = swordModel.GetComponent<Renderer>();
         ItemEquip(gear.gearList[(int)equipSlot]);
         gear.OnGearUpdate += ItemEquip;
         weaponStrength.OnIntUpdate += StrengthInput;
@@ -44,6 +47,7 @@ public class Weapon_Script : MonoBehaviour, IDamager
         itemName = weapon.name;
         description = weapon.itemDescription;
         if (meshFil) meshFil.mesh = weapon.itemModel.GetComponent<MeshFilter>().sharedMesh;
+        if (skinMeshil) skinMeshil.sharedMesh = weapon.itemModel.GetComponent<MeshFilter>().sharedMesh;
         if (andworck) andworck.material = weapon.itemModel.GetComponent<Renderer>().sharedMaterial;
     }
 
