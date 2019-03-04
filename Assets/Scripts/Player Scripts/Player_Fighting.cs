@@ -7,6 +7,7 @@ public class Player_Fighting : MonoBehaviour {
     [SerializeField] int clickNum;
     [SerializeField] bool isClickable;
     public Player_Reference_Holder playerRefs;
+    public Player_Control_Movement playerMov;
 
     private void Awake()
     {
@@ -17,6 +18,7 @@ public class Player_Fighting : MonoBehaviour {
     private void Start()
     {
         playerRefs = GetComponent<Player_Reference_Holder>();
+        playerMov = GetComponent<Player_Control_Movement>();
     }
 
     // Update is called once per frame
@@ -26,7 +28,30 @@ public class Player_Fighting : MonoBehaviour {
         {
             Comboer();
         }
-	}
+
+        SingleAttacks();
+    }
+
+    void SingleAttacks()
+    {
+        if (Input.GetKeyDown(KeyCode.E) && playerMov.isRunning)
+        {
+            playerRefs.anim.SetTrigger("SlideAttack");
+        }
+
+        if (Input.GetMouseButtonDown(1) && playerMov.isIdle)
+        {
+            Debug.Log("Right Mouse Clicked");
+            playerRefs.anim.SetTrigger("HeavySpinAttack");
+        }
+
+        if (Input.GetMouseButtonDown(1) && playerMov.isRunning)
+        {
+            Debug.Log("Right Mouse Clicked");
+            playerRefs.anim.SetTrigger("HeavySpinAttack");
+            playerMov.isIdle = false;
+        }
+    }
 
     void Comboer()
     {
