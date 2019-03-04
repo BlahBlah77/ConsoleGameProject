@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa4150338f42d394f8fc76676d9f15fc, type: 3}
   m_Name: Crap Sword
   m_EditorClassIdentifier: 
-  itemModel: {fileID: 1417812286789600, guid: 4cedb08cee4c4c140bbf46decebd8d7d, type: 2}
+  itemModel: {fileID: 100000, guid: deb0450dfb3fea84e873278f9c814553, type: 3}
   itemName: Sword of Shit
   itemIcon: {fileID: 0}
   itemDescription: Fuck me this is crap
