@@ -7,7 +7,6 @@ public class Player_Fighting : MonoBehaviour {
     [SerializeField] int clickNum;
     [SerializeField] bool isClickable;
     public Player_Reference_Holder playerRefs;
-    public Player_Control_Movement playerMov;
 
     private void Awake()
     {
@@ -18,7 +17,6 @@ public class Player_Fighting : MonoBehaviour {
     private void Start()
     {
         playerRefs = GetComponent<Player_Reference_Holder>();
-        playerMov = GetComponent<Player_Control_Movement>();
     }
 
     // Update is called once per frame
@@ -34,22 +32,22 @@ public class Player_Fighting : MonoBehaviour {
 
     void SingleAttacks()
     {
-        if (Input.GetKeyDown(KeyCode.E) && playerMov.isRunning)
+        if (Input.GetKeyDown(KeyCode.E) && playerRefs.playerPCM.isRunning)
         {
             playerRefs.anim.SetTrigger("SlideAttack");
         }
 
-        if (Input.GetMouseButtonDown(1) && playerMov.isIdle)
+        if (Input.GetMouseButtonDown(1) && playerRefs.playerPCM.isIdle)
         {
             Debug.Log("Right Mouse Clicked");
             playerRefs.anim.SetTrigger("HeavySpinAttack");
         }
 
-        if (Input.GetMouseButtonDown(1) && playerMov.isRunning)
+        if (Input.GetMouseButtonDown(1) && playerRefs.playerPCM.isRunning)
         {
             Debug.Log("Right Mouse Clicked");
             playerRefs.anim.SetTrigger("HeavySpinAttack");
-            playerMov.isIdle = false;
+            playerRefs.playerPCM.isIdle = false;
         }
     }
 
@@ -59,7 +57,7 @@ public class Player_Fighting : MonoBehaviour {
         {
             clickNum++;
         }
-        if(clickNum == 1 && playerRefs.anim.GetInteger("AnimationInt") == 0)
+        if(clickNum >= 1 && playerRefs.anim.GetInteger("AnimationInt") == 0)
         {
             playerRefs.anim.SetInteger("AnimationInt", 1);
         }
