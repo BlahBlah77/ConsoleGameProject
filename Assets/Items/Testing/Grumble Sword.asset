@@ -9,11 +9,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fa4150338f42d394f8fc76676d9f15fc, type: 3}
-  m_Name: DefaultName
+  m_Name: Grumble Sword
   m_EditorClassIdentifier: 
   itemModel: {fileID: 100000, guid: a5891d79fc30d314597f7cd1cdfcb62b, type: 3}
-  itemName: Item Name
+  itemName: Grumble Sword
   itemIcon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  itemDescription: This is an item without a description, give me one you fuck
+  itemDescription: Mumble Grumble
   stat: 12
   equipSlot: 3

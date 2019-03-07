@@ -1209,7 +1209,7 @@ GameObject:
   - component: {fileID: 4703704720296272}
   - component: {fileID: 33889738870681270}
   - component: {fileID: 137025690812734392}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Z_Sword
   m_TagString: Untagged
   m_Icon: {fileID: 0}

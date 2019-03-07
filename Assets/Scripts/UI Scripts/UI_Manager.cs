@@ -18,6 +18,7 @@ public class UI_Manager : MonoBehaviour
     public RectTransform gameOverPanel;
     public RectTransform currentPanel;
     public RectTransform dialoguePanel;
+    public RectTransform shopPanel;
 
     private UnityAction pauseListen;
 
@@ -35,6 +36,7 @@ public class UI_Manager : MonoBehaviour
     public Text coinText;
     public Text speechDialogueText;
     public Text nameDialogueText;
+    public Text nameShopText;
     public Slider xpSlider;
     public Slider healthSlider;
     public Button dialogueNextButton;
@@ -162,6 +164,21 @@ public class UI_Manager : MonoBehaviour
         }
         newPanel.gameObject.SetActive(true);
         currentPanel = newPanel;
+    }
+
+    public void EnableUIPanel_Shop(RectTransform newPanel, string shopName, Item_List_Script shopContents)
+    {
+        nameShopText.text = shopName;
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+        Time.timeScale = 0.0f;
+        if (currentPanel != null)
+        {
+            currentPanel.gameObject.SetActive(true);
+        }
+        newPanel.gameObject.SetActive(true);
+        currentPanel = newPanel;
+
     }
 
     void XPSliderSet(int value)
