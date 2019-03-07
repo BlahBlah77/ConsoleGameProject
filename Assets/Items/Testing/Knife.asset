@@ -15,5 +15,6 @@ MonoBehaviour:
   itemName: Metal Knife
   itemIcon: {fileID: 0}
   itemDescription: This is a metal knife. It's a knife made of metal.
+  itemValue: 10
   stat: 3
   equipSlot: 4

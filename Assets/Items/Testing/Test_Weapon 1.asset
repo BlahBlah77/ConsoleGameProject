@@ -15,5 +15,6 @@ MonoBehaviour:
   itemName: Item Name
   itemIcon: {fileID: 0}
   itemDescription: This is an item without a description, give me one you fuck
+  itemValue: 10
   stat: 7
   equipSlot: 3

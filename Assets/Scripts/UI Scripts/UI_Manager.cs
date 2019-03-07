@@ -168,6 +168,8 @@ public class UI_Manager : MonoBehaviour
 
     public void EnableUIPanel_Shop(RectTransform newPanel, string shopName, Item_List_Script shopContents)
     {
+        Shop_Menu_UI tempMenu = newPanel.GetComponent<Shop_Menu_UI>();
+        tempMenu.shopList = shopContents;
         nameShopText.text = shopName;
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;

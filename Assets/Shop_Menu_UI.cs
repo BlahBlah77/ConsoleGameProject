@@ -8,20 +8,42 @@ public class Shop_Menu_UI : MonoBehaviour {
     [Header("Text UI")]
     public Text descText;
     public Text nameText;
+    public Text priceText;
 
     [Header("Item List")]
     public Item_List_Script shopList;
     public Item_List_Script inventoryList;
 
-    // Use this for initialization
-    void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    [Header("Shop Slots")]
+    [SerializeField] Shop_Slot[] slots;
+
+    private void OnEnable()
+    {
+        slots = GetComponentsInChildren<Shop_Slot>();
+        shopList.OnItemUpdate += UIChanger;
+        UIChanger();
+    }
+
+    private void OnDestroy()
+    {
+        shopList.OnItemUpdate -= UIChanger;
+    }
+
+    void UIChanger()
+    {
+        for (int i = 0; i < slots.Length; i++)
+        {
+            if (i < shopList.itemList.Count)
+            {
+                if (shopList == null) Debug.Log("Kill me");
+                slots[i].AddItem(shopList.itemList[i]);
+            }
+            else
+            {
+                slots[i].RemoveItem();
+            }
+        }
+    }
 
     public void AddText(Item_Class newItem)
     {
@@ -29,6 +51,7 @@ public class Shop_Menu_UI : MonoBehaviour {
         {
             descText.text = newItem.itemDescription;
             nameText.text = newItem.itemName;
+            priceText.text = "Price: " + newItem.itemValue;
         }
     }
 
@@ -36,5 +59,6 @@ public class Shop_Menu_UI : MonoBehaviour {
     {
         descText.text = "";
         nameText.text = "";
+        priceText.text = "";
     }
 }

@@ -7,12 +7,14 @@ public class Shop_Slot : MonoBehaviour {
 
     [SerializeField]
     Item_Class storedItem;
-    public Inventory_Menu_UI uiRef;
+    public Int_Stat_Script playerMoney;
+    public Shop_Menu_UI uiRef;
     public Image iconImage;
 
     public void AddItem(Item_Class newItem)
     {
         storedItem = newItem;
+        if (storedItem == null) Debug.Log("Kill me");
         iconImage.sprite = newItem.itemIcon;
     }
 
@@ -28,10 +30,14 @@ public class Shop_Slot : MonoBehaviour {
 
     public void Interact()
     {
-        if (storedItem)
+        if (storedItem && (playerMoney.initialisedVariable >= storedItem.itemValue))
         {
+            int newMoney = playerMoney.initialisedVariable - storedItem.itemValue;
+            playerMoney.IntMinusChanger(newMoney);
             Inventory_Manager.InventMana.AddItem(storedItem);
-
+            uiRef.shopList.ItemRemove(storedItem);
+            RemoveItem();
         }
     }
+
 }

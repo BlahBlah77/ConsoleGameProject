@@ -13,7 +13,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemModel: {fileID: 100000, guid: deb0450dfb3fea84e873278f9c814553, type: 3}
   itemName: Sword of Shit
-  itemIcon: {fileID: 0}
+  itemIcon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   itemDescription: Fuck me this is crap
+  itemValue: 50
   stat: 3
   equipSlot: 3
