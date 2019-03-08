@@ -7,6 +7,7 @@ public class Player_Fighting : MonoBehaviour {
     [SerializeField] int clickNum;
     [SerializeField] bool isClickable;
     public Player_Reference_Holder playerRefs;
+    public List<BoxCollider> weapons;
 
     private void Awake()
     {
@@ -17,6 +18,7 @@ public class Player_Fighting : MonoBehaviour {
     private void Start()
     {
         playerRefs = GetComponent<Player_Reference_Holder>();
+        DisableBox();
     }
 
     // Update is called once per frame
@@ -24,6 +26,7 @@ public class Player_Fighting : MonoBehaviour {
     {
 		if (Input.GetButtonDown("Fire1"))
         {
+            EnableBox();
             Comboer();
         }
 
@@ -34,17 +37,20 @@ public class Player_Fighting : MonoBehaviour {
     {
         if (Input.GetKeyDown(KeyCode.E) && playerRefs.playerPCM.isRunning)
         {
+            EnableBox();
             playerRefs.anim.SetTrigger("SlideAttack");
         }
 
         if (Input.GetMouseButtonDown(1) && playerRefs.playerPCM.isIdle)
         {
+            EnableBox();
             Debug.Log("Right Mouse Clicked");
             playerRefs.anim.SetTrigger("HeavySpinAttack");
         }
 
         if (Input.GetMouseButtonDown(1) && playerRefs.playerPCM.isRunning)
         {
+            EnableBox();
             Debug.Log("Right Mouse Clicked");
             playerRefs.anim.SetTrigger("HeavySpinAttack");
             playerRefs.playerPCM.isIdle = false;
@@ -92,5 +98,28 @@ public class Player_Fighting : MonoBehaviour {
             playerRefs.anim.SetInteger("AnimationInt", 0);
         }
         isClickable = true;
+    }
+
+    void EnableBox()
+    {
+        foreach (BoxCollider box in weapons)
+        {
+            if (box.gameObject.activeSelf)
+            {
+                box.enabled = true;
+            }
+        }
+    }
+
+    public void DisableBox()
+    {
+        Debug.Log("Disabled");
+        foreach (BoxCollider box in weapons)
+        {
+            if (box.gameObject.activeSelf)
+            {
+                box.enabled = false;
+            }
+        }
     }
 }
