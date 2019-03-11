@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
@@ -25,6 +26,10 @@ public abstract class Base_Enemy_Control : MonoBehaviour, IDamageable {
     public Animator anim;
     bool isAttacking = false;
 
+    public Material deathMat;
+    public Renderer rend;
+
+
     //set all the data for enemies here
     [SerializeField] EnemyData _enemyDataScriptableObject;
 
@@ -50,7 +55,16 @@ public abstract class Base_Enemy_Control : MonoBehaviour, IDamageable {
         playerPosition = GameObject.Find("Player").GetComponent<Transform>();
         coneSight = GetComponentInChildren<Sight_Trigger>();
         navAgent.stoppingDistance = 0.2f;
-        if (patrolPointList.Length != 0) state = AI_BehaveState.Patrol; else state = AI_BehaveState.Idle;
+        if (patrolPointList.Length != 0)
+        {
+            state = AI_BehaveState.Patrol;
+            anim.SetBool("isIdle", false);
+        }
+        else
+        {
+            state = AI_BehaveState.Idle;
+            anim.SetBool("isIdle", true);
+        }//anim.SetBool
     }
 
     public void PatrolBehaviour()
@@ -71,11 +85,17 @@ public abstract class Base_Enemy_Control : MonoBehaviour, IDamageable {
         navAgent.destination = patrolPointList[patrolCurrentPoint].position;
     }
 
+    public virtual void IdleBehaviour()
+    {
+        RaycastHandler();
+    }
+
     public virtual void PursueBehaviour()
     {
         navAgent.speed = patrolSpeed;
         if (navAgent.remainingDistance <= navAgent.stoppingDistance)
         {
+            anim.SetBool("isIdle", true);
             Vector3 plaVec = playerPosition.position - transform.position;
             Quaternion playerRotateValue = Quaternion.LookRotation(plaVec);
             transform.rotation = playerRotateValue;
@@ -85,6 +105,10 @@ public abstract class Base_Enemy_Control : MonoBehaviour, IDamageable {
                 Debug.Log("Hung up on this line");
                 fireTime = Time.time + fireRate;
             }
+        }
+        else
+        {
+            anim.SetBool("isIdle", false);
         }
         navAgent.destination = playerPosition.position;
     }
@@ -137,13 +161,47 @@ public abstract class Base_Enemy_Control : MonoBehaviour, IDamageable {
 
         if (currentHealth <= 0)
         {
-            currentHealth = 0;
-            //anim.SetTrigger("Death");
-            Debug.Log("Enemy Dead");
-            Destroy(gameObject);
+            //currentHealth = 0;
+            //anim.SetTrigger("isDead");
+            //anim.SetBool("isDying", true);
+            //navAgent.isStopped = true;
+            //Debug.Log("Enemy Dead");
+            //StartCoroutine(DeathTimer());
+
+            KillEnemy();
+            
         }
 
         Debug.Log("I took: " + value, this);
+    }
+
+    public IEnumerator DeathTimer()
+    {
+        yield return new WaitForSeconds(10.0f);
+        Destroy(gameObject);
+    }
+    [ContextMenu("Start Death")]
+    public void KillEnemy()
+    {
+        currentHealth = 0;
+        anim.SetTrigger("isDead");
+        anim.SetBool("isDying", true);
+        navAgent.isStopped = true;
+        Debug.Log("Enemy Dead");
+        StartCoroutine(DeathTimer());
+        StartCoroutine(BloodMaker(20.0f));
+    }
+
+    IEnumerator BloodMaker(float timer)
+    {
+        rend.material = deathMat;
+        rend.material.SetFloat("_DissAmount", 0.0f);
+        while (rend.material.GetFloat("_DissAmount") < 1.0f)
+        {
+            rend.material.SetFloat("_DissAmount", rend.material.GetFloat("_DissAmount") + (Time.deltaTime / timer));
+            yield return null;
+        }
+        //yield new return WaitForSeconds
     }
 
     public void TakeDamage(float newDamage)
