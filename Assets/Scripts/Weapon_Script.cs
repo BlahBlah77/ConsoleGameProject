@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class Weapon_Script : MonoBehaviour, IDamager
 {
-
+    public GameObject zombieTest;
+    public Animator anim;
     public Item_Class weapon;
+    public Base_Enemy_Control baseEnemy;
     public Int_Stat_Script weaponStrength;
     public float damage;
 
@@ -20,6 +22,7 @@ public class Weapon_Script : MonoBehaviour, IDamager
     SkinnedMeshRenderer skinMeshil;
     Renderer andworck;
 
+
     private void Start()
     {
         meshFil = swordModel.GetComponent<MeshFilter>();
@@ -28,6 +31,9 @@ public class Weapon_Script : MonoBehaviour, IDamager
         ItemEquip(gear.gearList[(int)equipSlot]);
         gear.OnGearUpdate += ItemEquip;
         weaponStrength.OnIntUpdate += StrengthInput;
+
+        // testing for hit reaction animation on zombie when sword is hitting the enemy
+        anim = zombieTest.GetComponent<Animator>();
     }
 
     private void OnDestroy()
@@ -84,6 +90,10 @@ public class Weapon_Script : MonoBehaviour, IDamager
         {
             float newDamage = DoDamage();
             Debug.Log("You are hit");
+
+            // testing for hit reaction animation on zombie when sword is hitting the enemy
+            anim.SetTrigger("isTakingDamage");
+
             damageable.TakeDamage(newDamage); // the thing that is hit with the interface will take damage to its health
         }
     }

@@ -161,12 +161,15 @@ public abstract class Base_Enemy_Control : MonoBehaviour, IDamageable {
 
         if (currentHealth <= 0)
         {
-            currentHealth = 0;
-            anim.SetTrigger("isDead");
-            anim.SetBool("isDying", true);
-            navAgent.isStopped = true;
-            Debug.Log("Enemy Dead");
-            StartCoroutine(DeathTimer());
+            //currentHealth = 0;
+            //anim.SetTrigger("isDead");
+            //anim.SetBool("isDying", true);
+            //navAgent.isStopped = true;
+            //Debug.Log("Enemy Dead");
+            //StartCoroutine(DeathTimer());
+
+            KillEnemy();
+            
         }
 
         Debug.Log("I took: " + value, this);
@@ -178,7 +181,7 @@ public abstract class Base_Enemy_Control : MonoBehaviour, IDamageable {
         Destroy(gameObject);
     }
     [ContextMenu("Start Death")]
-    public void Kill()
+    public void KillEnemy()
     {
         currentHealth = 0;
         anim.SetTrigger("isDead");
@@ -186,7 +189,7 @@ public abstract class Base_Enemy_Control : MonoBehaviour, IDamageable {
         navAgent.isStopped = true;
         Debug.Log("Enemy Dead");
         StartCoroutine(DeathTimer());
-        StartCoroutine(BloodMaker(5.0f));
+        StartCoroutine(BloodMaker(20.0f));
     }
 
     IEnumerator BloodMaker(float timer)
