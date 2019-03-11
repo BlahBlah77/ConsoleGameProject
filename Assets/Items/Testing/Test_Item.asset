@@ -15,6 +15,5 @@ MonoBehaviour:
   itemName: Test Item
   itemIcon: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
   itemDescription: This is an item without a description, give me one you fuck
+  itemValue: 10
   stat: 0
-  isWeapon: 0
-  isEquipable: 0

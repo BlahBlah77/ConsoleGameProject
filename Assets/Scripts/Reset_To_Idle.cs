@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class Reset_To_Idle : StateMachineBehaviour {
 
+    public bool boolChange;
+
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        animator.GetComponentInParent<Player_Control_Movement>().isAttacking = false;
+        animator.GetComponent<Player_Control_Movement>().isAttacking = boolChange;
     }
 }

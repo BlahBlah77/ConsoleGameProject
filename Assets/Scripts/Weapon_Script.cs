@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class Weapon_Script : MonoBehaviour, IDamager
 {
-
+    public GameObject zombieTest;
+    public Animator anim;
     public Item_Class weapon;
+    public Base_Enemy_Control baseEnemy;
     public Int_Stat_Script weaponStrength;
     public float damage;
 
@@ -15,16 +17,23 @@ public class Weapon_Script : MonoBehaviour, IDamager
     public string itemName;
     public string description;
 
+    public GameObject swordModel;
     MeshFilter meshFil;
+    SkinnedMeshRenderer skinMeshil;
     Renderer andworck;
+
 
     private void Start()
     {
-        meshFil = GetComponent<MeshFilter>();
-        andworck = GetComponent<Renderer>();
+        meshFil = swordModel.GetComponent<MeshFilter>();
+        skinMeshil = swordModel.GetComponent<SkinnedMeshRenderer>();
+        andworck = swordModel.GetComponent<Renderer>();
         ItemEquip(gear.gearList[(int)equipSlot]);
         gear.OnGearUpdate += ItemEquip;
         weaponStrength.OnIntUpdate += StrengthInput;
+
+        // testing for hit reaction animation on zombie when sword is hitting the enemy
+        anim = zombieTest.GetComponent<Animator>();
     }
 
     private void OnDestroy()
@@ -44,6 +53,7 @@ public class Weapon_Script : MonoBehaviour, IDamager
         itemName = weapon.name;
         description = weapon.itemDescription;
         if (meshFil) meshFil.mesh = weapon.itemModel.GetComponent<MeshFilter>().sharedMesh;
+        if (skinMeshil) skinMeshil.sharedMesh = weapon.itemModel.GetComponent<MeshFilter>().sharedMesh;
         if (andworck) andworck.material = weapon.itemModel.GetComponent<Renderer>().sharedMaterial;
     }
 
@@ -80,6 +90,10 @@ public class Weapon_Script : MonoBehaviour, IDamager
         {
             float newDamage = DoDamage();
             Debug.Log("You are hit");
+
+            // testing for hit reaction animation on zombie when sword is hitting the enemy
+            anim.SetTrigger("isTakingDamage");
+
             damageable.TakeDamage(newDamage); // the thing that is hit with the interface will take damage to its health
         }
     }

@@ -1,0 +1,799 @@
+fileFormatVersion: 2
+guid: f7a640bd8a9bcd14eaf8b8fca8be0122
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: character_mixamo:Head
+    100002: character_mixamo:HeadTop_End
+    100004: character_mixamo:Hips
+    100006: character_mixamo:LeftArm
+    100008: character_mixamo:LeftFoot
+    100010: character_mixamo:LeftForeArm
+    100012: character_mixamo:LeftHand
+    100014: character_mixamo:LeftHandIndex1
+    100016: character_mixamo:LeftHandIndex2
+    100018: character_mixamo:LeftHandIndex3
+    100020: character_mixamo:LeftHandIndex4
+    100022: character_mixamo:LeftHandMiddle1
+    100024: character_mixamo:LeftHandMiddle2
+    100026: character_mixamo:LeftHandMiddle3
+    100028: character_mixamo:LeftHandMiddle4
+    100030: character_mixamo:LeftHandThumb1
+    100032: character_mixamo:LeftHandThumb2
+    100034: character_mixamo:LeftHandThumb3
+    100036: character_mixamo:LeftHandThumb4
+    100038: character_mixamo:LeftLeg
+    100040: character_mixamo:LeftShoulder
+    100042: character_mixamo:LeftToe_End
+    100044: character_mixamo:LeftToeBase
+    100046: character_mixamo:LeftUpLeg
+    100048: character_mixamo:Neck
+    100050: character_mixamo:RightArm
+    100052: character_mixamo:RightFoot
+    100054: character_mixamo:RightForeArm
+    100056: character_mixamo:RightHand
+    100058: character_mixamo:RightHandIndex1
+    100060: character_mixamo:RightHandIndex2
+    100062: character_mixamo:RightHandIndex3
+    100064: character_mixamo:RightHandIndex4
+    100066: character_mixamo:RightHandMiddle1
+    100068: character_mixamo:RightHandMiddle2
+    100070: character_mixamo:RightHandMiddle3
+    100072: character_mixamo:RightHandMiddle4
+    100074: character_mixamo:RightHandThumb1
+    100076: character_mixamo:RightHandThumb2
+    100078: character_mixamo:RightHandThumb3
+    100080: character_mixamo:RightHandThumb4
+    100082: character_mixamo:RightLeg
+    100084: character_mixamo:RightShoulder
+    100086: character_mixamo:RightToe_End
+    100088: character_mixamo:RightToeBase
+    100090: character_mixamo:RightUpLeg
+    100092: character_mixamo:Spine
+    100094: character_mixamo:Spine1
+    100096: character_mixamo:Spine2
+    100098: //RootNode
+    400000: character_mixamo:Head
+    400002: character_mixamo:HeadTop_End
+    400004: character_mixamo:Hips
+    400006: character_mixamo:LeftArm
+    400008: character_mixamo:LeftFoot
+    400010: character_mixamo:LeftForeArm
+    400012: character_mixamo:LeftHand
+    400014: character_mixamo:LeftHandIndex1
+    400016: character_mixamo:LeftHandIndex2
+    400018: character_mixamo:LeftHandIndex3
+    400020: character_mixamo:LeftHandIndex4
+    400022: character_mixamo:LeftHandMiddle1
+    400024: character_mixamo:LeftHandMiddle2
+    400026: character_mixamo:LeftHandMiddle3
+    400028: character_mixamo:LeftHandMiddle4
+    400030: character_mixamo:LeftHandThumb1
+    400032: character_mixamo:LeftHandThumb2
+    400034: character_mixamo:LeftHandThumb3
+    400036: character_mixamo:LeftHandThumb4
+    400038: character_mixamo:LeftLeg
+    400040: character_mixamo:LeftShoulder
+    400042: character_mixamo:LeftToe_End
+    400044: character_mixamo:LeftToeBase
+    400046: character_mixamo:LeftUpLeg
+    400048: character_mixamo:Neck
+    400050: character_mixamo:RightArm
+    400052: character_mixamo:RightFoot
+    400054: character_mixamo:RightForeArm
+    400056: character_mixamo:RightHand
+    400058: character_mixamo:RightHandIndex1
+    400060: character_mixamo:RightHandIndex2
+    400062: character_mixamo:RightHandIndex3
+    400064: character_mixamo:RightHandIndex4
+    400066: character_mixamo:RightHandMiddle1
+    400068: character_mixamo:RightHandMiddle2
+    400070: character_mixamo:RightHandMiddle3
+    400072: character_mixamo:RightHandMiddle4
+    400074: character_mixamo:RightHandThumb1
+    400076: character_mixamo:RightHandThumb2
+    400078: character_mixamo:RightHandThumb3
+    400080: character_mixamo:RightHandThumb4
+    400082: character_mixamo:RightLeg
+    400084: character_mixamo:RightShoulder
+    400086: character_mixamo:RightToe_End
+    400088: character_mixamo:RightToeBase
+    400090: character_mixamo:RightUpLeg
+    400092: character_mixamo:Spine
+    400094: character_mixamo:Spine1
+    400096: character_mixamo:Spine2
+    400098: //RootNode
+    7400000: mixamo.com
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: mixamo.com
+      takeName: mixamo.com
+      firstFrame: 0
+      lastFrame: 22
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 1
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 1
+  humanDescription:
+    serializedVersion: 2
+    human:
+    - boneName: character_mixamo:Hips
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: character_mixamo:LeftUpLeg
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: character_mixamo:RightUpLeg
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: character_mixamo:LeftLeg
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: character_mixamo:RightLeg
+      humanName: RightLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: character_mixamo:LeftFoot
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: character_mixamo:RightFoot
+      humanName: RightFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: character_mixamo:Spine
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: character_mixamo:Spine1
+      humanName: Chest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: character_mixamo:Neck
+      humanName: Neck
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: character_mixamo:Head
+      humanName: Head
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: character_mixamo:LeftShoulder
+      humanName: LeftShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: character_mixamo:RightShoulder
+      humanName: RightShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: character_mixamo:LeftArm
+      humanName: LeftUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: character_mixamo:RightArm
+      humanName: RightUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: character_mixamo:LeftForeArm
+      humanName: LeftLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: character_mixamo:RightForeArm
+      humanName: RightLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: character_mixamo:LeftHand
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: character_mixamo:RightHand
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: character_mixamo:LeftToeBase
+      humanName: LeftToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: character_mixamo:RightToeBase
+      humanName: RightToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: character_mixamo:LeftHandThumb1
+      humanName: Left Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: character_mixamo:LeftHandThumb2
+      humanName: Left Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: character_mixamo:LeftHandThumb3
+      humanName: Left Thumb Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: character_mixamo:LeftHandIndex1
+      humanName: Left Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: character_mixamo:LeftHandIndex2
+      humanName: Left Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: character_mixamo:LeftHandIndex3
+      humanName: Left Index Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: character_mixamo:LeftHandMiddle1
+      humanName: Left Middle Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: character_mixamo:LeftHandMiddle2
+      humanName: Left Middle Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: character_mixamo:LeftHandMiddle3
+      humanName: Left Middle Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: character_mixamo:RightHandThumb1
+      humanName: Right Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: character_mixamo:RightHandThumb2
+      humanName: Right Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: character_mixamo:RightHandThumb3
+      humanName: Right Thumb Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: character_mixamo:RightHandIndex1
+      humanName: Right Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: character_mixamo:RightHandIndex2
+      humanName: Right Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: character_mixamo:RightHandIndex3
+      humanName: Right Index Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: character_mixamo:RightHandMiddle1
+      humanName: Right Middle Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: character_mixamo:RightHandMiddle2
+      humanName: Right Middle Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: character_mixamo:RightHandMiddle3
+      humanName: Right Middle Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: character_mixamo:Spine2
+      humanName: UpperChest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: character_mixamo_T(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: character_mixamo:Body_geo
+      parentName: character_mixamo_T(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: character_mixamo:default1
+      parentName: character_mixamo_T(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: character_mixamo:Hips
+      parentName: character_mixamo_T(Clone)
+      position: {x: -0.000000076293944, y: 0.9954235, z: 0.018579938}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: character_mixamo:LeftUpLeg
+      parentName: character_mixamo:Hips
+      position: {x: -0.117649734, y: -0.06418419, z: 0.005359224}
+      rotation: {x: 0.005846373, y: -0.06660664, z: 0.9939407, w: 0.08724278}
+      scale: {x: 1, y: 1, z: 1}
+    - name: character_mixamo:LeftLeg
+      parentName: character_mixamo:LeftUpLeg
+      position: {x: -0, y: 0.45374954, z: 0}
+      rotation: {x: 0.047366116, y: -0.0005330384, z: -0.011240237, w: 0.9988142}
+      scale: {x: 1, y: 1, z: 1}
+    - name: character_mixamo:LeftFoot
+      parentName: character_mixamo:LeftLeg
+      position: {x: 3.5527136e-17, y: 0.39776558, z: 0}
+      rotation: {x: 0.48690847, y: -0.027595593, z: 0.015393304, w: 0.8728813}
+      scale: {x: 1, y: 1, z: 1}
+    - name: character_mixamo:LeftToeBase
+      parentName: character_mixamo:LeftFoot
+      position: {x: -0, y: 0.15686683, z: 4.440892e-18}
+      rotation: {x: 0.27382454, y: 0.12468371, z: -0.035825606, w: 0.9529904}
+      scale: {x: 1, y: 1, z: 1}
+    - name: character_mixamo:LeftToe_End
+      parentName: character_mixamo:LeftToeBase
+      position: {x: -0, y: 0.06402281, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: character_mixamo:RightUpLeg
+      parentName: character_mixamo:Hips
+      position: {x: 0.117649734, y: -0.06418419, z: 0.006000446}
+      rotation: {x: -0.0059515084, y: -0.0678267, z: 0.9938607, w: -0.0872071}
+      scale: {x: 1, y: 1, z: 1}
+    - name: character_mixamo:RightLeg
+      parentName: character_mixamo:RightUpLeg
+      position: {x: 7.105427e-17, y: 0.4538963, z: 0}
+      rotation: {x: 0.047700793, y: 0.0005381283, z: 0.011267768, w: 0.998798}
+      scale: {x: 1, y: 1, z: 1}
+    - name: character_mixamo:RightFoot
+      parentName: character_mixamo:RightLeg
+      position: {x: -0, y: 0.3977925, z: 0}
+      rotation: {x: 0.49555382, y: 0.025729772, z: -0.014688285, w: 0.86807185}
+      scale: {x: 1, y: 1, z: 1}
+    - name: character_mixamo:RightToeBase
+      parentName: character_mixamo:RightFoot
+      position: {x: -3.5527136e-17, y: 0.1612298, z: 1.7763568e-17}
+      rotation: {x: 0.26510194, y: -0.1256091, z: 0.03485485, w: 0.9553682}
+      scale: {x: 1, y: 1, z: 1}
+    - name: character_mixamo:RightToe_End
+      parentName: character_mixamo:RightToeBase
+      position: {x: -0, y: 0.0639383, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: character_mixamo:Spine
+      parentName: character_mixamo:Hips
+      position: {x: -0, y: 0.11564369, z: -0.010490146}
+      rotation: {x: -0.045216255, y: 0, z: -0, w: 0.99897724}
+      scale: {x: 1, y: 1, z: 1}
+    - name: character_mixamo:Spine1
+      parentName: character_mixamo:Spine
+      position: {x: -0, y: 0.13547154, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: character_mixamo:Spine2
+      parentName: character_mixamo:Spine1
+      position: {x: -0, y: 0.15482466, z: 1.7763568e-17}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: character_mixamo:Neck
+      parentName: character_mixamo:Spine2
+      position: {x: -0, y: 0.1741778, z: 0.000000009679095}
+      rotation: {x: 0.045216266, y: 0, z: -0, w: 0.99897724}
+      scale: {x: 1, y: 1, z: 1}
+    - name: character_mixamo:Head
+      parentName: character_mixamo:Neck
+      position: {x: -0, y: 0.11484634, z: 0.027486708}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: character_mixamo:HeadTop_End
+      parentName: character_mixamo:Head
+      position: {x: -0, y: 0.243927, z: 0.058380164}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: character_mixamo:LeftShoulder
+      parentName: character_mixamo:Spine2
+      position: {x: -0.06746212, y: 0.14662786, z: -0.0027313097}
+      rotation: {x: 0.56433594, y: -0.41825262, z: 0.58526653, w: 0.4050343}
+      scale: {x: 1, y: 1, z: 1}
+    - name: character_mixamo:LeftArm
+      parentName: character_mixamo:LeftShoulder
+      position: {x: -0, y: 0.14518593, z: 2.842171e-16}
+      rotation: {x: -0.19215213, y: 0.09459908, z: -0.009069591, w: 0.97675294}
+      scale: {x: 1, y: 1, z: 1}
+    - name: character_mixamo:LeftForeArm
+      parentName: character_mixamo:LeftArm
+      position: {x: 7.105427e-17, y: 0.35518798, z: -2.842171e-16}
+      rotation: {x: 0.04944825, y: -0.02037201, z: -0.0514861, w: 0.9972408}
+      scale: {x: 1, y: 1, z: 1}
+    - name: character_mixamo:LeftHand
+      parentName: character_mixamo:LeftForeArm
+      position: {x: -0, y: 0.24611773, z: 2.842171e-16}
+      rotation: {x: 0.011661991, y: 0.14474533, z: 0.0748981, w: 0.9865613}
+      scale: {x: 1, y: 1, z: 1}
+    - name: character_mixamo:LeftHandIndex1
+      parentName: character_mixamo:LeftHand
+      position: {x: 0.023761103, y: 0.13537908, z: 0.000000021959012}
+      rotation: {x: 0.06982648, y: -0.031698648, z: 0.045583438, w: 0.9960129}
+      scale: {x: 1, y: 1, z: 1}
+    - name: character_mixamo:LeftHandIndex2
+      parentName: character_mixamo:LeftHandIndex1
+      position: {x: -0.0007194831, y: 0.041070025, z: -5.684342e-16}
+      rotation: {x: -0.008110095, y: 0, z: -0, w: 0.99996716}
+      scale: {x: 1, y: 1, z: 1}
+    - name: character_mixamo:LeftHandIndex3
+      parentName: character_mixamo:LeftHandIndex2
+      position: {x: 0.0005283818, y: 0.020885726, z: 2.842171e-16}
+      rotation: {x: 0.040666346, y: 0.000049473256, z: -0.00056220766, w: 0.9991726}
+      scale: {x: 1, y: 1, z: 1}
+    - name: character_mixamo:LeftHandIndex4
+      parentName: character_mixamo:LeftHandIndex3
+      position: {x: 0.00019110135, y: 0.02240748, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: character_mixamo:LeftHandMiddle1
+      parentName: character_mixamo:LeftHand
+      position: {x: -0.023761103, y: 0.14512627, z: 0.000000022460462}
+      rotation: {x: 0.067074455, y: 0.012399879, z: 0.074195914, w: 0.99490815}
+      scale: {x: 1, y: 1, z: 1}
+    - name: character_mixamo:LeftHandMiddle2
+      parentName: character_mixamo:LeftHandMiddle1
+      position: {x: -0.00032691736, y: 0.011442317, z: 2.842171e-16}
+      rotation: {x: -0.039243717, y: 0.00006678977, z: 0.0015637737, w: 0.9992284}
+      scale: {x: 1, y: 1, z: 1}
+    - name: character_mixamo:LeftHandMiddle3
+      parentName: character_mixamo:LeftHandMiddle2
+      position: {x: 0.0000056382146, y: 0.012850104, z: 0}
+      rotation: {x: -0.033165783, y: -0.004361869, z: 0.020856837, w: 0.99922276}
+      scale: {x: 1, y: 1, z: 1}
+    - name: character_mixamo:LeftHandMiddle4
+      parentName: character_mixamo:LeftHandMiddle3
+      position: {x: 0.00032127913, y: 0.006397963, z: -2.842171e-16}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: character_mixamo:LeftHandThumb1
+      parentName: character_mixamo:LeftHand
+      position: {x: 0.020042108, y: 0.050089326, z: 0.023922332}
+      rotation: {x: 0.21138935, y: -0.01606887, z: -0.07407396, w: 0.9744585}
+      scale: {x: 1, y: 1, z: 1}
+    - name: character_mixamo:LeftHandThumb2
+      parentName: character_mixamo:LeftHandThumb1
+      position: {x: 0.0097923875, y: 0.04618625, z: 0}
+      rotation: {x: 0.004581762, y: 0.0005617083, z: -0.14598599, w: 0.9892759}
+      scale: {x: 1, y: 1, z: 1}
+    - name: character_mixamo:LeftHandThumb3
+      parentName: character_mixamo:LeftHandThumb2
+      position: {x: -0.0057133613, y: 0.037212703, z: 2.842171e-16}
+      rotation: {x: -0.04025609, y: 0.0082376655, z: 0.0049944916, w: 0.99914306}
+      scale: {x: 1, y: 1, z: 1}
+    - name: character_mixamo:LeftHandThumb4
+      parentName: character_mixamo:LeftHandThumb3
+      position: {x: -0.004079026, y: 0.029893188, z: 2.842171e-16}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: character_mixamo:RightShoulder
+      parentName: character_mixamo:Spine2
+      position: {x: 0.06746212, y: 0.14658608, z: -0.0022706264}
+      rotation: {x: -0.5664346, y: -0.4167124, z: 0.5834836, w: -0.406263}
+      scale: {x: 1, y: 1, z: 1}
+    - name: character_mixamo:RightArm
+      parentName: character_mixamo:RightShoulder
+      position: {x: -1.7763568e-17, y: 0.14518593, z: 2.842171e-16}
+      rotation: {x: -0.19128935, y: -0.103696674, z: 0.009655594, w: 0.975993}
+      scale: {x: 1, y: 1, z: 1}
+    - name: character_mixamo:RightForeArm
+      parentName: character_mixamo:RightArm
+      position: {x: 7.105427e-17, y: 0.3553377, z: -2.842171e-16}
+      rotation: {x: 0.0499747, y: 0.020138757, z: 0.05145056, w: 0.99722105}
+      scale: {x: 1, y: 1, z: 1}
+    - name: character_mixamo:RightHand
+      parentName: character_mixamo:RightForeArm
+      position: {x: -3.5527136e-17, y: 0.24576367, z: 2.842171e-16}
+      rotation: {x: 0.05062459, y: -0.116765685, z: -0.04329667, w: 0.990923}
+      scale: {x: 1, y: 1, z: 1}
+    - name: character_mixamo:RightHandIndex1
+      parentName: character_mixamo:RightHand
+      position: {x: -0.014570642, y: 0.14180419, z: -0.000000003893449}
+      rotation: {x: 0.07621987, y: 0.007905683, z: -0.022674553, w: 0.99680185}
+      scale: {x: 1, y: 1, z: 1}
+    - name: character_mixamo:RightHandIndex2
+      parentName: character_mixamo:RightHandIndex1
+      position: {x: 0.0013499717, y: 0.0403594, z: 2.842171e-16}
+      rotation: {x: 0.035871994, y: -0.00025226214, z: -0.024778144, w: 0.9990491}
+      scale: {x: 1, y: 1, z: 1}
+    - name: character_mixamo:RightHandIndex3
+      parentName: character_mixamo:RightHandIndex2
+      position: {x: -0.0007301859, y: 0.018118657, z: 2.842171e-16}
+      rotation: {x: 0.013137004, y: 1.3876591e-17, z: -1.8231256e-19, w: 0.99991375}
+      scale: {x: 1, y: 1, z: 1}
+    - name: character_mixamo:RightHandIndex4
+      parentName: character_mixamo:RightHandIndex3
+      position: {x: -0.0006197858, y: 0.02264836, z: 2.842171e-16}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: character_mixamo:RightHandMiddle1
+      parentName: character_mixamo:RightHand
+      position: {x: 0.014570642, y: 0.15305881, z: -0.000000005147302}
+      rotation: {x: 0.060334455, y: -0.059456497, z: -0.07078902, w: 0.9938882}
+      scale: {x: 1, y: 1, z: 1}
+    - name: character_mixamo:RightHandMiddle2
+      parentName: character_mixamo:RightHandMiddle1
+      position: {x: 0.000029734003, y: 0.020211164, z: 0}
+      rotation: {x: 0.034740925, y: 0.0000818483, z: -0.0007236277, w: 0.99939615}
+      scale: {x: 1, y: 1, z: 1}
+    - name: character_mixamo:RightHandMiddle3
+      parentName: character_mixamo:RightHandMiddle2
+      position: {x: -0.0000050786953, y: 0.015434022, z: 0}
+      rotation: {x: -0.035283267, y: 0.00017524886, z: -0.00078786415, w: 0.99937713}
+      scale: {x: 1, y: 1, z: 1}
+    - name: character_mixamo:RightHandMiddle4
+      parentName: character_mixamo:RightHandMiddle3
+      position: {x: -0.000024655306, y: 0.010571643, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: character_mixamo:RightHandThumb1
+      parentName: character_mixamo:RightHand
+      position: {x: -0.016798679, y: 0.05397221, z: 0.022552056}
+      rotation: {x: 0.191013, y: -0.005114189, z: 0.12406057, w: 0.9737027}
+      scale: {x: 1, y: 1, z: 1}
+    - name: character_mixamo:RightHandThumb2
+      parentName: character_mixamo:RightHandThumb1
+      position: {x: -0.008996848, y: 0.047848586, z: 2.842171e-16}
+      rotation: {x: 0.00019581609, y: -0.000020015044, z: 0.11922934, w: 0.9928667}
+      scale: {x: 1, y: 1, z: 1}
+    - name: character_mixamo:RightHandThumb3
+      parentName: character_mixamo:RightHandThumb2
+      position: {x: 0.004611267, y: 0.036761887, z: 0}
+      rotation: {x: -0.038363285, y: -0.018681535, z: 0.02251829, w: 0.9988354}
+      scale: {x: 1, y: 1, z: 1}
+    - name: character_mixamo:RightHandThumb4
+      parentName: character_mixamo:RightHandThumb3
+      position: {x: 0.0043855812, y: 0.023720011, z: 2.842171e-16}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: 234a814e6bd40f2419e3d32fbc2c347a,
+    type: 3}
+  animationType: 3
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class Melee_Enemy_Control : Base_Enemy_Control, IDamager
 {
-
     private void Update()
     {
         switch (state)
         {
             case AI_BehaveState.Idle:
+                IdleBehaviour();
                 break;
             case AI_BehaveState.Chase:
                 PursueBehaviour();
@@ -42,6 +42,19 @@ public class Melee_Enemy_Control : Base_Enemy_Control, IDamager
         Ray newRay = new Ray(transform.position, transform.forward);
         if (Physics.Raycast(newRay, out attackHit, rayLengthAttack))
         {
+            int randnum = Random.Range(0, 4);
+            anim.SetInteger("AttackNum", randnum);
+            anim.SetTrigger("isAttacking");
+        }        //WHEN HEALTH IMPLEMENTED
+        //return;
+    }
+
+    public void ActualAttack()
+    {
+        RaycastHit attackHit;
+        Ray newRay = new Ray(transform.position, transform.forward);
+        if (Physics.Raycast(newRay, out attackHit, rayLengthAttack))
+        {
             IPlayerDamageable player = attackHit.transform.GetComponent<IPlayerDamageable>();
             if (player != null)
             {
@@ -52,7 +65,6 @@ public class Melee_Enemy_Control : Base_Enemy_Control, IDamager
             {
                 Debug.Log("ERROR");
             }
-        }        //WHEN HEALTH IMPLEMENTED
-        return;
+        }
     }
 }

@@ -17,6 +17,8 @@ public class UI_Manager : MonoBehaviour
     public RectTransform inventoryPanel;
     public RectTransform gameOverPanel;
     public RectTransform currentPanel;
+    public RectTransform dialoguePanel;
+    public RectTransform shopPanel;
 
     private UnityAction pauseListen;
 
@@ -32,8 +34,14 @@ public class UI_Manager : MonoBehaviour
     [Header("UI Elements")]
     public Text lvlText;
     public Text coinText;
+    public Text speechDialogueText;
+    public Text nameDialogueText;
+    public Text nameShopText;
     public Slider xpSlider;
     public Slider healthSlider;
+    public Button dialogueNextButton;
+    public Button dialogueFirstOptionButton;
+    public Button dialogueSecondOptionButton;
 
     Game_Manager gmRef;
 
@@ -158,6 +166,23 @@ public class UI_Manager : MonoBehaviour
         currentPanel = newPanel;
     }
 
+    public void EnableUIPanel_Shop(RectTransform newPanel, string shopName, Item_List_Script shopContents)
+    {
+        Shop_Menu_UI tempMenu = newPanel.GetComponent<Shop_Menu_UI>();
+        tempMenu.shopList = shopContents;
+        nameShopText.text = shopName;
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+        Time.timeScale = 0.0f;
+        if (currentPanel != null)
+        {
+            currentPanel.gameObject.SetActive(true);
+        }
+        newPanel.gameObject.SetActive(true);
+        currentPanel = newPanel;
+
+    }
+
     void XPSliderSet(int value)
     {
         Debug.Log(value);
@@ -191,5 +216,29 @@ public class UI_Manager : MonoBehaviour
         {
             yield return null;
         }
+    }
+
+    public void DialogueName(string name)
+    {
+        nameDialogueText.text = name;
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+        Time.timeScale = 0.0f;
+    }
+
+    public IEnumerator DialogueAutoType(string dialogue)
+    {
+        speechDialogueText.text = "";
+        foreach (char dialogueLetter in dialogue.ToCharArray())
+        {
+            speechDialogueText.text += dialogueLetter;
+            yield return null;
+        }
+    }
+
+    public void ButtonTextChanger(string firstOption, string secondOption)
+    {
+        dialogueFirstOptionButton.GetComponentInChildren<Text>().text = firstOption;
+        dialogueSecondOptionButton.GetComponentInChildren<Text>().text = secondOption;
     }
 }

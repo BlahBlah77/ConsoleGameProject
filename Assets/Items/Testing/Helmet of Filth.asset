@@ -15,5 +15,6 @@ MonoBehaviour:
   itemName: Helmet of Filth
   itemIcon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
   itemDescription: Disgusting pile of filth, modelled into a helmet, you sick bastard.
+  itemValue: 10
   stat: 7
   equipSlot: 0

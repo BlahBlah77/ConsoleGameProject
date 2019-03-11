@@ -53,7 +53,7 @@ public class PlayerManager : MonoBehaviour, IDamager, IPlayerDamageable
         //rb = this.GetComponent<Rigidbody>();
         SetPlayerHealth();
         anim.SetBool("isIdle", true);
-	}
+    }
 	
 	// Update is called once per frame
 	void LateUpdate ()

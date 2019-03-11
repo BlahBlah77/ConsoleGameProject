@@ -9,6 +9,7 @@ public class Item_Class : ScriptableObject
     public string itemName = "Item Name";
     public Sprite itemIcon = null;
     public string itemDescription = "This is an item without a description, give me one you fuck";
+    public int itemValue;
     public float stat = 0.0f;
 
     public virtual void UseItem()

@@ -11,9 +11,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa4150338f42d394f8fc76676d9f15fc, type: 3}
   m_Name: Crap Sword
   m_EditorClassIdentifier: 
-  itemModel: {fileID: 100000, guid: 90e495c1dc10e07459dbb502317ca739, type: 3}
+  itemModel: {fileID: 100000, guid: deb0450dfb3fea84e873278f9c814553, type: 3}
   itemName: Sword of Shit
-  itemIcon: {fileID: 0}
+  itemIcon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   itemDescription: Fuck me this is crap
+  itemValue: 50
   stat: 3
   equipSlot: 3

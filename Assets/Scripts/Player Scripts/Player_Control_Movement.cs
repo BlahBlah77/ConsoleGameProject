@@ -45,13 +45,15 @@ public class Player_Control_Movement : MonoBehaviour {
         {
             transform.eulerAngles = new Vector3(transform.eulerAngles.x, camQuad.eulerAngles.y, transform.eulerAngles.z);
             playerRefs.playerObject.localRotation = Quaternion.LookRotation(combInput, Vector3.up);
-            //if (!isAttacking)
-            playerRefs.anim.SetBool("isIdle", false);
-            isIdle = false;
-            isRunning = true;
-            playerRefs.rb.AddRelativeForce(combInput, ForceMode.Impulse);
-            combInput *= Time.deltaTime;
-            playerRefs.anim.SetFloat("speed", combInput.magnitude);
+            if (!isAttacking)
+            {
+                playerRefs.anim.SetBool("isIdle", false);
+                isIdle = false;
+                isRunning = true;
+                playerRefs.rb.AddRelativeForce(combInput, ForceMode.Impulse);
+                combInput *= Time.deltaTime;
+                playerRefs.anim.SetFloat("speed", combInput.magnitude);
+            }
             //playerRefs.playerObject.localRotation = Quaternion.LookRotation(transform.InverseTransformDirection(playerRefs.rb.velocity.x, 0.0f, playerRefs.rb.velocity.z), Vector3.up);
 
         }

@@ -7,6 +7,7 @@ public class Player_Fighting : MonoBehaviour {
     [SerializeField] int clickNum;
     [SerializeField] bool isClickable;
     public Player_Reference_Holder playerRefs;
+    public List<BoxCollider> weapons;
 
     private void Awake()
     {
@@ -17,6 +18,7 @@ public class Player_Fighting : MonoBehaviour {
     private void Start()
     {
         playerRefs = GetComponent<Player_Reference_Holder>();
+        DisableBox();
     }
 
     // Update is called once per frame
@@ -24,44 +26,100 @@ public class Player_Fighting : MonoBehaviour {
     {
 		if (Input.GetButtonDown("Fire1"))
         {
+            EnableBox();
             Comboer();
         }
-	}
+
+        SingleAttacks();
+    }
+
+    void SingleAttacks()
+    {
+        if (Input.GetKeyDown(KeyCode.E) && playerRefs.playerPCM.isRunning)
+        {
+            EnableBox();
+            playerRefs.anim.SetTrigger("SlideAttack");
+        }
+
+        if (Input.GetMouseButtonDown(1) && playerRefs.playerPCM.isIdle)
+        {
+            EnableBox();
+            Debug.Log("Right Mouse Clicked");
+            playerRefs.anim.SetTrigger("HeavySpinAttack");
+        }
+
+        if (Input.GetMouseButtonDown(1) && playerRefs.playerPCM.isRunning)
+        {
+            EnableBox();
+            Debug.Log("Right Mouse Clicked");
+            playerRefs.anim.SetTrigger("HeavySpinAttack");
+            playerRefs.playerPCM.isIdle = false;
+        }
+    }
 
     void Comboer()
     {
-        //playerRefs.playerPCM.isAttacking = true;
         if(isClickable)
         {
             clickNum++;
         }
-        if(clickNum == 1)
+        if(clickNum >= 1 && playerRefs.anim.GetInteger("AnimationInt") == 0)
         {
             playerRefs.anim.SetInteger("AnimationInt", 1);
         }
     }
 
+    public void ClickReset()
+    {
+        clickNum = 0;
+    }
+
     public void CheckComboStatus()
     {
         isClickable = false;
-        if(playerRefs.anim.GetInteger("AnimationInt") == 1 && clickNum == 1)
+        if(playerRefs.anim.GetInteger("AnimationInt") == 1 && clickNum == 0)
         {
             playerRefs.anim.SetInteger("AnimationInt", 0);
-            isClickable = true;
-            clickNum = 0;
         }
-        else if (playerRefs.anim.GetInteger("AnimationInt") == 1 && clickNum >= 2)
+        else if (playerRefs.anim.GetInteger("AnimationInt") == 1 && clickNum >= 1)
         {
             playerRefs.anim.SetInteger("AnimationInt", 2);
-            isClickable = true;
-            //clickNum = 0;
         }
-        else if (playerRefs.anim.GetInteger("AnimationInt") == 2 && clickNum >= 2)
+        else if (playerRefs.anim.GetInteger("AnimationInt") == 2 && clickNum == 0)
         {
             playerRefs.anim.SetInteger("AnimationInt", 0);
-            isClickable = true;
-            clickNum = 0;
+        }
+        else if (playerRefs.anim.GetInteger("AnimationInt") == 2 && clickNum >= 1)
+        {
+            playerRefs.anim.SetInteger("AnimationInt", 3);
+        }
+        else if (playerRefs.anim.GetInteger("AnimationInt") == 3 && clickNum >= 0)
+        {
+            playerRefs.anim.SetInteger("AnimationInt", 0);
         }
         isClickable = true;
+    }
+
+    void EnableBox()
+    {
+        foreach (BoxCollider box in weapons)
+        {
+            if (box.gameObject.activeSelf)
+            {
+                box.enabled = true;
+            }
+        }
+    }
+
+    public void DisableBox()
+    {
+        Debug.Log("Disabled");
+        foreach (BoxCollider box in weapons)
+        {
+            if (box.gameObject.activeSelf)
+            {
+                box.enabled = false;
+            }
+        }
     }
 }
