@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Weapon_Script : MonoBehaviour, IDamager
 {
-    public GameObject zombieTest;
-    public Animator anim;
+    //public GameObject zombieTest;
+    //public Animator anim;
     public Item_Class weapon;
     public Base_Enemy_Control baseEnemy;
     public Int_Stat_Script weaponStrength;
@@ -33,7 +33,7 @@ public class Weapon_Script : MonoBehaviour, IDamager
         weaponStrength.OnIntUpdate += StrengthInput;
 
         // testing for hit reaction animation on zombie when sword is hitting the enemy
-        anim = zombieTest.GetComponent<Animator>();
+        //anim = zombieTest.GetComponent<Animator>();
     }
 
     private void OnDestroy()
@@ -92,9 +92,10 @@ public class Weapon_Script : MonoBehaviour, IDamager
             Debug.Log("You are hit");
 
             // testing for hit reaction animation on zombie when sword is hitting the enemy
-            anim.SetTrigger("isTakingDamage");
+            //anim.SetTrigger("isTakingDamage");
 
             damageable.TakeDamage(newDamage); // the thing that is hit with the interface will take damage to its health
+            damageable.AnimationTrigger();
         }
     }
 }

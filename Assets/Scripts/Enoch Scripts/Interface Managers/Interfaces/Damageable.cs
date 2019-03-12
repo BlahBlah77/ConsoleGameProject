@@ -6,5 +6,6 @@ public interface IDamageable
 {
     // function to determine how much damage is taken by something
     void TakeDamage(float newVal);
+    void AnimationTrigger();
     //float damage
 }

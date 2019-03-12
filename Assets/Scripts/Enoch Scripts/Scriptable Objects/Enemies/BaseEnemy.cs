@@ -93,6 +93,11 @@ public class BaseEnemy : MonoBehaviour, IDamager, IDamageable
             player.PlayerTakesDamage(DoDamage()); // the player with the interface will take damage to its health
         }
     }
+
+    public void AnimationTrigger()
+    {
+
+    }
 }
 
 

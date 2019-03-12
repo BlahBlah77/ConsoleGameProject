@@ -189,11 +189,12 @@ public abstract class Base_Enemy_Control : MonoBehaviour, IDamageable {
         navAgent.isStopped = true;
         Debug.Log("Enemy Dead");
         StartCoroutine(DeathTimer());
-        StartCoroutine(BloodMaker(20.0f));
+        StartCoroutine(BloodMaker(5.0f));
     }
 
     IEnumerator BloodMaker(float timer)
     {
+        Debug.Log("He's Dead Jim");
         rend.material = deathMat;
         rend.material.SetFloat("_DissAmount", 0.0f);
         while (rend.material.GetFloat("_DissAmount") < 1.0f)
@@ -209,4 +210,10 @@ public abstract class Base_Enemy_Control : MonoBehaviour, IDamageable {
         float damage = (newDamage + _enemyData.damageToTake) / 2;
         UpdateHealth(damage);
     }
+
+    public void AnimationTrigger()
+    {
+        anim.SetTrigger("isTakingDamage");
+    }
+    
 }
