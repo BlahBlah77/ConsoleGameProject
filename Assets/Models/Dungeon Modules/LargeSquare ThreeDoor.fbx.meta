@@ -1,14 +1,14 @@
 fileFormatVersion: 2
-guid: 290317eaf0e95494e9e8c982072eeeae
+guid: 697870a7e7a08cb49bb63e99b1a3cdfe
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: aiStandardSurface1
+    2100000: aiStandardSurface2
     2300000: //RootNode
     3300000: //RootNode
-    4300000: pQuarterDonut
+    4300000: pLargeSquare_ThreeDoor
   externalObjects: {}
   materials:
     importMaterials: 1
