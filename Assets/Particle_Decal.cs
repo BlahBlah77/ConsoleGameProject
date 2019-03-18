@@ -7,5 +7,4 @@ public class Particle_Decal : MonoBehaviour {
     public Vector3 position;
     public Vector3 rotation;
     public float scale;
-    public Color colour;
 }
