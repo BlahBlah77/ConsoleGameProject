@@ -6,7 +6,6 @@ public class Particle_Puwarer : MonoBehaviour {
 
     public ParticleSystem particleLaunch;
     public ParticleSystem splatterLaunch;
-
     public Particle_Pool particlePool;
 
     List<ParticleCollisionEvent> particleCollisions;
