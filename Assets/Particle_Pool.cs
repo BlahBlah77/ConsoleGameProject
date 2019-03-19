@@ -37,7 +37,9 @@ public class Particle_Pool : MonoBehaviour {
             particleIndex = 0;
         }
 
-        particleDecals[particleIndex].position = particleCollision.intersection;
+        Vector3 particlePos = particleCollision.intersection;
+        particlePos.y = particlePos.y - 0.4f;
+        particleDecals[particleIndex].position = particlePos;
         Vector3 particleRotation = Quaternion.LookRotation(particleCollision.normal).eulerAngles;
         particleRotation.z = Random.Range(0, 360);
         particleDecals[particleIndex].rotation = particleRotation;

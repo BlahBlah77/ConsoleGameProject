@@ -1258,7 +1258,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1923631396226630}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4804063207726718}
@@ -2097,7 +2097,7 @@ Camera:
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_RenderingPath: -1
+  m_RenderingPath: 3
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
   m_TargetEye: 3
@@ -2258,6 +2258,7 @@ MonoBehaviour:
   itemName: 
   description: 
   swordModel: {fileID: 1536205507927160}
+  bloodSpray: {fileID: 0}
 --- !u!114 &114082820533437898
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2404,6 +2405,7 @@ MonoBehaviour:
   itemName: 
   description: 
   swordModel: {fileID: 1536205507927160}
+  bloodSpray: {fileID: 0}
 --- !u!114 &114801492292091360
 MonoBehaviour:
   m_ObjectHideFlags: 1

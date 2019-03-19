@@ -21,7 +21,7 @@ public class Weapon_Script : MonoBehaviour, IDamager
     MeshFilter meshFil;
     SkinnedMeshRenderer skinMeshil;
     Renderer andworck;
-
+    public ParticleSystem bloodSpray;
 
     private void Start()
     {
@@ -89,6 +89,8 @@ public class Weapon_Script : MonoBehaviour, IDamager
         if (damageable != null)
         {
             float newDamage = DoDamage();
+            bloodSpray.gameObject.transform.position = other.transform.position;
+            bloodSpray.Emit(5);
             Debug.Log("You are hit");
 
             // testing for hit reaction animation on zombie when sword is hitting the enemy
