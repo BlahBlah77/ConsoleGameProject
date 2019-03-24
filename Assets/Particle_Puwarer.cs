@@ -19,7 +19,7 @@ public class Particle_Puwarer : MonoBehaviour {
     void Start ()
     {
         particleCollisions = new List<ParticleCollisionEvent>();
-        particleLaunch.Emit(5);
+        //particleLaunch.Emit(5);
 	}
 
     private void OnParticleCollision(GameObject other)

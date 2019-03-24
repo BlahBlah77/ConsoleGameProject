@@ -233,7 +233,7 @@ public class UI_Manager : MonoBehaviour
         Application.Quit();
     }
 
-    IEnumerator LoadSceneAsynchronously(string newLevel)
+    public IEnumerator LoadSceneAsynchronously(string newLevel)
     {
         AsyncOperation aOp = SceneManager.LoadSceneAsync(newLevel);
         while (!aOp.isDone)

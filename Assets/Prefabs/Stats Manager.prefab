@@ -54,3 +54,5 @@ MonoBehaviour:
   playerXP: {fileID: 11400000, guid: 8785524743e7c4c4783bd39f1fd4f2ca, type: 2}
   playerLevel: {fileID: 11400000, guid: 9e505b2e56ddf154f8d35cdf1f0e8618, type: 2}
   playerStrength: {fileID: 11400000, guid: 31a6f64d6fdd7ab40b65d37f87c330ff, type: 2}
+  playerDefence: {fileID: 11400000, guid: c02b9e881633a6f4092a7bf0966fd4ed, type: 2}
+  gearList: {fileID: 11400000, guid: 438a99f204ec2f14cb14e7c2aabf9358, type: 2}

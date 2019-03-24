@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gearList:
   - {fileID: 11400000, guid: c606a10eaf032f84aab7194436c4d750, type: 2}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 11400000, guid: 33a5af152f47b4241bb8bd1c4ffe3444, type: 2}
+  - {fileID: 11400000, guid: c300b831fdb37534db2b129f526fb2f5, type: 2}
+  - {fileID: 11400000, guid: a905c0fc4e698c345a78b54e04869ef6, type: 2}
+  - {fileID: 11400000, guid: 22b25c57d08fd15459b6b626bc94f937, type: 2}
   - {fileID: 11400000, guid: 3d5935f18732cae44b161123463865f3, type: 2}
