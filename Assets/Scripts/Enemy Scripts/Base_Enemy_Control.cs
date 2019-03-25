@@ -29,6 +29,8 @@ public abstract class Base_Enemy_Control : MonoBehaviour, IDamageable {
     public Material deathMat;
     public Renderer rend;
 
+    public bool instaAgro;
+
 
     //set all the data for enemies here
     [SerializeField] EnemyData _enemyDataScriptableObject;
@@ -65,6 +67,12 @@ public abstract class Base_Enemy_Control : MonoBehaviour, IDamageable {
             state = AI_BehaveState.Idle;
             anim.SetBool("isIdle", true);
         }//anim.SetBool
+
+        if (instaAgro)
+        {
+            navAgent.stoppingDistance = 2.0f;
+            state = AI_BehaveState.Chase;
+        }
     }
 
     public void PatrolBehaviour()
@@ -98,7 +106,7 @@ public abstract class Base_Enemy_Control : MonoBehaviour, IDamageable {
             anim.SetBool("isIdle", true);
             Vector3 plaVec = playerPosition.position - transform.position;
             Quaternion playerRotateValue = Quaternion.LookRotation(plaVec);
-            transform.rotation = playerRotateValue;
+            transform.rotation = new Quaternion(0, playerRotateValue.y, 0, playerRotateValue.w);
             if (Time.time > fireTime)
             {
                 Attack();
