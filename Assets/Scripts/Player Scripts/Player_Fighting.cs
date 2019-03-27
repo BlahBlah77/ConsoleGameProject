@@ -8,6 +8,7 @@ public class Player_Fighting : MonoBehaviour {
     [SerializeField] bool isClickable;
     public Player_Reference_Holder playerRefs;
     public List<BoxCollider> weapons;
+    bool isBlocking;
 
     private void Awake()
     {
@@ -54,6 +55,19 @@ public class Player_Fighting : MonoBehaviour {
             Debug.Log("Right Mouse Clicked");
             playerRefs.anim.SetTrigger("HeavySpinAttack");
             playerRefs.playerPCM.isIdle = false;
+        }
+
+
+        // blocking
+        if (Input.GetKey(KeyCode.V) && playerRefs.playerPCM.isIdle)
+        {
+            playerRefs.anim.SetTrigger("isBlocking");
+            isBlocking = true;
+            Debug.Log("Blocking");
+        }
+        else
+        {
+            isBlocking = false;
         }
     }
 

@@ -7,15 +7,23 @@ public class Stats_Manager : MonoBehaviour {
     public Int_Stat_Script playerXP;
     public Int_Stat_Script playerLevel;
     public Int_Stat_Script playerStrength;
+    public Int_Stat_Script playerDefence;
+    public Equipment_Script gearList;
 
     private void Start()
     {
         playerXP.OnIntUpdate += ExperienceChecker;
+        gearList.OnGearUpdate += DefenceCalculator;
+        foreach (Equip_Class equip in gearList.gearList)
+        {
+            DefenceCalculator(equip);
+        }
     }
 
     private void OnDestroy()
     {
         playerXP.OnIntUpdate -= ExperienceChecker;
+        gearList.OnGearUpdate -= DefenceCalculator;
     }
 
     void ExperienceChecker(int value)
@@ -32,6 +40,15 @@ public class Stats_Manager : MonoBehaviour {
             playerXP.SecondIntSetValChanger(newVal);
 
 
+        }
+    }
+
+    public void DefenceCalculator(Equip_Class currEquip)
+    {
+        if (((int)currEquip.equipSlot != 3) && ((int)currEquip.equipSlot != 4))
+        {
+            playerDefence.runVariable = (int)gearList.gearList[0].stat + (int)gearList.gearList[1].stat + (int)gearList.gearList[2].stat;
+            Debug.Log(playerDefence.runVariable);
         }
     }
 

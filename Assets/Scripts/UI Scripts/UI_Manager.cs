@@ -19,6 +19,7 @@ public class UI_Manager : MonoBehaviour
     public RectTransform currentPanel;
     public RectTransform dialoguePanel;
     public RectTransform shopPanel;
+    public RectTransform questPanel;
 
     private UnityAction pauseListen;
 
@@ -37,6 +38,7 @@ public class UI_Manager : MonoBehaviour
     public Text speechDialogueText;
     public Text nameDialogueText;
     public Text nameShopText;
+    public Text questText;
     public Slider xpSlider;
     public Slider healthSlider;
     public Button dialogueNextButton;
@@ -44,6 +46,8 @@ public class UI_Manager : MonoBehaviour
     public Button dialogueSecondOptionButton;
 
     Game_Manager gmRef;
+
+    private string levelToLoad;
 
     public static UI_Manager Current
     {
@@ -152,7 +156,7 @@ public class UI_Manager : MonoBehaviour
             currentPanel = null;
         }
     }
-    
+
     public void EnableUIPanel(RectTransform newPanel)
     {
         Cursor.visible = true;
@@ -183,6 +187,26 @@ public class UI_Manager : MonoBehaviour
 
     }
 
+    public void EnableUIPanel_Quest(RectTransform newPanel, string dialogue, string levelID)
+    {
+        questText.text = dialogue;
+        levelToLoad = levelID;
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+        Time.timeScale = 0.0f;
+        if (currentPanel != null)
+        {
+            currentPanel.gameObject.SetActive(true);
+        }
+        newPanel.gameObject.SetActive(true);
+        currentPanel = newPanel;
+    }
+
+    public void LoadNewLevel()
+    {
+        if (levelToLoad != null) StartCoroutine(LoadSceneAsynchronously(levelToLoad));
+    }
+
     void XPSliderSet(int value)
     {
         Debug.Log(value);
@@ -209,7 +233,7 @@ public class UI_Manager : MonoBehaviour
         Application.Quit();
     }
 
-    IEnumerator LoadSceneAsynchronously(string newLevel)
+    public IEnumerator LoadSceneAsynchronously(string newLevel)
     {
         AsyncOperation aOp = SceneManager.LoadSceneAsync(newLevel);
         while (!aOp.isDone)
