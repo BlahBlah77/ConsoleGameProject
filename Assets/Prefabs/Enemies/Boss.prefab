@@ -1824,6 +1824,7 @@ MonoBehaviour:
   deathMat: {fileID: 2100000, guid: bb1d6b97caa702045ace51f44c0057db, type: 2}
   rend: {fileID: 137861000910768060}
   instaAgro: 1
+  animations: 1
   _enemyDataScriptableObject: {fileID: 11400000, guid: 386c85a19cabde049a992bc6ae2a3216,
     type: 2}
   _enemyData:

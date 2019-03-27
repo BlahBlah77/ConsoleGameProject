@@ -3307,6 +3307,8 @@ MonoBehaviour:
   anim: {fileID: 0}
   deathMat: {fileID: 2100000, guid: bb1d6b97caa702045ace51f44c0057db, type: 2}
   rend: {fileID: 137375377197728294}
+  instaAgro: 0
+  animations: 1
   _enemyDataScriptableObject: {fileID: 11400000, guid: be20ec5820666044aa8175bf6b3f372d,
     type: 2}
   _enemyData:

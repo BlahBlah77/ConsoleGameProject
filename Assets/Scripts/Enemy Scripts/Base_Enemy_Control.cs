@@ -30,7 +30,8 @@ public abstract class Base_Enemy_Control : MonoBehaviour, IDamageable {
     public Renderer rend;
 
     public bool instaAgro;
-
+    public bool animations;
+    bool isDead = false;
 
     //set all the data for enemies here
     [SerializeField] EnemyData _enemyDataScriptableObject;
@@ -45,7 +46,7 @@ public abstract class Base_Enemy_Control : MonoBehaviour, IDamageable {
         navAgent = GetComponent<NavMeshAgent>();
         _enemyData = _enemyDataScriptableObject._enemyData;
         currentHealth = _enemyData.EnemyHealth;
-        if (anim == null)
+        if (anim == null && animations)
         {
             anim = GetComponent<Animator>();
         }
@@ -60,12 +61,12 @@ public abstract class Base_Enemy_Control : MonoBehaviour, IDamageable {
         if (patrolPointList.Length != 0)
         {
             state = AI_BehaveState.Patrol;
-            anim.SetBool("isIdle", false);
+            if (animations) anim.SetBool("isIdle", false);
         }
         else
         {
             state = AI_BehaveState.Idle;
-            anim.SetBool("isIdle", true);
+            if (animations) anim.SetBool("isIdle", true);
         }//anim.SetBool
 
         if (instaAgro)
@@ -103,7 +104,7 @@ public abstract class Base_Enemy_Control : MonoBehaviour, IDamageable {
         navAgent.speed = patrolSpeed;
         if (navAgent.remainingDistance <= navAgent.stoppingDistance)
         {
-            anim.SetBool("isIdle", true);
+            if (animations) anim.SetBool("isIdle", true);
             Vector3 plaVec = playerPosition.position - transform.position;
             Quaternion playerRotateValue = Quaternion.LookRotation(plaVec);
             transform.rotation = new Quaternion(0, playerRotateValue.y, 0, playerRotateValue.w);
@@ -116,7 +117,7 @@ public abstract class Base_Enemy_Control : MonoBehaviour, IDamageable {
         }
         else
         {
-            anim.SetBool("isIdle", false);
+            if (animations) anim.SetBool("isIdle", false);
         }
         navAgent.destination = playerPosition.position;
     }
@@ -192,12 +193,16 @@ public abstract class Base_Enemy_Control : MonoBehaviour, IDamageable {
     public void KillEnemy()
     {
         currentHealth = 0;
-        anim.SetTrigger("isDead");
-        anim.SetBool("isDying", true);
+        if (animations)
+        {
+            anim.SetTrigger("isDead");
+            anim.SetBool("isDying", true);
+        }
         navAgent.isStopped = true;
         Debug.Log("Enemy Dead");
-        StartCoroutine(DeathTimer());
+        //StartCoroutine(DeathTimer());
         StartCoroutine(BloodMaker(5.0f));
+        isDead = true;
     }
 
     IEnumerator BloodMaker(float timer)
@@ -210,18 +215,22 @@ public abstract class Base_Enemy_Control : MonoBehaviour, IDamageable {
             rend.material.SetFloat("_DissAmount", rend.material.GetFloat("_DissAmount") + (Time.deltaTime / timer));
             yield return null;
         }
+        Destroy(gameObject);
         //yield new return WaitForSeconds
     }
 
     public void TakeDamage(float newDamage)
     {
-        float damage = (newDamage + _enemyData.damageToTake) / 2;
-        UpdateHealth(damage);
+        if (!isDead)
+        {
+            float damage = (newDamage + _enemyData.damageToTake) / 2;
+            UpdateHealth(damage);
+        }
     }
 
     public void AnimationTrigger()
     {
-        anim.SetTrigger("isTakingDamage");
+        if (animations) anim.SetTrigger("isTakingDamage");
     }
     
 }

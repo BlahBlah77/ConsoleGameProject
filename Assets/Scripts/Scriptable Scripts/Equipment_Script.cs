@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "DefaultName", menuName = "Equipment/Gear List")]
-public class Equipment_Script : ScriptableObject {
-
+public class Equipment_Script : ScriptableObject
+{
     public Equip_Class[] gearList;
+    public Equip_Class[] defaultGearList;
 
     public delegate void OnGearUpdateHandle(Equip_Class newVal);
     public event OnGearUpdateHandle OnGearUpdate;

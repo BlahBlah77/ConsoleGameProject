@@ -7,14 +7,14 @@ public class Weapon_Switcher : MonoBehaviour
 
     public List<Weapon_Script> listOfWeapons;
 
-    public int equipedWeapon;
+    public int equipedWeapon = 0;
     public bool isSwitching = false;
 
 
     // Use this for initialization
     void Start()
     {
-
+        SwitchAndCheckWeapons();
     }
 
     // Update is called once per frame
@@ -61,6 +61,7 @@ public class Weapon_Switcher : MonoBehaviour
         {
             if (weapNumber == equipedWeapon)
             {
+                weap.ItemEquip(weap.weapon);
                 weap.gameObject.SetActive(true);
             }
             else

@@ -28,13 +28,18 @@ public class Player_Control_Movement : MonoBehaviour {
     void Update () 
 	{
 		MovementInputRetrieve ();
-		GroundMovement ();
+		//GroundMovement ();
 	}
 
-	void MovementInputRetrieve()
+    private void FixedUpdate()
+    {
+        GroundMovement();
+    }
+
+    void MovementInputRetrieve()
 	{
-		horiInput = Input.GetAxis ("Horizontal") * inputSpeed;
-		vertInput = Input.GetAxis ("Vertical") * inputSpeed;
+        horiInput = Input.GetAxis("Horizontal") * inputSpeed;
+        vertInput = Input.GetAxis("Vertical") * inputSpeed;
         combInput = new Vector3(horiInput, 0.0f, vertInput);
 	}
 
@@ -50,6 +55,7 @@ public class Player_Control_Movement : MonoBehaviour {
                 playerRefs.anim.SetBool("isIdle", false);
                 isIdle = false;
                 isRunning = true;
+                Debug.Log(combInput);
                 playerRefs.rb.AddRelativeForce(combInput, ForceMode.Impulse);
                 combInput *= Time.deltaTime;
                 playerRefs.anim.SetFloat("speed", combInput.magnitude);

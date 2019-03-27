@@ -6,7 +6,7 @@ public class Weapon_Script : MonoBehaviour, IDamager
 {
     //public GameObject zombieTest;
     //public Animator anim;
-    public Item_Class weapon;
+    public Equip_Class weapon;
     public Base_Enemy_Control baseEnemy;
     public Int_Stat_Script weaponStrength;
     public float damage;
