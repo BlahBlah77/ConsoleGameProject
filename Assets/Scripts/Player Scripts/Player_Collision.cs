@@ -7,6 +7,7 @@ public class Player_Collision : MonoBehaviour, IPlayerDamageable
     public float currentHealth;
     private float maxHealth = 100;
     public Int_Stat_Script playerHealth;
+    public Int_Stat_Script playerDefence;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -49,7 +50,9 @@ public class Player_Collision : MonoBehaviour, IPlayerDamageable
 
     void IPlayerDamageable.PlayerTakesDamage(float damage)
     {
-        playerHealth.IntMinusChanger((int)damage);
+        int newDamage = (int)damage - playerDefence.runVariable;
+        if (newDamage > 0) newDamage = 0;
+        playerHealth.IntMinusChanger(newDamage);
         //UpdatePlayerHealth(damage);
     }
 }
