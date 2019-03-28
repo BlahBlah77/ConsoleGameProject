@@ -471,7 +471,7 @@ GameObject:
   - component: {fileID: 279879256}
   - component: {fileID: 279879258}
   - component: {fileID: 279879257}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Proximity Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -690,7 +690,7 @@ GameObject:
   - component: {fileID: 437110984}
   - component: {fileID: 437110986}
   - component: {fileID: 437110985}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Proximity Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1406,7 +1406,7 @@ GameObject:
   - component: {fileID: 1139991522}
   - component: {fileID: 1139991524}
   - component: {fileID: 1139991523}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Proximity Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
