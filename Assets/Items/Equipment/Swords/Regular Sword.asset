@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa4150338f42d394f8fc76676d9f15fc, type: 3}
   m_Name: Regular Sword
   m_EditorClassIdentifier: 
-  itemModel: {fileID: 100000, guid: deb0450dfb3fea84e873278f9c814553, type: 3}
+  itemModel: {fileID: 1075009406544782, guid: affb9282aea61f646a6286dec3da1a17, type: 2}
   itemName: Regular Sword
   itemIcon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   itemDescription: A regular sword, the true weapon of a warrior.
