@@ -1,9 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class Player_Collision : MonoBehaviour, IPlayerDamageable
 {
+    public EventManager eventmanager;
     public float currentHealth;
     private float maxHealth = 100;
     public Int_Stat_Script playerHealth;
@@ -14,6 +16,26 @@ public class Player_Collision : MonoBehaviour, IPlayerDamageable
     private void Awake()
     {
         audSource = GetComponent<AudioSource>();
+    }
+
+    private void Start()
+    {
+        eventmanager.OnAnyHealthPackCollected += Eventmanager_OnAnyHealthPackCollected;
+    }
+
+    // if the player collects the pickup for health give them back 5 health
+    private void Eventmanager_OnAnyHealthPackCollected(object sender, EventArgs e)
+    {
+        if (currentHealth <= maxHealth)
+        {
+            Debug.Log("adding five health");
+            playerHealth.IntPlusChanger(5);
+        }
+
+        if (currentHealth == maxHealth)
+        {
+            return;
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -51,10 +73,6 @@ public class Player_Collision : MonoBehaviour, IPlayerDamageable
         throw new System.NotImplementedException();
     }
 
-    //void UpdatePlayerHealth(float value)
-    //{
-    //    currentHealth -= value;
-    //}
 
     void IPlayerDamageable.PlayerTakesDamage(float damage)
     {

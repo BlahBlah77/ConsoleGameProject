@@ -8,35 +8,26 @@ public class BreakableObjects : MonoBehaviour {
 
     public GameObject CoinTest;
     private int numberOfCoins;
+    private int numberOfHealthPacks;
 
     public event EventHandler<CoinArgs> OnSmashBox; // declare event
-    public event EventHandler<SpecialArgs> OnSmashSpecialBox; // for special items
+    public event EventHandler<HealthArgs> OnSmashBoxHealth; // for special items
     
     // make method to call an event
-    void RaiseSmashBox(CoinArgs args)
+    void RaiseSmashBox(CoinArgs args, HealthArgs hargs)
     {
         if(OnSmashBox != null)
             OnSmashBox.Invoke(this, args);
     }
 
-    private void Start()
-    {
-        SetupSpawnedCoins();
-    }
-
-    void SetupSpawnedCoins()
-    {
-        //CoinTest.GetComponent<Rigidbody>().useGravity = true;
-        //CoinTest.GetComponent<Collider>().isTrigger = false;
-    }
-
     private void OnTriggerEnter(Collider other)
     {
         numberOfCoins = UnityEngine.Random.Range(5, 6);
+        numberOfHealthPacks = UnityEngine.Random.Range(5, 6);
 
         if (other.gameObject.tag == "sword")
         {
-           RaiseSmashBox(new CoinArgs(numberOfCoins));
+           RaiseSmashBox(new CoinArgs(numberOfCoins), new HealthArgs(numberOfHealthPacks));
         }
     }
 }
@@ -51,7 +42,11 @@ public class CoinArgs: EventArgs
     }
 }
 
-public class SpecialArgs: EventArgs
+public class HealthArgs: EventArgs
 {
-
+    public int healthSpawns { get; private set; }
+    public HealthArgs(int numOfHealthPacks)
+    {
+        healthSpawns = numOfHealthPacks;
+    }
 }

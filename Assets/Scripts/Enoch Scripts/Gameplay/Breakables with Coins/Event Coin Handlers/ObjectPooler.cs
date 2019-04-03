@@ -3,21 +3,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum ObjectTypes { Breakable, Coin }
+public enum ObjectTypes { Breakable, Coin, HealthPack }
 
 public class ObjectPooler : MonoBehaviour
 {
     public GameObject coinPrefab;
     public GameObject breakablePrefab;
+    public GameObject healthPrefab;
 
     public static ObjectPooler objectPool; // create an instance of this and no need to reference
     public int pooledAmount = 1;
     public bool expandPool = true;    
 
     public List<GameObject> pooledCoins;
+    public List<GameObject> pooledHealthPacks;
     public List<GameObject> pooledBreakables;
 
     public event EventHandler OnCoinSpawn;
+    public event EventHandler OnHealthSpawn;
     public event EventHandler OnBreakableSpawn;
 
     // Destroy unloads object from the memory and set reference to null so in order to use it again you need to recreate it, via let's say instantiate. 
@@ -44,6 +47,7 @@ public class ObjectPooler : MonoBehaviour
             breakableObj.GetComponent<IPoolableObject>().SetObjectPool(this);
 
         SeedCoinList(coinPrefab, pooledCoins);
+        SeedHealthList(healthPrefab, pooledHealthPacks);
     }
 
 
@@ -57,9 +61,22 @@ public class ObjectPooler : MonoBehaviour
             case ObjectTypes.Coin:
                 CoinReturn(genericObject);
                 break;
+            case ObjectTypes.HealthPack:
+                HealthPackReturn(genericObject);
+                break;
             default:
                 break;
         }
+    }
+
+
+
+
+
+    public void BreakableReturn(GameObject returnedBreakable)
+    {
+        returnedBreakable.GetComponent<PickupEvent>().ResetSubscriptions();
+        returnedBreakable.SetActive(false);
     }
 
     public void CoinReturn(GameObject returnedCoin)
@@ -68,6 +85,33 @@ public class ObjectPooler : MonoBehaviour
         returnedCoin.GetComponent<PickupEvent>().ResetSubscriptions();
         returnedCoin.SetActive(false);
         pooledCoins.Add(returnedCoin);
+    }
+
+    public void HealthPackReturn(GameObject returnedHealthPack)
+    {
+        Debug.Log("Health Returned");
+        returnedHealthPack.GetComponent<PickupEvent>().ResetSubscriptions();
+        returnedHealthPack.SetActive(false);
+        pooledHealthPacks.Add(returnedHealthPack);
+    }
+
+
+
+
+
+
+    public GameObject GetHealthPack()
+    {
+        if (pooledHealthPacks.Count == 0)
+        {
+            SeedHealthList(healthPrefab, pooledHealthPacks);
+        }
+
+        GameObject poppedHealth = pooledHealthPacks[0];
+        pooledHealthPacks.RemoveAt(0);
+        RaiseCoinSpawn(poppedHealth, EventArgs.Empty);
+        poppedHealth.SetActive(true);
+        return poppedHealth;
     }
 
     public GameObject GetCoin()
@@ -84,12 +128,7 @@ public class ObjectPooler : MonoBehaviour
         return poppedCoin;
     }
 
-    public void BreakableReturn(GameObject returnedBreakable)
-    {
-        returnedBreakable.GetComponent<PickupEvent>().ResetSubscriptions();
-        returnedBreakable.SetActive(false);
-        
-    }
+
 
     public GameObject GetBreakable()
     {
@@ -105,6 +144,13 @@ public class ObjectPooler : MonoBehaviour
         return poppedBreakable;
     }
 
+
+
+
+
+
+
+
     void SeedCoinList(GameObject prefab, List<GameObject> poolList)
     {
         for (int x = 0; x < 4; x++)
@@ -115,6 +161,23 @@ public class ObjectPooler : MonoBehaviour
             poolList.Add(newCoin);
         }
     }
+    void SeedHealthList(GameObject prefab, List<GameObject> poolList)
+    {
+        for (int x = 0; x < 4; x++)
+        {
+            GameObject newHealthPack = Instantiate(prefab);
+            newHealthPack.GetComponent<IPoolableObject>().SetObjectPool(this);
+            newHealthPack.SetActive(false);
+            poolList.Add(newHealthPack);
+        }
+    }
+
+
+
+
+
+
+
 
     void RaiseBreakableSpawn(object spawnedBreakable, EventArgs args)
     {
@@ -126,6 +189,12 @@ public class ObjectPooler : MonoBehaviour
     {
         if (OnCoinSpawn != null)
             OnCoinSpawn.Invoke(spawnedCoin, args);
+    }
+
+    void RaiseHealthSpawn(object spawnedHealth, EventArgs args)
+    {
+        if (OnHealthSpawn != null)
+            OnHealthSpawn.Invoke(spawnedHealth, args);
     }
 }
 
