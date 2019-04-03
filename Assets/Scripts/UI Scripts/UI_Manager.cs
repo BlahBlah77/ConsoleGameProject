@@ -47,7 +47,6 @@ public class UI_Manager : MonoBehaviour
 
     Game_Manager gmRef;
 
-    private int storedMoneyReq;
     private string levelToLoad;
 
     public static UI_Manager Current
@@ -188,9 +187,8 @@ public class UI_Manager : MonoBehaviour
 
     }
 
-    public void EnableUIPanel_Quest(RectTransform newPanel, string dialogue, string levelID, int moneyReq)
+    public void EnableUIPanel_Quest(RectTransform newPanel, string dialogue, string levelID)
     {
-        storedMoneyReq = moneyReq;
         questText.text = dialogue;
         levelToLoad = levelID;
         Cursor.visible = true;
@@ -206,7 +204,7 @@ public class UI_Manager : MonoBehaviour
 
     public void LoadNewLevel()
     {
-        if (levelToLoad != null && playerMoney.runVariable >= storedMoneyReq) StartCoroutine(LoadSceneAsynchronously(levelToLoad));
+        if (levelToLoad != null) StartCoroutine(LoadSceneAsynchronously(levelToLoad));
     }
 
     void XPSliderSet(int value)

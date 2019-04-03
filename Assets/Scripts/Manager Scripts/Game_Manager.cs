@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Runtime.Serialization.Formatters.Binary;
@@ -34,7 +33,6 @@ public class Game_Manager : MonoBehaviour {
         OptionLoad();
     }
 
-    [Serializable]
     class OptionsFile
     {
         public float volume;

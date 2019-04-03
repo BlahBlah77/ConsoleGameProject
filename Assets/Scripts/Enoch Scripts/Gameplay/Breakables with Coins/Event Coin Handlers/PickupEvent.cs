@@ -8,7 +8,6 @@ public class PickupEvent : MonoBehaviour, IPoolableObject {
     public ObjectTypes myType;
     public ObjectPooler objectpool;
     public event EventHandler OnCollection; // declare event
-    public GameObject shards;
 
     public bool isCollided = false;
 
@@ -35,10 +34,6 @@ public class PickupEvent : MonoBehaviour, IPoolableObject {
                 //isCollided = true;
                 OnCollection(this, EventArgs.Empty);
                 objectpool.ReturnObject(this.gameObject, myType);
-                if (myType == ObjectTypes.Breakable)
-                {
-                    var obj = Instantiate(shards, transform.position, transform.rotation);
-                }
             }
         }
     }
