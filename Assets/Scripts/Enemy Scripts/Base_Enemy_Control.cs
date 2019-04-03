@@ -61,10 +61,6 @@ public abstract class Base_Enemy_Control : MonoBehaviour, IDamageable {
     // Use this for initialization
     void Start ()
     {
-        // get an array of the two sounds
-        audSource.clip = zombieDeaths[UnityEngine.Random.Range(0, zombieDeaths.Length)];
-
-
         playerPosition = GameObject.Find("Player").GetComponent<Transform>();
         coneSight = GetComponentInChildren<Sight_Trigger>();
         navAgent.stoppingDistance = 0.2f;
@@ -83,6 +79,12 @@ public abstract class Base_Enemy_Control : MonoBehaviour, IDamageable {
         {
             navAgent.stoppingDistance = 2.0f;
             state = AI_BehaveState.Chase;
+        }
+
+        // get an array of the two sounds
+        if (zombieDeaths.Length != 0)
+        {
+            audSource.clip = zombieDeaths[UnityEngine.Random.Range(0, zombieDeaths.Length)];
         }
     }
 
