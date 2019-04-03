@@ -8,6 +8,13 @@ public class Player_Collision : MonoBehaviour, IPlayerDamageable
     private float maxHealth = 100;
     public Int_Stat_Script playerHealth;
     public Int_Stat_Script playerDefence;
+    public AudioClip playerHurt;
+    AudioSource audSource;
+
+    private void Awake()
+    {
+        audSource = GetComponent<AudioSource>();
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -53,6 +60,8 @@ public class Player_Collision : MonoBehaviour, IPlayerDamageable
         int newDamage = (int)damage - playerDefence.runVariable;
         if (newDamage > 0) newDamage = 0;
         playerHealth.IntMinusChanger(newDamage);
+        audSource.clip = playerHurt;
+        audSource.Play();
         //UpdatePlayerHealth(damage);
     }
 }

@@ -10,8 +10,13 @@ public class Player_Fighting : MonoBehaviour {
     public List<BoxCollider> weapons;
     bool isBlocking;
 
+    public AudioClip swrdSlash1;
+    public AudioClip swrdSlash2;
+    AudioSource audSource;
+
     private void Awake()
     {
+        audSource = GetComponent<AudioSource>();
         clickNum = 0;
         isClickable = true;
     }
@@ -27,6 +32,8 @@ public class Player_Fighting : MonoBehaviour {
     {
 		if (Input.GetButtonDown("Fire1"))
         {
+            audSource.clip = swrdSlash1;
+            audSource.Play();
             EnableBox();
             Comboer();
         }
@@ -38,12 +45,16 @@ public class Player_Fighting : MonoBehaviour {
     {
         if (Input.GetKeyDown(KeyCode.E) && playerRefs.playerPCM.isRunning)
         {
+            audSource.clip = swrdSlash2;
+            audSource.Play();
             EnableBox();
             playerRefs.anim.SetTrigger("SlideAttack");
         }
 
         if (Input.GetMouseButtonDown(1) && playerRefs.playerPCM.isIdle)
         {
+            audSource.clip = swrdSlash2;
+            audSource.Play();
             EnableBox();
             Debug.Log("Right Mouse Clicked");
             playerRefs.anim.SetTrigger("HeavySpinAttack");
@@ -51,6 +62,8 @@ public class Player_Fighting : MonoBehaviour {
 
         if (Input.GetMouseButtonDown(1) && playerRefs.playerPCM.isRunning)
         {
+            audSource.clip = swrdSlash2;
+            audSource.Play();
             EnableBox();
             Debug.Log("Right Mouse Clicked");
             playerRefs.anim.SetTrigger("HeavySpinAttack");

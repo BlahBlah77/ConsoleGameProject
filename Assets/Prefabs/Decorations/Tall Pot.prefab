@@ -22,9 +22,11 @@ GameObject:
   - component: {fileID: 33544130181133374}
   - component: {fileID: 23249798863383886}
   - component: {fileID: 136975832838286314}
+  - component: {fileID: 114200428903128060}
+  - component: {fileID: 114305482208052404}
   m_Layer: 0
   m_Name: Tall Pot
-  m_TagString: Untagged
+  m_TagString: Breakable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -51,7 +53,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1769357953176824}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9.116822, y: -0.9, z: -9.294965}
+  m_LocalPosition: {x: 16.11923, y: -0.85344565, z: 42.052826}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4983935500885868}
@@ -113,6 +115,32 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1522505556595868}
   m_Mesh: {fileID: 4300000, guid: 20847c319bee7184f934b2105c113c93, type: 3}
+--- !u!114 &114200428903128060
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1522505556595868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2d9caf568ce0e3408f9ce72b3533064, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114305482208052404
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1522505556595868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5022c11acbe4aff44a824f376b361f7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myType: 0
+  objectpool: {fileID: 0}
+  shards: {fileID: 1471694441150238, guid: 619f2b6ed0e018f4399894f86aaa8c8c, type: 2}
+  isCollided: 0
 --- !u!136 &136975832838286314
 CapsuleCollider:
   m_ObjectHideFlags: 1
