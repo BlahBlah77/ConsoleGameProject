@@ -23,6 +23,15 @@ public class Weapon_Script : MonoBehaviour, IDamager
     Renderer andworck;
     public ParticleSystem bloodSpray;
 
+    public AudioClip swordBloodSquirt;
+    public AudioClip zombiePain1;
+    AudioSource audSource;
+
+    private void Awake()
+    {
+        audSource = GetComponent<AudioSource>();
+    }
+
     private void Start()
     {
         meshFil = swordModel.GetComponent<MeshFilter>();
@@ -89,13 +98,11 @@ public class Weapon_Script : MonoBehaviour, IDamager
         if (damageable != null)
         {
             float newDamage = DoDamage();
+            audSource.clip = swordBloodSquirt;
+            audSource.Play();
             bloodSpray.gameObject.transform.position = other.transform.position;
             bloodSpray.Emit(5);
             Debug.Log("You are hit");
-
-            // testing for hit reaction animation on zombie when sword is hitting the enemy
-            //anim.SetTrigger("isTakingDamage");
-
             damageable.TakeDamage(newDamage); // the thing that is hit with the interface will take damage to its health
             damageable.AnimationTrigger();
         }

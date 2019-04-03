@@ -33,6 +33,11 @@ public abstract class Base_Enemy_Control : MonoBehaviour, IDamageable {
     public bool animations;
     bool isDead = false;
 
+    
+    public AudioSource audSource;
+    public AudioClip[] zombieDeaths;
+
+
     //set all the data for enemies here
     [SerializeField] EnemyData _enemyDataScriptableObject;
 
@@ -44,6 +49,7 @@ public abstract class Base_Enemy_Control : MonoBehaviour, IDamageable {
     private void Awake()
     {
         navAgent = GetComponent<NavMeshAgent>();
+        audSource = GetComponent<AudioSource>();
         _enemyData = _enemyDataScriptableObject._enemyData;
         currentHealth = _enemyData.EnemyHealth;
         if (anim == null && animations)
@@ -55,6 +61,10 @@ public abstract class Base_Enemy_Control : MonoBehaviour, IDamageable {
     // Use this for initialization
     void Start ()
     {
+        // get an array of the two sounds
+        audSource.clip = zombieDeaths[UnityEngine.Random.Range(0, zombieDeaths.Length)];
+
+
         playerPosition = GameObject.Find("Player").GetComponent<Transform>();
         coneSight = GetComponentInChildren<Sight_Trigger>();
         navAgent.stoppingDistance = 0.2f;
@@ -170,15 +180,7 @@ public abstract class Base_Enemy_Control : MonoBehaviour, IDamageable {
 
         if (currentHealth <= 0)
         {
-            //currentHealth = 0;
-            //anim.SetTrigger("isDead");
-            //anim.SetBool("isDying", true);
-            //navAgent.isStopped = true;
-            //Debug.Log("Enemy Dead");
-            //StartCoroutine(DeathTimer());
-
             KillEnemy();
-            
         }
 
         Debug.Log("I took: " + value, this);
@@ -197,6 +199,8 @@ public abstract class Base_Enemy_Control : MonoBehaviour, IDamageable {
         {
             anim.SetTrigger("isDead");
             anim.SetBool("isDying", true);
+            audSource.Play();
+
         }
         navAgent.isStopped = true;
         Debug.Log("Enemy Dead");

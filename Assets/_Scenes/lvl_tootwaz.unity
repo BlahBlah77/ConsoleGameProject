@@ -2108,6 +2108,11 @@ Prefab:
       propertyPath: playerHurt
       value: 
       objectReference: {fileID: 8300000, guid: eb2ff724da791da4b8ab7ff814ffab19, type: 3}
+    - target: {fileID: 114674189171738142, guid: 4133aa6db7e10b04abf38bb2c93e3944,
+        type: 2}
+      propertyPath: swordBloodSquirt
+      value: 
+      objectReference: {fileID: 8300000, guid: 0f75f93476c774d499a2bcd245622e51, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4133aa6db7e10b04abf38bb2c93e3944, type: 2}
   m_IsPrefabAsset: 0

@@ -45,6 +45,7 @@ public class Player_Collision : MonoBehaviour, IPlayerDamageable
         currentHealth = Mathf.Clamp(currentHealth, 0, 100);
     }
 
+
     public void DamageTaken(float damage)
     {
         throw new System.NotImplementedException();

@@ -18,7 +18,7 @@ public class SwordLogic : MonoBehaviour, IDamager {
 
         float flaot = DoDamage();
         if (damageable != null)
-        {
+        { 
             Debug.Log("You are hit");
             damageable.TakeDamage(flaot); // the thing that is hit with the interface will take damage to its health
         }
