@@ -7,6 +7,7 @@ public class Quest_Giver : MonoBehaviour
     public string levelID;
     public string levelName;
     public string dialogue;
+    public int moneyReq;
 
     private void OnTriggerStay(Collider other)
     {
@@ -15,7 +16,7 @@ public class Quest_Giver : MonoBehaviour
             if (Input.GetButtonDown("Fire1"))
             {
                 string newDialogue = dialogue + levelName + "?";
-                UI_Manager.Current.EnableUIPanel_Quest(UI_Manager.Current.questPanel, newDialogue, levelID);
+                UI_Manager.Current.EnableUIPanel_Quest(UI_Manager.Current.questPanel, newDialogue, levelID, moneyReq);
             }
         }
     }
