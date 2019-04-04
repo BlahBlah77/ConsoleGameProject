@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemModel: {fileID: 1461432849873036, guid: 88b6b397c62d24d41b1cf8a7baaeb397, type: 2}
   itemName: Teppo Knife
-  itemIcon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  itemIcon: {fileID: 21300000, guid: a85b1296d48f6874f9ba9f2dcf77d66a, type: 3}
   itemDescription: Fueled with the power of Teppo.
   itemValue: 20
   stat: 5

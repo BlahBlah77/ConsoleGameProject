@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemModel: {fileID: 1188390397861996, guid: a671cdbd6cc31f9409493f85a2cf218d, type: 2}
   itemName: Standard Chestplate
-  itemIcon: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  itemIcon: {fileID: 21300000, guid: a85b1296d48f6874f9ba9f2dcf77d66a, type: 3}
   itemDescription: A standard Chestplate
   itemValue: 1
   stat: 1

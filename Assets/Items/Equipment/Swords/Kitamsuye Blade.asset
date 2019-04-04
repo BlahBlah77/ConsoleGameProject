@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemModel: {fileID: 1616464334523908, guid: 9e022fb607fe7974a9d3e32a96ab3eb3, type: 2}
   itemName: Kitamsuye Blade
-  itemIcon: {fileID: 0}
+  itemIcon: {fileID: 21300000, guid: a85b1296d48f6874f9ba9f2dcf77d66a, type: 3}
   itemDescription: The legendary blade forged from a mysterious metal.
   itemValue: 40
   stat: 7
