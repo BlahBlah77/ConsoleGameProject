@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Name: Test_Shop
   m_EditorClassIdentifier: 
   itemList:
-  - {fileID: 11400000, guid: 33a5af152f47b4241bb8bd1c4ffe3444, type: 2}
+  - {fileID: 11400000, guid: d13013d9a93886149a4fb60141290066, type: 2}
+  defaultItemList:
   - {fileID: 11400000, guid: d13013d9a93886149a4fb60141290066, type: 2}

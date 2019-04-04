@@ -78,8 +78,24 @@ public class UI_Manager : MonoBehaviour
         Event_Manager_Luke.StartListen("InventToggle", InventoryActivate);
         playerXP.OnIntUpdate2 += MaxSliderSet;
         playerLevel.OnIntUpdate += LevelTextSet;
+        playerMoney.OnIntUpdate += PlayerMoney_OnIntUpdate;
         eventmanager.OnAnyCoinCollected += Eventmanager_OnAnyCoinCollected;
+        PlayerMoney_OnIntUpdate(playerMoney.runVariable);
         gmRef = Game_Manager.Instance;
+    }
+
+    private void PlayerMoney_OnIntUpdate(int newValue)
+    {
+        if (playerMoney.runVariable < playerMoney.runVariable2)
+        {
+            coinText.text = playerMoney.runVariable.ToString();
+        }
+        else
+        {
+            playerMoney.IntSetValChanger(playerMoney.runVariable2);
+            coinText.text = playerMoney.runVariable.ToString();
+            Debug.Log("You have collected the max coins");
+        }
     }
 
     private void OnDestroy()
@@ -87,23 +103,16 @@ public class UI_Manager : MonoBehaviour
         playerXP.OnIntUpdate -= XPSliderSet;
         playerLevel.OnIntUpdate -= LevelTextSet;
         playerXP.OnIntUpdate2 -= MaxSliderSet;
+        playerMoney.OnIntUpdate -= PlayerMoney_OnIntUpdate;
         eventmanager.OnAnyCoinCollected -= Eventmanager_OnAnyCoinCollected;
     }
 
     private void Eventmanager_OnAnyCoinCollected(object sender, EventArgs e)
     {
-        if (playerMoney.runVariable < playerMoney.runVariable2)
-        {
-            playerMoney.runVariable++;
-            coinText.text = "Coins: " + playerMoney.runVariable;
-        }
-        else
-        {
-            playerMoney.runVariable = playerMoney.runVariable2;
-            coinText.text = "Coins: " + playerMoney.runVariable;
-            Debug.Log("You have collected the max coins");
-        }
+        playerMoney.IntPlusChanger(1);
     }
+
+
 
     void CollectStartUIObjects()
     {
