@@ -13,5 +13,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initialisedVariable: 100
   initialisedVariable2: 100
-  runVariable: 100
+  runVariable: -57
   runVariable2: 100

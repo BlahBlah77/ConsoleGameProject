@@ -9,12 +9,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fa4150338f42d394f8fc76676d9f15fc, type: 3}
-  m_Name: Knife
+  m_Name: Legendary Sword
   m_EditorClassIdentifier: 
-  itemModel: {fileID: 100000, guid: 82c8182082ac8a848b36f451c21c8612, type: 3}
-  itemName: Metal Knife
+  itemModel: {fileID: 1447214881667970, guid: 8a97288beb090a94ea892c6dfda3f3aa, type: 2}
+  itemName: Legendary Sword
   itemIcon: {fileID: 0}
-  itemDescription: This is a metal knife. It's a knife made of metal.
-  itemValue: 10
-  stat: 3
-  equipSlot: 4
+  itemDescription: The most powerful blade in all the land
+  itemValue: 100
+  stat: 12
+  equipSlot: 3

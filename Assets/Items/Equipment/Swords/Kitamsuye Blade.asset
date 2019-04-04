@@ -9,12 +9,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fa4150338f42d394f8fc76676d9f15fc, type: 3}
-  m_Name: Nonstandard Chestplate
+  m_Name: Kitamsuye Blade
   m_EditorClassIdentifier: 
-  itemModel: {fileID: 0}
-  itemName: Nonstandard Chestplate
-  itemIcon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
-  itemDescription: Nonstandard Chestplate, not commonly used.
-  itemValue: 20
-  stat: 3
-  equipSlot: 1
+  itemModel: {fileID: 1616464334523908, guid: 9e022fb607fe7974a9d3e32a96ab3eb3, type: 2}
+  itemName: Kitamsuye Blade
+  itemIcon: {fileID: 0}
+  itemDescription: The legendary blade forged from a mysterious metal.
+  itemValue: 40
+  stat: 7
+  equipSlot: 3

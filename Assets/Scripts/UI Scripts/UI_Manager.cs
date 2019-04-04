@@ -230,6 +230,26 @@ public class UI_Manager : MonoBehaviour
         StartCoroutine(LoadSceneAsynchronously(menuScene));
     }
 
+    public void BackToHub()
+    {
+        //if (gmRef.isGameOver)
+        //{
+            playerHealth.IntSetValChanger(playerHealth.runVariable2);
+            gmRef.isGameOver = false;
+        //}
+        StartCoroutine(LoadSceneAsynchronously("lvl_hub"));
+    }
+
+    public void RetryLevel()
+    {
+        if (gmRef.isGameOver)
+        {
+            playerHealth.IntSetValChanger(playerHealth.runVariable2);
+            gmRef.isGameOver = false;
+        }
+        StartCoroutine(LoadSceneAsynchronously(SceneManager.GetActiveScene().name));
+    }
+
     public void ExitGame()
     {
         Application.Quit();

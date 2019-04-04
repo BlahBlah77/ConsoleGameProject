@@ -14,4 +14,4 @@ MonoBehaviour:
   _enemyData:
     EnemyHealth: 100
     damageToTake: 30
-    enemyAttackPower: 5
+    enemyAttackPower: 20

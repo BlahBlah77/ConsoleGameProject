@@ -9,19 +9,38 @@ public class Inventory_Menu_UI : MonoBehaviour {
     public Text nameText;
 
     public Item_List_Script inventory;
+    public Equipment_Script gearList;
 
     Inventory_Slot[] slots;
+    Equip_Slot[] equipSlots;
 
     private void Start()
     {
         slots = GetComponentsInChildren<Inventory_Slot>();
+        equipSlots = GetComponentsInChildren<Equip_Slot>();
         inventory.OnItemUpdate += UIChanger;
+        gearList.OnGearUpdate += GearUIChanger;
         UIChanger();
+        foreach (Equip_Class equip in gearList.gearList)
+        {
+            GearUIChanger(equip);
+        }
     }
 
     private void OnDestroy()
     {
         inventory.OnItemUpdate -= UIChanger;
+    }
+
+    void GearUIChanger(Equip_Class equipment)
+    {
+        foreach (Equip_Slot equipslot in equipSlots)
+        {
+            if (equipslot.itemCategory == equipment.equipSlot)
+            {
+                equipslot.AddItem(equipment);
+            }
+        }
     }
 
     void UIChanger()

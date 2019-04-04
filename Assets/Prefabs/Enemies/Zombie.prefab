@@ -3393,6 +3393,8 @@ MonoBehaviour:
   navAgent: {fileID: 0}
   coneSight: {fileID: 0}
   playerKnownPos: {x: 0, y: 0, z: 0}
+  playerXP: {fileID: 11400000, guid: 8785524743e7c4c4783bd39f1fd4f2ca, type: 2}
+  playerMoney: {fileID: 11400000, guid: f7abb537c4fc51045828b70515b5e6cc, type: 2}
   state: 0
   rayLength: 20
   rayLengthAttack: 5
@@ -3413,6 +3415,8 @@ MonoBehaviour:
     EnemyHealth: 10
     damageToTake: 10
     enemyAttackPower: 5
+    moneyDropped: 5
+    experienceGain: 10
   currentHealth: 0
 --- !u!137 &137375377197728294
 SkinnedMeshRenderer:

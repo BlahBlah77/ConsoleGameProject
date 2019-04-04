@@ -11,6 +11,9 @@ public abstract class Base_Enemy_Control : MonoBehaviour, IDamageable {
     public Sight_Trigger coneSight;
     public Vector3 playerKnownPos;
 
+    public Int_Stat_Script playerXP;
+    public Int_Stat_Script playerMoney;
+
     public AI_BehaveState state;
 
     public float rayLength = 20.0f;
@@ -204,6 +207,8 @@ public abstract class Base_Enemy_Control : MonoBehaviour, IDamageable {
             audSource.Play();
 
         }
+        playerXP.IntPlusChanger(_enemyData.experienceGain);
+        playerMoney.IntPlusChanger(_enemyData.moneyDropped);
         navAgent.isStopped = true;
         Debug.Log("Enemy Dead");
         //StartCoroutine(DeathTimer());

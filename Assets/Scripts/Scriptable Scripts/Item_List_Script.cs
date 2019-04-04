@@ -6,6 +6,7 @@ using UnityEngine;
 public class Item_List_Script : ScriptableObject
 {
     public List<Item_Class> itemList;
+    public List<Item_Class> defaultItemList;
 
     public delegate void OnItemUpdateHandle();
     public event OnItemUpdateHandle OnItemUpdate;

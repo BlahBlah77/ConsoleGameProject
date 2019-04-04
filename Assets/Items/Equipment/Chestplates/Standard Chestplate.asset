@@ -14,7 +14,7 @@ MonoBehaviour:
   itemModel: {fileID: 1188390397861996, guid: a671cdbd6cc31f9409493f85a2cf218d, type: 2}
   itemName: Standard Chestplate
   itemIcon: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  itemDescription: A standard helmet
+  itemDescription: A standard Chestplate
   itemValue: 1
   stat: 1
   equipSlot: 1

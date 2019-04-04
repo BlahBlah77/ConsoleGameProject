@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Boss_Enemy_Control : Base_Enemy_Control, IDamager
 {
+    public FinalBossUIManager bossUIRef;
+
     private void Update()
     {
         switch (state)
@@ -56,6 +58,11 @@ public class Boss_Enemy_Control : Base_Enemy_Control, IDamager
                 Debug.Log("ERROR");
             }
         }
+    }
+
+    public void DeathTrigger()
+    {
+        bossUIRef.EnableUIPanel(bossUIRef.victoryPanel);
     }
 
 }

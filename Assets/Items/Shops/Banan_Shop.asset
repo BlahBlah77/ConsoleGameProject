@@ -12,3 +12,5 @@ MonoBehaviour:
   m_Name: Banan_Shop
   m_EditorClassIdentifier: 
   itemList: []
+  defaultItemList:
+  - {fileID: 11400000, guid: d13013d9a93886149a4fb60141290066, type: 2}

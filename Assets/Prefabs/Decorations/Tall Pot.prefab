@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 136975832838286314}
   - component: {fileID: 114200428903128060}
   - component: {fileID: 114305482208052404}
+  - component: {fileID: 114302829276754212}
   m_Layer: 0
   m_Name: Tall Pot
   m_TagString: Breakable
@@ -124,6 +125,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2d9caf568ce0e3408f9ce72b3533064, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114302829276754212
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1522505556595868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a17de208fa4da514a8ec01398c7e21ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &114305482208052404

@@ -1334,9 +1334,12 @@ MonoBehaviour:
   coinPrefab: {fileID: 1319961139886520, guid: d94bc71dba969b5459ac88417d68c8e4, type: 2}
   breakablePrefab: {fileID: 1188390397861996, guid: a671cdbd6cc31f9409493f85a2cf218d,
     type: 2}
+  healthPrefab: {fileID: 1765124821092160, guid: 93de3f74c3d03eb4d936b365eeb24fbe,
+    type: 2}
   pooledAmount: 1
   expandPool: 1
   pooledCoins: []
+  pooledHealthPacks: []
   pooledBreakables: []
 --- !u!4 &212463231
 Transform:

@@ -9,12 +9,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fa4150338f42d394f8fc76676d9f15fc, type: 3}
-  m_Name: Teppo Sword
+  m_Name: Nonstandard Helmet
   m_EditorClassIdentifier: 
-  itemModel: {fileID: 1461432849873036, guid: 88b6b397c62d24d41b1cf8a7baaeb397, type: 2}
-  itemName: Teppo Sword
-  itemIcon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  itemDescription: Fueled with the power of Teppo.
+  itemModel: {fileID: 0}
+  itemName: Nonstandard Helmet
+  itemIcon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
+  itemDescription: Nonstandard Helmet, not commonly used.
   itemValue: 20
-  stat: 5
-  equipSlot: 3
+  stat: 3
+  equipSlot: 0

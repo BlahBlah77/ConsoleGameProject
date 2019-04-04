@@ -9,12 +9,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fa4150338f42d394f8fc76676d9f15fc, type: 3}
-  m_Name: Test_Weapon 1
+  m_Name: Teppo Knife
   m_EditorClassIdentifier: 
-  itemModel: {fileID: 100000, guid: a5891d79fc30d314597f7cd1cdfcb62b, type: 3}
-  itemName: Item Name
-  itemIcon: {fileID: 0}
-  itemDescription: This is an item without a description, give me one you fuck
-  itemValue: 10
-  stat: 7
-  equipSlot: 3
+  itemModel: {fileID: 1461432849873036, guid: 88b6b397c62d24d41b1cf8a7baaeb397, type: 2}
+  itemName: Teppo Knife
+  itemIcon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  itemDescription: Fueled with the power of Teppo.
+  itemValue: 20
+  stat: 5
+  equipSlot: 4

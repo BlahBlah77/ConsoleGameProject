@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Name: EmperorEnemy
   m_EditorClassIdentifier: 
   _enemyData:
-    EnemyHealth: 500
+    EnemyHealth: 150
     damageToTake: 10
-    enemyAttackPower: 20
+    enemyAttackPower: 50

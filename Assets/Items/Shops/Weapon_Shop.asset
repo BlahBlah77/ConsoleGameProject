@@ -11,5 +11,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d49d28595913d44f9f4370a12e5e13a, type: 3}
   m_Name: Weapon_Shop
   m_EditorClassIdentifier: 
-  itemList:
+  itemList: []
+  defaultItemList:
   - {fileID: 11400000, guid: c8fe5049a64cd114cad447f8c2fbcaf5, type: 2}
+  - {fileID: 11400000, guid: 1311b9bb8e19586498a1b934a2c3e69f, type: 2}
+  - {fileID: 11400000, guid: c072c8c0bf79cfa42bc6d492a13944a9, type: 2}

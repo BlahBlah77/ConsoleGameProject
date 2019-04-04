@@ -12,14 +12,17 @@ public class Player_Collision : MonoBehaviour, IPlayerDamageable
     public Int_Stat_Script playerDefence;
     public AudioClip playerHurt;
     AudioSource audSource;
+    Player_Reference_Holder prh;
 
     private void Awake()
     {
         audSource = GetComponent<AudioSource>();
+        prh = GetComponent<Player_Reference_Holder>();
     }
 
     private void Start()
     {
+        eventmanager = GameObject.Find("EventManager").GetComponent<EventManager>();
         eventmanager.OnAnyHealthPackCollected += Eventmanager_OnAnyHealthPackCollected;
     }
 
@@ -77,10 +80,23 @@ public class Player_Collision : MonoBehaviour, IPlayerDamageable
     void IPlayerDamageable.PlayerTakesDamage(float damage)
     {
         int newDamage = (int)damage - playerDefence.runVariable;
-        if (newDamage > 0) newDamage = 0;
+        //Debug.Log(newDamage);
+        if (newDamage < 0) newDamage = 0;
         playerHealth.IntMinusChanger(newDamage);
+        if (playerHealth.runVariable <= 0)
+        {
+            prh.anim.SetTrigger("IsDead");
+            prh.playerPCM.enabled = false;
+            prh.playerCGC.enabled = false;
+            Game_Manager.Instance.isGameOver = true;
+        }
         audSource.clip = playerHurt;
         audSource.Play();
         //UpdatePlayerHealth(damage);
+    }
+
+    public void IsDeadNow()
+    {
+        UI_Manager.Current.EnableUIPanel(UI_Manager.Current.gameOverPanel);
     }
 }
