@@ -33,6 +33,7 @@ public class UI_Manager : MonoBehaviour
     public string menuScene;
 
     [Header("UI Elements")]
+    public Text clickToTalk;
     public Text lvlText;
     public Text coinText;
     public Text speechDialogueText;
@@ -49,6 +50,16 @@ public class UI_Manager : MonoBehaviour
 
     private int storedMoneyReq;
     private string levelToLoad;
+
+    public void EnableClick()
+    {
+        clickToTalk.gameObject.SetActive(true);
+    }
+
+    public void DisableClick()
+    {
+        clickToTalk.gameObject.SetActive(false);
+    }
 
     public static UI_Manager Current
     {
