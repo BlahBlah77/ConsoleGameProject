@@ -1946,7 +1946,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5f7ad37787cc084393955e8d101da9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelID: "lvl_\u0562\u0561\u0576\u0561\u0576_\u0586\u0561\u0576\u057F\u0561\u0566\u056B\u0561"
+  levelID: lvl_barnan
   levelName: the Land of Knowledge
   dialogue: 'Do you know what resides in '
   moneyReq: 0
