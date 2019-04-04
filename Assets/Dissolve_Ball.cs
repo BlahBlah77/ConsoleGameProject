@@ -4,31 +4,15 @@ using UnityEngine;
 
 public class Dissolve_Ball : MonoBehaviour {
 
-    Renderer rend;
+    public Int_Stat_Script playerHealth;
 
-    private void Awake()
+    private void OnTriggerEnter(Collider other)
     {
-        rend = GetComponent<Renderer>();
-    }
-
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        StartCoroutine(Dissolve(0.5f));
-    }
-
-    IEnumerator Dissolve(float timer)
-    {
-        rend.material.SetFloat("_DissAmount", 0.0f);
-        while (rend.material.GetFloat("_DissAmount") < 1.0f)
+        if (other.CompareTag("Player"))
         {
-            rend.material.SetFloat("_DissAmount", rend.material.GetFloat("_DissAmount") + (Time.deltaTime / timer));
-            yield return null;
+            playerHealth.IntMinusChanger(5);
+            Destroy(gameObject);
         }
-        Destroy(gameObject);
     }
 
-    void Update () {
-		
-	}
 }

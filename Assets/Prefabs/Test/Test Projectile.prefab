@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 54059419529005038}
   - component: {fileID: 96482808139719284}
   - component: {fileID: 114566750549314892}
+  - component: {fileID: 114454568430426142}
   m_Layer: 0
   m_Name: Test Projectile
   m_TagString: Untagged
@@ -194,6 +195,18 @@ TrailRenderer:
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
   m_Emitting: 1
+--- !u!114 &114454568430426142
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1501024198036456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d20d126ed94f81945a95d637351dc3e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerHealth: {fileID: 11400000, guid: a4420fb92f943eb4db00dd9e6f19d2cb, type: 2}
 --- !u!114 &114566750549314892
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -213,7 +226,7 @@ SphereCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1501024198036456}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
