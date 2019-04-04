@@ -399,6 +399,7 @@ GameObject:
   - component: {fileID: 279879256}
   - component: {fileID: 279879258}
   - component: {fileID: 279879257}
+  - component: {fileID: 279879259}
   m_Layer: 2
   m_Name: Proximity Trigger
   m_TagString: Untagged
@@ -443,6 +444,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterSpeech: {fileID: 11400000, guid: ce5957647bf8acf4182ac0c38b103def, type: 2}
+--- !u!114 &279879259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 279879255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cc15f799e7af3646a3585de43a1ed47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &316482208
 GameObject:
   m_ObjectHideFlags: 0
@@ -618,6 +630,7 @@ GameObject:
   - component: {fileID: 437110984}
   - component: {fileID: 437110986}
   - component: {fileID: 437110985}
+  - component: {fileID: 437110987}
   m_Layer: 2
   m_Name: Proximity Trigger
   m_TagString: Untagged
@@ -662,6 +675,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterSpeech: {fileID: 11400000, guid: 874c570533116fc47ac1b4b8d1ed278c, type: 2}
+--- !u!114 &437110987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 437110983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cc15f799e7af3646a3585de43a1ed47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &480190223
 Prefab:
   m_ObjectHideFlags: 0
@@ -1351,6 +1375,7 @@ GameObject:
   - component: {fileID: 1139991522}
   - component: {fileID: 1139991524}
   - component: {fileID: 1139991523}
+  - component: {fileID: 1139991525}
   m_Layer: 2
   m_Name: Proximity Trigger
   m_TagString: Untagged
@@ -1395,6 +1420,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterSpeech: {fileID: 11400000, guid: 3707aabb7b3d3b749afbdda73e4f7446, type: 2}
+--- !u!114 &1139991525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1139991521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cc15f799e7af3646a3585de43a1ed47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1152300304
 GameObject:
   m_ObjectHideFlags: 0
@@ -2132,6 +2168,7 @@ GameObject:
   - component: {fileID: 2124133208}
   - component: {fileID: 2124133210}
   - component: {fileID: 2124133209}
+  - component: {fileID: 2124133211}
   m_Layer: 2
   m_Name: Proximity Trigger
   m_TagString: Untagged
@@ -2177,6 +2214,17 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 2.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2124133211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2124133207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cc15f799e7af3646a3585de43a1ed47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2143529601
 Prefab:
   m_ObjectHideFlags: 0

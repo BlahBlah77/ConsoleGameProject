@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Name: Armour_Shop
   m_EditorClassIdentifier: 
   itemList:
+  - {fileID: 11400000, guid: c3eebfa1aed43b24086a2c3bd7d40edb, type: 2}
   - {fileID: 11400000, guid: c300b831fdb37534db2b129f526fb2f5, type: 2}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 21bfe934b51b6114298589ffa11079a6, type: 2}
   - {fileID: 11400000, guid: c606a10eaf032f84aab7194436c4d750, type: 2}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 9409735298de5db4990e46f599aceaaa, type: 2}
+  - {fileID: 11400000, guid: b6073b725371294489e301b81782ba26, type: 2}
   defaultItemList:
   - {fileID: 11400000, guid: c3eebfa1aed43b24086a2c3bd7d40edb, type: 2}
   - {fileID: 11400000, guid: c300b831fdb37534db2b129f526fb2f5, type: 2}
