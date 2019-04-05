@@ -55,7 +55,7 @@ public class Player_Control_Movement : MonoBehaviour {
                 playerRefs.anim.SetBool("isIdle", false);
                 isIdle = false;
                 isRunning = true;
-                Debug.Log(combInput);
+                //Debug.Log(combInput);
                 playerRefs.rb.AddRelativeForce(combInput, ForceMode.Impulse);
                 combInput *= Time.deltaTime;
                 playerRefs.anim.SetFloat("speed", combInput.magnitude);
