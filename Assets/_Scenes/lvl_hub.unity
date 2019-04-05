@@ -2086,8 +2086,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelID: lvl_tootwaz
   levelName: the Emperor
-  dialogue: 'It costs 500 coins, would you like to face '
-  moneyReq: 500
+  dialogue: 'It costs 300 coins, would you like to face '
+  moneyReq: 300
 --- !u!135 &1730624322
 SphereCollider:
   m_ObjectHideFlags: 0

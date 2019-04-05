@@ -21,6 +21,6 @@ EditorBuildSettings:
     path: Assets/_Scenes/lvl_hub.unity
     guid: a80b0df2253b2614ca0779065cfaf674
   - enabled: 1
-    path: "Assets/_Scenes/lvl_\u0562\u0561\u0576\u0561\u0576_\u0586\u0561\u0576\u057F\u0561\u0566\u056B\u0561.unity"
+    path: Assets/_Scenes/lvl_barnan.unity
     guid: 65de3bd1cfc7b68419de0e6abc345149
   m_configObjects: {}
