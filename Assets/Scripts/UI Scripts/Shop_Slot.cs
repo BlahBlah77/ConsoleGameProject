@@ -30,13 +30,13 @@ public class Shop_Slot : MonoBehaviour {
 
     public void Interact()
     {
-        if (storedItem && (playerMoney.initialisedVariable >= storedItem.itemValue))
+        if (storedItem && (playerMoney.runVariable >= storedItem.itemValue))
         {
-            int newMoney = playerMoney.initialisedVariable - storedItem.itemValue;
-            playerMoney.IntMinusChanger(newMoney);
+            //int newMoney = playerMoney.runVariable - storedItem.itemValue;
+            playerMoney.IntMinusChanger(storedItem.itemValue);
             Inventory_Manager.InventMana.AddItem(storedItem);
             uiRef.shopList.ItemRemove(storedItem);
-            RemoveItem();
+            //RemoveItem();
         }
     }
 
